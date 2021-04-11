@@ -1,0 +1,13 @@
+.overflow_x{
+    overflow-x: scroll;
+}
+
+.icoLogo{
+    width: 60px;
+    height: 60px;
+    src: url('../media/images/logo-page.png');
+}
+
+.overflow_y {
+    overflow-y: auto;
+}
