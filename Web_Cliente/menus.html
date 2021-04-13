@@ -18,22 +18,27 @@
 
 <body>
   <!--Container Header and nav-->
-  <div class="container w-100">
+  <div class="container ">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom border-dark mb-sl-3">
       <a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-        <img src="media/images/logo-page.png" alt="" class="icoLogo">  
+        <img src="media/images/logo-page.png" alt="" class="icoLogo">        
       </a>
 
+      <!--Username-->
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="" class="nav-link">
-            <p class="username">Username:'.$_SESSION["usuario"].'</p>
+        <li class="nav-item "><a href="" class="nav-link text-reset">
+            <p class="username">Username:<p id=""></p></p>
+            <!-- caso php'.$_SESSION["usuario"].'-->
           </a></li>
+        <!--Redirect to pages-->
         <li class="nav-item"><a href="ofertas.html" class="nav-link ">Ofertas</a></li>
         <li class="nav-item"><a href="menus.html" class="nav-link active">Menus</a></li>
         <li class="nav-item"><a href="reservar.html" class="nav-link">Reservar</a></li>
         <li class="nav-item"><a href="productos.html" class="nav-link">Productos</a></li>
         <li class="nav-item"><a href="pedidos-domicilio.html" class="nav-link">Pedir a domicilio</a></li>
-        <li class="nav-item"><a href="carrito.html" class="nav-link"><img src="" alt=""><i class="bi bi-cart4"></i></a>
+        <li class="nav-item"><a href="about-us.html" class="nav-link">Quienes somos</a></li>
+        <li class="nav-item"><a href="carrito.html" class="nav-link"><img src="" alt=""><i
+              class="bi bi-cart4"></i></a>
         </li>
         <li class="nav-item"><a href="php/logout.php" class="nav-link">Cerrar sesion</a></li>
       </ul>
@@ -46,65 +51,65 @@
     <!--Container menus-->
     <div class="container border-top border-dark w-100 p-3 overflow_y">
       <!--Menu 1-->
-      <div class="container border border-success my-2 p-2 d-flex">
+      <div class="container my-2 p-2 d-flex color-White-6 rounded-4">
         <!--Img-->
         <img src="media/images/" alt="" class="imgMenus">
         <!--Info-->
-        <div class="container border mx-2">
+        <div class="container border-start border-dark mx-2">
           <p class="text-primary mt-2">Nombre: <p></p></p>
           <p class="text-reset mt-4">Contiene: <p></p></p>
           <p class="text-danger">Precio: <p></p></p>
         </div>
         <!--Btn-->
-        <div class="container border border-success text-center w-50">
+        <div class="container border-start border-dark text-center w-50">
           <button class="btn btn-info w-75 p-2 my-5">Comprar</button>
         </div>
-      </div>      
+      </div>            
       <!--Menu 2-->
-      <div class="container border border-success my-2 p-2 d-flex">
+      <div class="container my-2 p-2 d-flex color-White-6 rounded-4">
         <!--Img-->
         <img src="media/images/" alt="" class="imgMenus">
         <!--Info-->
-        <div class="container border mx-2">
+        <div class="container border-start border-dark mx-2">
           <p class="text-primary mt-2">Nombre: <p></p></p>
           <p class="text-reset mt-4">Contiene: <p></p></p>
           <p class="text-danger">Precio: <p></p></p>
         </div>
         <!--Btn-->
-        <div class="container border border-success text-center w-50">
+        <div class="container border-start border-dark text-center w-50">
           <button class="btn btn-info w-75 p-2 my-5">Comprar</button>
         </div>
-      </div>      
+      </div>            
       <!--Menu 3-->
-      <div class="container border border-success my-2 p-2 d-flex">
+      <div class="container my-2 p-2 d-flex color-White-6 rounded-4">
         <!--Img-->
         <img src="media/images/" alt="" class="imgMenus">
         <!--Info-->
-        <div class="container border mx-2">
+        <div class="container border-start border-dark mx-2">
           <p class="text-primary mt-2">Nombre: <p></p></p>
           <p class="text-reset mt-4">Contiene: <p></p></p>
           <p class="text-danger">Precio: <p></p></p>
         </div>
         <!--Btn-->
-        <div class="container border border-success text-center w-50">
+        <div class="container border-start border-dark text-center w-50">
           <button class="btn btn-info w-75 p-2 my-5">Comprar</button>
         </div>
-      </div>      
+      </div>            
       <!--Menu 4-->
-      <div class="container border border-success my-2 p-2 d-flex">
+      <div class="container my-2 p-2 d-flex color-White-6 rounded-4">
         <!--Img-->
         <img src="media/images/" alt="" class="imgMenus">
         <!--Info-->
-        <div class="container border mx-2">
+        <div class="container border-start border-dark mx-2">
           <p class="text-primary mt-2">Nombre: <p></p></p>
           <p class="text-reset mt-4">Contiene: <p></p></p>
           <p class="text-danger">Precio: <p></p></p>
         </div>
         <!--Btn-->
-        <div class="container border border-success text-center w-50">
+        <div class="container border-start border-dark text-center w-50">
           <button class="btn btn-info w-75 p-2 my-5">Comprar</button>
         </div>
-      </div>
+      </div>            
     </div>
   </div>
 
