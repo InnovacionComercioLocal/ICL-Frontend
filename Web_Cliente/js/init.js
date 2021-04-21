@@ -1,11 +1,11 @@
 function init() {
-   idRegister.addEventListener('click',pay);
-   idLogin.addEventListener('click',login);
-   idFinalizarPago.addEventListener('click',login);
+   //btn actions
+   
+   //document.getElementById(idFinalizarPago).addEventListener("click",pay());
 }
 
 function printCarrito() {
-    test();
+   test();
 }
 
 function pay() {
@@ -16,8 +16,13 @@ function login(email, password) {
    alert("Is working");
 }
 
+function test() {
+   alert("All is working");
+}
+
 //https://www.w3schools.com/jsref/prop_text_value.asp
 
-var idLogin = document.getElementById("login");
-var idRegister = document.getElementById("register");
-var idFinalizarPago = document.getElementById("pagar");
+//caugh all ids
+var idLogin = "login";
+var idRegister = "register";
+var idFinalizarPago = "pagar";
