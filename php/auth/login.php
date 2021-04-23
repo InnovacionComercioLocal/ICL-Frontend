@@ -16,7 +16,7 @@ $comprobacion = $mysqli->query("SELECT * from usuario WHERE usuario.Email='$emai
 if (mysqli_num_rows($comprobacion) <= 0) {
     //Redirect to errors/not exists users    
     header("location:../../errors/error-login.html");
-    
+
     //If it exists
 } else {
     //Run all array
@@ -26,7 +26,7 @@ if (mysqli_num_rows($comprobacion) <= 0) {
     if (password_verify($password, $row->Password)) {
         $contador++;
     }
-    
+
     //Correct password or username
     if ($contador > 0) {
         echo ("Usuario: " . $row->Nombre . " conectado");
@@ -41,8 +41,25 @@ if (mysqli_num_rows($comprobacion) <= 0) {
         //change status connection
         $mysqli->query("UPDATE usuario SET Validado=1 WHERE usuario.Email ='$email'");
         echo ($mysqli->error);
-        //redirect to products.html
-        header("location:../../productos.html");
+
+        //Check type user role
+        switch ($RoleUsuActive) {
+                //Admin            
+            case 1:
+                //redirect to workers/crear-oferta.html            
+                header("location:../../workers/crear-oferta.html");
+                break;
+                //Client or regular            
+            case 2:
+                //redirect to products.html            
+                header("location:../../productos.html");
+                break;
+                //SuperAdmin            
+            case 3:
+                //redirect to workers/crear-oferta.html            
+                header("location:../../productos.html");
+                break;
+        }
 
         //Incorrect password
     } else {
