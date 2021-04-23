@@ -15,6 +15,8 @@ if (mysqli_num_rows($comprobacion) <= 0) {
 } else {
     $row = $comprobacion->fetch_object();
 
+    echo $password;
+
 
     if (password_verify($password, $row->Password)) {
         $contador++;
