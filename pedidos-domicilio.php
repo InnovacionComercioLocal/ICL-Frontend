@@ -57,8 +57,8 @@
     <div class="container h-auto w-auto p-3">
         <h1>Pedidos a domicilio</h1>
         <div class="container border border-dark w-100 h-75 p-4">
-            <h2>Dirección</h2>
-            <form action="php/" method="get" id="pedidos" class="border-top border-dark h-100">
+            <h2>Dirección</h2> <p id="errormsg"></p>
+            <form method="get" id="pedidos" class="border-top border-dark h-100">
                 <div class="container border my-4 h-50 p-4 text-center">
                   <!--Provincia-->
                   <label for="provincia">Provincia*: </label>
@@ -81,8 +81,8 @@
                   <label for="Direccion">Dirección*: </label>
                   <input id="Direccion" type="text" placeholder="Ej:c/Ramón turró"></input>
                   <!--Número-->
-                  <label for="numero">Número: </label>
-                  <input type="text" name="numero" id="" placeholder="Número" required>
+                  <label for="Numero">Número: </label>
+                  <input type="text" name="Numero" id="Numero" placeholder="Número" required>
                   <!--Piso-->
                   <label for="Piso">Piso: </label>
                   <input id="Piso" type="text" placeholder=""></input>
@@ -99,7 +99,7 @@
                   <input id="Escalera" type="text" placeholder=""></input>                                    
                 </div>                               
                 <div class="container text-center border my-4 p-4">
-                    <input type="submit" value="Comprobar Dirección" id="doIt" class="btn btn-success">
+                    <input type="button" value="Comprobar Dirección" id="botonEnviar" class="btn btn-success">
                 </div>
             </form>
         </div>

@@ -158,29 +158,33 @@ function comprobarCampos(){
     var puerta = document.getElementById("Puerta");
     var escalera = document.getElementById("Escalera");
 
+    alert (numero.value);
+
     //Comprobamos que en los option hay algo seleccionado 
     if(selectorProv.options[selectorProv.selectedIndex].text==="Selecione una provincia"||
     selectorMun.options[selectorMun.selectedIndex].text==="Selecione un municipio"||
     selectorCp.options[selectorCp.selectedIndex].text==="Selecione un código postal"||
-    direccion.value===""||numero.value==="") {
+    direccion.value==="" || numero.value==="") {
         errorMsg.style="color:red";
-        errorMsg.innerHTML="Error algo ha ido mal, revise que ha introducido correctamente los datos en los campos, recuerde que los campos marcados con un * son obligatorios\nRealiza la búsqueda por alguna palabra de referencia y no utilices signos de puntuación, abreviaturas ni artículos.";
+        errorMsg.innerHTML=text;        
     }else{
-       
+        
         errorMsg.style="color:green";
         errorMsg.innerHTML="Dirección Válida";
         var direccionCompuesta = selectorProv.options[selectorProv.selectedIndex].text+".."+selectorMun.options[selectorMun.selectedIndex].text+
         ".."+selectorCp.options[selectorCp.selectedIndex].text+".."+direccion.value+".."+numero.value+".."+piso.value+".."+bloque.value+".."+puerta.value+".."+escalera.value+"//";
-
+        
         
         console.log('dirección comp: '+direccionCompuesta);
         
-        window.location="../php/pedirAdomicilio/insertDireccion.php?userDireccion=" + direccionCompuesta;
+        window.location="http://localhost/ICL-Frontend/php/pedirAdomicilio/insertDireccion.php?userDireccion=" + direccionCompuesta;
         
-     
-
+        
+        
     }
 }
 
 
 
+
+text = "Error algo ha ido mal, revise que ha introducido correctamente los datos en los campos, recuerde que los campos marcados con un * son obligatorios\nRealiza la búsqueda por alguna palabra de referencia y no utilices signos de puntuación, abreviaturas ni artículos.";
