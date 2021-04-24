@@ -56,7 +56,7 @@
   <!--Page content-->
     <div class="container h-auto w-auto p-3">
         <h1>Pedidos a domicilio</h1>
-        <div class="container border border-dark w-100 h-75 p-4">
+        <div class="container border border-dark w-100 h-75 p-4"> 
             <h2>Dirección</h2> <p id="errormsg"></p>
             <form method="get" id="pedidos" class="border-top border-dark h-100">
                 <div class="container border my-4 h-50 p-4 text-center">

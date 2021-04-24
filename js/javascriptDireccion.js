@@ -13,7 +13,7 @@ function loadEvents() {
 function loadProvincias() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = procesarProvincias;
-    xmlhttp.open("GET", "http://localhost/ICL-Frontend/php/pedirAdomicilio/getProvincia.php", true);
+    xmlhttp.open("GET", "http://localhost/ICL-Frontend/php/pedirAdomicilio/getProvincia.php", true); 
     xmlhttp.send();
 }
 
