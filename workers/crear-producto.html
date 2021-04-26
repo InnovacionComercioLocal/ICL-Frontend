@@ -48,50 +48,32 @@
     <h1>Crear Producto</h1>
     <hr>
 
-    <form action="../php/worker/crearProducto.php" class="form-check p-3 " method="POST">
+    <!--Container product form-->
+    <form action="../php/worker/crearProducto/crearProducto.php" class="form-check p-3 " method="POST">
 
-      <!--Container order-->
-      <!--
-
-        <div class="container rounded-4 d-flex w-auto color-White-6">  
-      -->
-      <div class="container rounded-4 d-flex flex-column color-White-6">
-
-        <!--Image-->
-        <div class="container border-start border-dark mx-2 my-2 w-25 text-center">
-          <img src="../media/images/exampleP.jpg" alt="" class="imgProduct">
+      <!--Container order-->      
+      <div class="container my-2 p-2 d-flex color-White-6 rounded-4">
+        <!--Conf img-->
+        <img src="../media/images/exampleP.jpg" alt="" class="imgProduct">
+        <div class="container border-start border-dark mx-2">          
+            <input type="text" name="imagen" id="" class="my-5 w-auto" placeholder="Inserte la url de img">          
         </div>
-        <div class="container mx-2 my-2 w-auto text-center">
-          <input type="text" name="imagen" id="" class="my-5 w-auto">
-        </div>
-
-
-        <!--Container Nombre-->
-        <div class="container border-start border-dark mx-2 my-2 w-50 text-center">
+        <!--Conf data-->
+        <div class="container border-start border-dark mx-2">
           <input type="text" name="nombre" id="" class="my-5 w-100" placeholder="Nombre">
         </div>
-
-        <!--Container Precio-->
-        <div class="container border-start border-dark mx-2 my-2 w-50 text-center">
+        <div class="container border-start border-dark mx-2">
           <input type="text" name="precio" id="" class="my-5 w-100" placeholder="Precio">
         </div>
-
-        <!--Container select-->
-        <div class="container border-start border-dark mx-2 my-2 w-50 text-center">
+        <div class="container border-start border-dark mx-2">
           <select name="Categoria" id="Categoria" class="my-5 w-100" required>
             <option value="optCat"> Selecione una categoria </option>
           </select>
-        </div>
-
-        <!--Container btn-->
-        <div class="container border-start border-end border-dark text-center mx-2 my-2 w-50">
+        </div>      
+        <div class="container border-start border-dark mx-2">
           <input type="submit" value="Agregar producto" class="btn btn-success my-5">
-        </div>
-
-      </div>
-      <!--
-
-  -->
+        </div>        
+      </div>    
 
     </form>
   </div>

@@ -27,4 +27,6 @@ function procesarCategorias() {
         }
 
     }
+
+    //Llama mostrar ofertas
 }

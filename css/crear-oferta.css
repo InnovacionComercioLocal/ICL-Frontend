@@ -2,3 +2,11 @@
     width: 150px;
     height: 140px;
 }
+
+.hide{
+    display: none;
+}
+
+.see{
+    display: block;
+}

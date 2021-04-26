@@ -15,8 +15,8 @@ if (mysqli_num_rows($comprobacion) <= 0) {
         $passwordCrypt = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $result = $mysqli->query("INSERT INTO usuario (Nombre,Telefono,Password,Email) VALUES ('$nombre','$telefono','$passwordCrypt','$email')");
         echo ($mysqli->error);
-        session_start();
-        $_SESSION["usuario"] = $_POST["email"];
+        //session_start();
+        //$_SESSION["usuario"] = $_POST["email"];
         $mysqli->query("UPDATE usuario SET validado=1 WHERE usuario.Email ='$email'");
         echo ($mysqli->error);
         header("location:../../index.html");
