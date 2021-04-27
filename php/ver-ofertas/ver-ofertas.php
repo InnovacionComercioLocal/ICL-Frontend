@@ -2,7 +2,7 @@
 
 include("../../conexionBD.php");
 
-$producto = $mysqli->query("SELECT * FROM `oferta`");
+$producto = $mysqli->query("SELECT * FROM `reserva`");
 
 if (mysqli_num_rows($producto) > 0) {          
     
@@ -12,9 +12,10 @@ if (mysqli_num_rows($producto) > 0) {
         <div class="container border-bottom border-dark d-flex p-1">
             <!--Name product-->
             <div class="container w-100 h-25 text-start p-1">
-            <p class="h5"> Nombre: '.$row->Nombre.'</p>
-            <p class="h5"> Precio: '.$row->Precio.' €</p>
-            <p class="hide" id="id">'.$row->ID_Oferta.'</p>                        
+            <p class="h6"> Fecha de Inicio: '.$row->Fercha_Hora_Inicio.'</p>
+            <p class="h6"> Fecha fianl: '.$row->Fercha_Hora_Final.'</p>
+            <p class="h6"> Clientes: '.$row->Descripcion.'</p>
+            <p class="hide" id="id">'.$row->ID_Reserva.'</p>                        
             </div>
     
             <!--Btn actions-->

@@ -35,3 +35,11 @@
 .rounded-4 {
     border-radius: 10px;
 }
+
+.hide{
+    display: none;
+}
+
+.see{
+    display: block;
+}
