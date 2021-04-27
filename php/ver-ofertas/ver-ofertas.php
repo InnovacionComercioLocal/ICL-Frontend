@@ -1,29 +1,25 @@
 <?php
 
-include("../../conexionBD.php");
+include("../conexionBD.php");
 
-$producto = $mysqli->query("SELECT * FROM `reserva`");
+$producto = $mysqli->query("SELECT * FROM `oferta`");
 
 if (mysqli_num_rows($producto) > 0) {          
     
     while ($row = $producto->fetch_object()) {
         echo ('
-        <!--Product 1-->
-        <div class="container border-bottom border-dark d-flex p-1">
-            <!--Name product-->
-            <div class="container w-100 h-25 text-start p-1">
-            <p class="h6"> Fecha de Inicio: '.$row->Fercha_Hora_Inicio.'</p>
-            <p class="h6"> Fecha fianl: '.$row->Fercha_Hora_Final.'</p>
-            <p class="h6"> Clientes: '.$row->Descripcion.'</p>
-            <p class="hide" id="id">'.$row->ID_Reserva.'</p>                        
-            </div>
-    
-            <!--Btn actions-->
-            <div class="container w-100 h-25 text-end p-1">
-                <button class="btn btn-success"><i class="bi bi-plus-square"></i></button>
-                <button class="btn btn-danger" ><i class="bi bi-dash-square"></i></button>
-            </div>
-        </div>
+        <!--Producto '.$row->ID_Oferta.'-->                  
+        <div class="container border border-dark p-2 d-flex my-2 color-White-6 rounded-4 h-25">
+          <img src="media/images/exampleP.j" alt="" class="mx-2 border w-100 h-100">
+          <div class="container border-start border-dark w-100">
+            <p class="text-primary mt-4">Nombre: '.$row->Nombre.'</p>            
+            <p class="text-danger">Precio: '.$row->Precio.' €</p>
+            <p class="hide" id="id">'.$row->ID_Oferta.'</p>            
+          </div>
+          <div class="container border-start border-dark w-100 p-1 text-center">
+            <button class="btn btn-primary my-5">Añadir a la cesta</button>
+          </div>
+        </div> 
         ');                
     }
     

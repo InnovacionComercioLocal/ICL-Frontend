@@ -1,5 +1,5 @@
 function loadEvents() {
-  loadReservas();
+    loadReservas();      
 }
 
 //Get ofertas
