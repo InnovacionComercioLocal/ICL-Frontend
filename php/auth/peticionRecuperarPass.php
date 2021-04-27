@@ -9,7 +9,7 @@ if (isset($_POST["boton-peticion-reset"])) {
     $token = random_bytes(32);
 
     //url de la pagina
-    $url = "www.icl.net/php/auth/recuperarPassword.php?selector=" . $selector . "&validator=" . bin2hex($token);
+    $url = "www.icl.net/php/auth/crear-nueva-pass.php?selector=" . $selector . "&validator=" . bin2hex($token);
 
     //tiempo de expiracion del token
     $expires = date("U") + 1800;
@@ -62,7 +62,7 @@ if (isset($_POST["boton-peticion-reset"])) {
 
     $message .= '<p>Aqui tienes el link para resetear tu contraseña : <br>';
 
-    $message .= '<a href="'. $url . '">' . $url . '</a></p>';
+    $message .= '<a href="' . $url . '">' . $url . '</a></p>';
 
     //cabecera del email
     $headers = "From:  icl <icl@gmail.com>\r\n";
@@ -71,10 +71,7 @@ if (isset($_POST["boton-peticion-reset"])) {
 
     $mail($to, $subject, $message, $headers);
 
-    header("location:../");
-
-
-
+    header("location:../../recuperarPass.php?reset=success");
 } else {
     header("location:../../index.html");
 }

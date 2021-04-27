@@ -55,10 +55,17 @@
                 <section>
                     <h2>Reset your password</h2>
                     <p>Se te enviará un correo con las instrucciones para resetear la pass</p>
-                    <form action="php/auth/recuperarPassword.php" method="POST">
+                    <form action="php/auth/peticionRecuperarPass.php" method="POST">
                         <input type="text" name="email" placeholder="Inserta tu email">
                         <button type="submit" name="boton-peticion-reset">Enviar</button>
-                    </form>                    
+                    </form>
+                    <?php
+                        if(isset($_GET["reset"])){
+                            if($_GET["reset"] == "success"){
+                                echo '<p class=signupsuccess>Revisa tu email!</p>';
+                            }
+                        }
+                    ?>                   
                 </section>
             </div>
         </main>
