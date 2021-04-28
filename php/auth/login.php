@@ -51,7 +51,7 @@ if (mysqli_num_rows($comprobacion) <= 0) {
                 break;
                 //Client or regular            
             case 2:
-                //redirect to products.html            
+                //redirect to products.html                    
                 header("location:../../productos.html");
                 break;
                 //SuperAdmin            

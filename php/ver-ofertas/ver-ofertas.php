@@ -16,9 +16,14 @@ if (mysqli_num_rows($producto) > 0) {
             <p class="text-danger">Precio: '.$row->Precio.' €</p>
             <p class="hide" id="id">'.$row->ID_Oferta.'</p>            
           </div>
-          <div class="container border-start border-dark w-100 p-1 text-center">
-            <button class="btn btn-primary my-5">Añadir a la cesta</button>
-          </div>
+          <?php
+    session_start();
+    if (!isset($_SESSION["usuario"])) {        
+              
+    }else{
+      include("components/btnAdd.html");
+    }
+    ?>  
         </div> 
         ');                
     }
