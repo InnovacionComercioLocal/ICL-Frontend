@@ -32,7 +32,7 @@
             <!-- caso php'.$_SESSION["usuario"].'-->
           </a></li>
         <!--Redirect to pages-->
-        <li class="nav-item"><a href="ofertas.php" class="nav-link active">Ofertas</a></li>
+        <li class="nav-item"><a href="ofertas.php" class="nav-link ">Ofertas</a></li>
         <!--<li class="nav-item"><a href="menus.html" class="nav-link">Menus</a></li>-->
         <!--<li class="nav-item"><a href="reservar.html" class="nav-link active">Reservar</a></li>-->
         <li class="nav-item"><a href="productos.html" class="nav-link">Productos</a></li>
