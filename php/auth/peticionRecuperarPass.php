@@ -49,8 +49,8 @@ if (isset($_POST["boton-peticion-reset"])) {
 
 
     mysqli_stmt_close($stmt);
-    // mysqli_close($);
-    $mysqli->close();
+    mysqli_close($conn);
+    //  $mysqli->close();
 
     //a quien le enviamos el email
     $to = $userEmail;
