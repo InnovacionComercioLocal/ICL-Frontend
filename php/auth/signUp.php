@@ -9,7 +9,7 @@ $password = $_POST['password'];
 include("../conexionBD.php");
 $comprobacion = $mysqli->query("SELECT * from usuario WHERE usuario.Email='$email'");
 //If email not exist
-if (mysqli_num_rows($comprobacion) <= 0) {    
+if (mysqli_num_rows($comprobacion) <= 0) {
     //Check passwords
     if ($_POST['password'] == $_POST['ConfirmarPassword']) {
         $passwordCrypt = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -19,7 +19,7 @@ if (mysqli_num_rows($comprobacion) <= 0) {
         //$_SESSION["usuario"] = $_POST["email"];
         $mysqli->query("UPDATE usuario SET validado=1 WHERE usuario.Email ='$email'");
         echo ($mysqli->error);
-        header("location:../../index.html");
+        header("location:../../index.php");
 
         //redirect to errors/error-register.html
     } else {

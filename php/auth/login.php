@@ -22,7 +22,7 @@ if (mysqli_num_rows($comprobacion) <= 0) {
     //Run all array
     $row = $comprobacion->fetch_object();
 
-    //Chech password
+    //Check password
     if (password_verify($password, $row->Password)) {
         $contador++;
     }
