@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/allPages.css">
+  <link rel="stylesheet" href="css/carrito.css">
   <script src="js/init.js"></script>
-  <script src="js/ver-ofertas.js"></script>
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -16,9 +16,9 @@
   <title>Pitzeria girona</title>
 </head>
 
-<body>
+<body onload="init()">
   <!--Container Header and nav-->
-  <div class="container w-100">
+  <div class="container">
   <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom border-dark mb-sl-3">
       <a href="index.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
         <img src="media/images/logo-page.png" alt="" class="icoLogo">
@@ -59,33 +59,79 @@
   </div>
 
   <!--Page content-->
-  <div>
-    
-    <div class="container border border-dark p-1 pt-3">
-      <h2 class="mx-5">Ofertas</h2>
-      <hr>
-      <div class="row mx-2 my-2" id="containerOfertas">        
-        
-      </div>      
-     
+  <!--Contenedor de todo-->
+  <div class="container border border-dark w-50 pt-3 px-3">
+    <!--Contenedor de productos-->
+    <div class="container pt-2 px-2 overflow_y">
+      <!--Producto 1-->
+      <div class="container border p-2 d-lg-flex d-sm-flex my-2 color-White-6 rounded-4">
+        <img src="media/images/exampleP.jpg" alt="" class="mx-2 imgProduct border">
+        <div class="container border-start border-dark w-100">
+          <p class="text-primary mt-4">Nombre: <p></p>
+          </p>
+          <p class="text-danger">Precio: <p></p>
+          </p>
+        </div>
+        <div class="container border-start border-dark w-50 p-1 text-center">
+          <button class="btn btn-danger my-5">Quitar de la cesta</button>
+        </div>
+      </div>
+      <!--Producto 2-->
+      <div class="container border p-2 d-flex my-2 color-White-6 rounded-4">
+        <img src="media/images/exampleP.jpg" alt="" class="mx-2 imgProduct border">
+        <div class="container border-start border-dark w-100">
+          <p class="text-primary mt-4">Nombre: <p></p>
+          </p>
+          <p class="text-danger">Precio: <p></p>
+          </p>
+        </div>
+        <div class="container border-start border-dark w-50 p-1 text-center">
+          <button class="btn btn-danger my-5">Quitar de la cesta</button>
+        </div>
+      </div>
+      <!--Producto 3-->
+      <div class="container border p-2 d-flex my-2 color-White-6 rounded-4">
+        <img src="media/images/exampleP.jpg" alt="" class="mx-2 imgProduct border">
+        <div class="container border-start border-dark w-100">
+          <p class="text-primary mt-4">Nombre: <p></p>
+          </p>
+          <p class="text-danger">Precio: <p></p>
+          </p>
+        </div>
+        <div class="container border-start border-dark w-50 p-1 text-center">
+          <button class="btn btn-danger my-5">Quitar de la cesta</button>
+        </div>
+      </div>
+      <!--Producto 4-->
+      <div class="container border p-2 d-flex my-2 color-White-6 rounded-4">
+        <img src="media/images/exampleP.jpg" alt="" class="mx-2 imgProduct border">
+        <div class="container border-start border-dark w-100">
+          <p class="text-primary mt-4">Nombre: <p></p>
+          </p>
+          <p class="text-danger">Precio: <p></p>
+          </p>
+        </div>
+        <div class="container border-start border-dark w-50 p-1 text-center">
+          <button class="btn btn-danger my-5">Quitar de la cesta</button>
+        </div>
+      </div>
+      
+      <!--Contenedor Finalizar pago-->
+    <div class="container text-center mt-3 p-2">
+      <button id="pagar" class="btn btn-primary w-25" onclick="pay()">Pagar</button>
     </div>
-
   </div>
 
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
     integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous">
-    </script>
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
     integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous">
-    </script>
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
-    </script>
-
-<script type="text/javascript">
-  window.addEventListener("load", loadEvents);
-</script>
+  </script>
 </body>
 
 </html>

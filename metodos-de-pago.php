@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/allPages.css">
   <script src="js/init.js"></script>
-  <script src="js/ver-ofertas.js"></script>
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -16,10 +15,10 @@
   <title>Pitzeria girona</title>
 </head>
 
-<body>
-  <!--Container Header and nav-->
-  <div class="container w-100">
-  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom border-dark mb-sl-3">
+<body onload="init()">
+   <!--Container Header and nav-->
+  <div class="container ">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom border-dark mb-sl-3">
       <a href="index.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
         <img src="media/images/logo-page.png" alt="" class="icoLogo">
       </a>
@@ -59,33 +58,60 @@
   </div>
 
   <!--Page content-->
-  <div>
-    
-    <div class="container border border-dark p-1 pt-3">
-      <h2 class="mx-5">Ofertas</h2>
-      <hr>
-      <div class="row mx-2 my-2" id="containerOfertas">        
-        
-      </div>      
-     
+    <div class="container text-center ">
+        <form action="" method="GET" id="metodoPago" class="border border-dark w-50 mx-auto p-3">
+            <img src="media/images/card.jpg" alt="">
+            <br/>
+            <!--Titular targeta-->
+            <label for="">Titular de la targeta</label>
+            <br/>
+            <br/>
+            <input type="text" name="" id="">
+            <br/>
+            <!--Numero targeta-->
+            <label for="">Numero de la targeta</label>
+            <br/>
+            <br/>
+            <input type="text" name="" id="">
+            <br/>
+            <!--Fecha vencimiento-->
+            <label for="fechaIni">Fecha de vencimiento</label>
+            <br/>
+            <br/>
+            <select name="fechaIni" id="fechaIni" form="metodoPago">
+                <option value=""></option>
+            </select>
+            <select name="fechaFin" id="fechaIni" form="metodoPago">
+                <option value=""></option>
+            </select>
+            <br/>            
+            <!--Codigo de seguridad-->
+            <label for="">Código de seguridad</label>
+            <br/>
+            <br/>
+            <input type="text" name="" id="">            
+            <br/>
+            <!--Recordar datos-->
+            <input type="checkbox" name="" id="">
+            <label for="">Recordar targeta</label>
+            <br/>
+            <br/>
+            <!--Finalizar pago-->
+            <!--<input type="submit" value="Pagar y finalizar" class="btn bg-primary">-->
+            <button type="submit" class="btn btn-primary w-25">Pagar</button>
+        </form>
     </div>
 
-  </div>
-
-  <!-- JavaScript Bundle with Popper -->
+    <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
-    integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous">
-    </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
-    integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous">
-    </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
-    </script>
-
-<script type="text/javascript">
-  window.addEventListener("load", loadEvents);
-</script>
+  integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous">
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+  integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous">
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
+  </script>
 </body>
 
 </html>

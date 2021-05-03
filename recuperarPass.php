@@ -20,31 +20,43 @@
 
     <!--Container Header and nav-->
     <div class="container ">
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom border-dark mb-sl-3">
-        <a href="index.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-                <img src="media/images/logo-page.png" alt="" class="icoLogo">
-            </a>
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom border-dark mb-sl-3">
+      <a href="index.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <img src="media/images/logo-page.png" alt="" class="icoLogo">
+      </a>
 
-            <!--Username-->
-            <ul class="nav nav-pills">
-                <li class="nav-item "><a href="" class="nav-link text-reset">
-                        <p class="username">Username:<p id=""></p>
-                        </p>
-                        <!-- caso php'.$_SESSION["usuario"].'-->
-                    </a></li>
-                <!--Redirect to pages-->
-                <li class="nav-item"><a href="ofertas.php" class="nav-link ">Ofertas</a></li>
-                <!--<li class="nav-item"><a href="menus.html" class="nav-link">Menus</a></li>-->
-                <!--<li class="nav-item"><a href="reservar.html" class="nav-link active">Reservar</a></li>-->
-                <li class="nav-item"><a href="productos.html" class="nav-link">Productos</a></li>
-                <li class="nav-item"><a href="pedidos-domicilio.php" class="nav-link active">Pedir a domicilio</a></li>
-                <li class="nav-item"><a href="about-us.html" class="nav-link">Quienes somos</a></li>
-                <li class="nav-item"><a href="carrito.html" class="nav-link"><img src="" alt=""><i
-                            class="bi bi-cart4"></i></a>
-                </li>
-                <li class="nav-item"><a href="php/auth/logout.php" class="nav-link">Cerrar sesion</a></li>
-            </ul>
-        </header>
+      <!--Username-->
+      <ul class="nav nav-pills">
+        <li class="nav-item "><a href="" class="nav-link text-reset">
+        <?php
+        session_start();
+        if (!isset($_SESSION["usuario"])) {
+          //include("components/login.html");        
+        } else {
+          include("components/username.php");
+        }
+        ?>
+            
+          </a></li>
+        <!--Redirect to pages-->
+        <li class="nav-item"><a href="ofertas.php" class="nav-link ">Ofertas</a></li>
+        <!--<li class="nav-item"><a href="menus.html" class="nav-link">Menus</a></li>-->
+        <!--<li class="nav-item"><a href="reservar.html" class="nav-link active">Reservar</a></li>-->
+        <li class="nav-item"><a href="productos.php" class="nav-link">Productos</a></li>
+        <li class="nav-item"><a href="pedidos-domicilio.php" class="nav-link ">Pedir a domicilio</a></li>
+        <li class="nav-item"><a href="about-us.php" class="nav-link">Quienes somos</a></li>
+        <li class="nav-item"><a href="carrito.php" class="nav-link"><img src="" alt=""><i class="bi bi-cart4"></i></a>
+        </li>
+        <?php        
+        if (!isset($_SESSION["usuario"])) {
+          //include("components/login.html");        
+        } else {
+          include("components/logout.html");
+        }
+        ?>
+        <!--<li class="nav-item"><a href="php/auth/logout.php" class="nav-link">Cerrar sesion</a></li>-->
+      </ul>
+    </header>
     </div>
 
     <!--Page content-->
