@@ -26,7 +26,7 @@
 
       <!--Username-->
       <ul class="nav nav-pills">
-        <li class="nav-item "><a href="" class="nav-link text-reset">
+      <li class="nav-item "><a href="editarPerfil.php" class="nav-link text-reset">
         <?php
         session_start();
         if (!isset($_SESSION["usuario"])) {

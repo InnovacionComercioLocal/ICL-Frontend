@@ -47,17 +47,17 @@ if (mysqli_num_rows($comprobacion) <= 0) {
                 //Admin            
             case 1:
                 //redirect to workers/crear-oferta.html            
-                header("location:../../workers/crear-oferta.html");
+                header("location:../../workers/crear-oferta.php");
                 break;
                 //Client or regular            
             case 2:
                 //redirect to products.html                    
-                header("location:../../productos.html");
+                header("location:../../productos.php");
                 break;
                 //SuperAdmin            
             case 3:
                 //redirect to workers/crear-oferta.html            
-                header("location:../../productos.html");
+                header("location:../../productos.php");
                 break;
         }
 

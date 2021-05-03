@@ -25,7 +25,7 @@
 
       <!--Username-->
       <ul class="nav nav-pills">
-        <li class="nav-item "><a href="" class="nav-link text-reset">
+        <li class="nav-item "><a href="editarPerfil.php" class="nav-link text-reset">
         <?php
         session_start();
         if (!isset($_SESSION["usuario"])) {
@@ -49,7 +49,7 @@
         if (!isset($_SESSION["usuario"])) {
           //include("components/login.html");        
         } else {
-          include("components/logout.html");
+          include("../components/logout2.php");
         }
         ?>
         <!--<li class="nav-item"><a href="php/auth/logout.php" class="nav-link">Cerrar sesion</a></li>-->
