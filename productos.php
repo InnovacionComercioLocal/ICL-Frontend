@@ -60,16 +60,30 @@
   <!--Page content-->  
     <div id="containerProducts" class="container border border-dark w-100 my-5">
         <h1 class="h2 mt-2">Productos</h1>
-        <!--Fila 1-->
-        <div id="containerUp" class="container border border-dark d-flex text-center my-3">  
-            <div id="producto" class="container border my-3 w-50 p-2 mx-1 d-flex text-start">
-                <img src="media/images/exampleP.jpg" alt="" class="w-25 border border-dark my-3 mx-3">
-                <div class="container my-4 mx-3 w-50 border border-dark">
-                    <p>Nombre: </p>
-                    <p>Precio: </p>         
-                    <button class="btn btn-success mb-1">Añadir a la cesta</button>
-                </div>
-            </div>                                                                                               
+        <hr>
+        <!--Contenedor de productos-->
+        <div id="containerUp" class="container border border-primary w-75 text-center my-3">  
+
+          <!--Producto-->          
+            <div id="producto" class="container border border-danger my-3 w-100 h-25 p-2 mx-1 d-flex text-center">
+              <!--Img-->              
+              <div class="container w-auto h-50 border border-success p-4 border text-center">
+                <img src="media/images/example.jpeg" alt="" style="width: 200; height: 50px;">
+              </div>
+              <!--Nombre-->
+              <div class="container w-auto border border-success p-4 border text-center">
+                <p>Nombre: </p>
+              </div>
+              <!--Precio-->
+              <div class="container w-auto border border-success p-4 border text-center">
+                <p>Precio: </p>         
+              </div>
+              <!--btn-->
+              <div class="container w-auto border border-success p-4 border text-center ">
+                <button class="btn btn-success">Añadir a la cesta</button>
+              </div>                
+            </div>        
+                                                                                      
         </div>        
         
     </div>
@@ -84,9 +98,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
   </script>
-  <script type="text/javascript" src="js/javascriptProductos.js">
+  <!--<script type="text/javascript" src="js/javascriptProductos.js">
     window.addEventListener("load",loadEvents);          
-</script> 
+</script>--> 
 </body>
 
 </html>
