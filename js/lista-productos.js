@@ -184,7 +184,7 @@ function procesarProductos() {
 
 function rutaImagen(imgName) {
   console.log("Ruta imagen, Nombre: " + imgName);
-  var rutaImgTemp = "/ICL-Frontend/media/images/products/" + imgName;
+  var rutaImgTemp = "/ICL-Frontend/media/images/products/" + imgName+".jpg";
 
   var rutaImg = rutaImgTemp.split(" ").join("");
   return rutaImg;
