@@ -21,7 +21,7 @@ if (mysqli_num_rows($comprobacion) <= 0) {
     $result = $mysqli->query("INSERT INTO producto (Nombre,Precio,img,ID_Categoria) VALUES ('$nombre','$precio','$imagen','$row->ID_Categoria')");
     echo ($mysqli->error);
 
-    header("location:../../../workers/crear-producto.html");
+    header("location:../../../workers/crear-producto.php");
 } else {
     //Mensaje de error
     echo ("<div id='Div1'><span style='color: red;' >Ese producto ya existe</span></div> ");
