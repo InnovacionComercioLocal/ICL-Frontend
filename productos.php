@@ -70,19 +70,8 @@
                     <button class="btn btn-success mb-1">Añadir a la cesta</button>
                 </div>
             </div>                                                                                               
-        </div>
-        <hr>
-        <!--Fila 2-->
-        <div class="container border border-dark d-flex text-center my-3">
-            <div id="producto" class="container border my-3 w-50 p-2 mx-1 d-flex text-start">
-                <img src="media/images/exampleP.jpg" alt="" class="w-25 border border-dark my-3 mx-3">
-                <div class="container my-4 mx-3 w-50 border border-dark">
-                    <p>Nombre: </p>
-                    <p>Precio: </p>
-                    <button class="btn btn-success mb-1">Añadir a la cesta</button>
-                </div>
-            </div>                   
-        </div>
+        </div>        
+        
     </div>
 
     <!-- JavaScript Bundle with Popper -->

@@ -12,7 +12,7 @@
         session_start();
         session_destroy();
         //Return to index
-        header("location:../../../index.php");    
+        header("location:../../index.php");    
     ?>
     
 </body>

@@ -47,7 +47,7 @@
         if (!isset($_SESSION["usuario"])) {
           //include("components/login.html");        
         } else {
-          include("../components/logout.html");
+          include("../components/logout2.html");
         }
         ?>
       </ul>

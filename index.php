@@ -49,7 +49,7 @@
         if (!isset($_SESSION["usuario"])) {
           //include("components/login.html");        
         } else {
-          include("../components/logout2.php");
+          include("components/logout.html");
         }
         ?>
         <!--<li class="nav-item"><a href="php/auth/logout.php" class="nav-link">Cerrar sesion</a></li>-->
