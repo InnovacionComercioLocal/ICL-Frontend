@@ -69,10 +69,14 @@
     </div>
 
     <div class="container p-2 mb-3 text-center">
-    <button class="btn btn-primary">Primera</button>
-    <button class="btn btn-primary">Anterior</button>
-    <button class="btn btn-primary">Siguiente</button>
-    <button class="btn btn-primary">Última</button>
+    <button class="btn btn-primary" id="primera">Primera</button>
+    <button class="btn btn-primary" id="anterior">Anterior</button>
+    <!--Total de paginas-->
+    <button class="btn btn-primary" id="contadorActual"></button>
+    <button class="btn btn-primary" id="contador"></button>
+    <!---->
+    <button class="btn btn-primary" id="siguiente">Siguiente</button>
+    <button class="btn btn-primary" id="ultima">Última</button>
     </div>
   </div>
 

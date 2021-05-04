@@ -2,7 +2,7 @@
 
     include("../conexionBD.php");
     
-    $registrosPorPag=3;
+    $registrosPorPag=4;
     
     $pagina=$_GET["pagina"];
 
@@ -13,7 +13,7 @@
 
     $numRegistros = mysqli_num_rows($result);
 
-    $total_paginas=ceil($numRegistros/$registrosPorPag);
+    $total_paginas=ceil($numRegistros/$registrosPorPag);    
 
     $resultPagianado = $mysqli->query("SELECT * from producto LIMIT $empezar_desde,$registrosPorPag");
     while ($row = $resultPagianado->fetch_object()) {
