@@ -132,18 +132,17 @@ function procesarProductos() {
 
       //Establece los estilos
       divProducto.classList =
-        "container border border-danger my-3 w-100 h-25 p-2 mx-1 d-flex text-center";
+        "container border border-dark rounded-4 color-White-6 my-3 w-80 h-25 p-2 mx-1 d-flex text-start";
       divImg.classList =
-        "container w-auto h-50 border border-success p-1 border text-center";
+        "container w-100 h-100 p-1 color-White-5 rounded-4 text-center mx-5 my-2";
       divNombre.classList =
-        "container w-auto border border-success p-4 border text-center";
+        "container w-100 h-100 p-4 color-White-5 rounded-4 text-center mx-5 my-2";
       divPrecio.classList =
-        "container w-auto border border-success p-4 border text-center";
+        "container w-100 h-100 p-4 color-White-5 rounded-4 text-center mx-5 my-2";
       divBtn.classList =
-        "container w-auto border border-success p-4 border text-center";
+        "container w-100 h-100 p-4 color-White-5 rounded-4 text-center mr-5 my-2";
       btnAdd.classList = "btn btn-success";
-      img.style = "width: 200px; height: 100px;";
-
+      img.style = "width: 200px; height: 100px;";      
       //Asigna los valores
       //Contenedor
       divProducto.id = "Producto";

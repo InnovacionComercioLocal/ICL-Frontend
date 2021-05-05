@@ -1,28 +1,28 @@
 <?php
 
-include("../conexionBD.php");
+  include("../conexionBD.php");
 
-$producto = $mysqli->query("SELECT * FROM `oferta`");
+  $registrosPorPag = 4;
 
-if (mysqli_num_rows($producto) > 0) {            
-    
-    while ($row = $producto->fetch_object()) {
-        echo ("<!--Producto ".$row->ID_Oferta."-->                  
-        <div class='container border border-dark p-2 d-flex my-2 color-White-6 rounded-4 h-25'>
-          <img src='' alt='' class='mx-2 border w-100 h-100'>
-          <div class='container border-start border-dark w-100'>
-            <p class='text-primary mt-4'>Nombre: $row->Nombre</p>            
-            <p class='text-danger'>Precio: $row->Precio €</p>
-            <p class='hide' id='id'>$row->ID_Oferta</p>            
-          </div>
-          
-        </div> ");                
-    }
-    
-} else {
-    //Mensaje de error
-    echo ("No hay ofertas");
-}
+  $pagina = $_GET["pagina"];
 
-echo ($mysqli->error);
-$mysqli->close();
+  $empezar_desde = ($pagina - 1) * $registrosPorPag;
+
+  $result = $mysqli->query("SELECT * from oferta");
+  echo ($mysqli->error);
+
+  $numRegistros = mysqli_num_rows($result);
+
+  $total_paginas = ceil($numRegistros / $registrosPorPag);
+
+  $resultPagianado = $mysqli->query("SELECT * from oferta LIMIT $empezar_desde,$registrosPorPag");
+  while ($row = $resultPagianado->fetch_object()) {
+    echo ($row->ID_Oferta . " / " . $row->img . " / " . $row->Nombre . " / " . $row->Precio . "//");
+  }
+  echo ("#");
+  echo ($total_paginas);
+
+  $result->free();
+  $mysqli->close();
+
+?>

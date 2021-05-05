@@ -9,8 +9,7 @@
   <script src="js/init.js"></script>
   <script src="js/ver-ofertas.js"></script>
   <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
   <!-- CSS Icons-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
   <title>Pitzeria girona</title>
@@ -19,23 +18,23 @@
 <body>
   <!--Container Header and nav-->
   <div class="container w-100">
-  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom border-dark mb-sl-3">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom border-dark mb-sl-3">
       <a href="index.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
         <img src="media/images/logo-page.png" alt="" class="icoLogo">
       </a>
 
       <!--Username-->
       <ul class="nav nav-pills">
-      <li class="nav-item "><a href="editarPerfil.php" class="nav-link text-reset">
-        <?php
-        session_start();
-        if (!isset($_SESSION["usuario"])) {
-          //include("components/login.html");        
-        } else {
-          include("components/username.php");
-        }
-        ?>
-            
+        <li class="nav-item "><a href="editarPerfil.php" class="nav-link text-reset">
+            <?php
+            session_start();
+            if (!isset($_SESSION["usuario"])) {
+              //include("components/login.html");        
+            } else {
+              include("components/username.php");
+            }
+            ?>
+
           </a></li>
         <!--Redirect to pages-->
         <li class="nav-item"><a href="ofertas.php" class="nav-link ">Ofertas</a></li>
@@ -46,7 +45,7 @@
         <li class="nav-item"><a href="about-us.php" class="nav-link">Quienes somos</a></li>
         <li class="nav-item"><a href="carrito.php" class="nav-link"><img src="" alt=""><i class="bi bi-cart4"></i></a>
         </li>
-        <?php        
+        <?php
         if (!isset($_SESSION["usuario"])) {
           //include("components/login.html");        
         } else {
@@ -60,32 +59,39 @@
 
   <!--Page content-->
   <div>
-    
+
     <div class="container border border-dark p-1 pt-3">
       <h2 class="mx-5">Ofertas</h2>
       <hr>
-      <div class="row mx-2 my-2" id="containerOfertas">        
-        
-      </div>      
-     
+      <div class="row mx-2 my-2" id="containerOfertas">
+
+      </div>
+
+      <div class="container p-2 mb-3 text-center">
+        <button class="btn btn-primary" id="primera">Primera</button>
+        <button class="btn btn-primary" id="anterior">Anterior</button>
+        <!--Total de paginas-->
+        <button class="btn btn-primary" id="contadorActual"></button>
+        <button class="btn btn-primary" id="contador"></button>
+        <!---->
+        <button class="btn btn-primary" id="siguiente">Siguiente</button>
+        <button class="btn btn-primary" id="ultima">Última</button>
+      </div>
     </div>
 
   </div>
 
   <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
-    integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous">
-    </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
-    integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous">
-    </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
-    </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
+  </script>
 
-<script type="text/javascript">
-  window.addEventListener("load", loadEvents);
-</script>
+  <script type="text/javascript">
+    window.addEventListener("load", loadEvents);
+  </script>
 </body>
 
 </html>

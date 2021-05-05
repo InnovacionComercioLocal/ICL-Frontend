@@ -61,7 +61,7 @@
     <h1 class="h2 mt-2">Productos</h1>
     <hr>
     <!--Contenedor de productos-->
-    <div id="containerUp" class="container border border-primary w-75 text-center my-3">
+    <div id="containerUp" class="container w-100 text-center my-3">
       <!--Productos-->
 
 
