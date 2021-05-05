@@ -104,8 +104,6 @@
     </div>
   </div>
 
-  <p id="here" class="container border border-dark h-25 p-3 my-2 text-center text-danger hide"></p>
-
   <!--Container oferta-->
   <div class="container mt-4 border border-dark p-2">
     <!--Title-->
@@ -123,8 +121,8 @@
         <button class="btn btn-primary" id="primera">Primera</button>
         <button class="btn btn-primary" id="anterior">Anterior</button>
         <!--Total de paginas-->
-        <button class="btn btn-primary" id="contadorActual"></button>
-        <button class="btn btn-primary" id="contador"></button>
+        <button class="btn btn-primary disabled" id="contadorActual"></button>
+        <button class="btn btn-primary disabled" id="contador"></button>
         <!---->
         <button class="btn btn-primary" id="siguiente">Siguiente</button>
         <button class="btn btn-primary" id="ultima">Última</button>
@@ -147,7 +145,7 @@
     integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
     </script>
     <script type="text/javascript">
-      window.addEventListener("load", loadOfertas);
+      window.addEventListener("load", loadEvents);
     </script>
 </body>
 

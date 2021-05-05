@@ -71,6 +71,12 @@ function añadirAlCarro() {
   );
 }
 
+//--------------Test-----------------------//
+
+function test() {
+  alert("Is working!!!!");
+}
+
 //--------------Limpia el contenido a mostrado-----------------//
 
 function limpiarContenidoLista() {

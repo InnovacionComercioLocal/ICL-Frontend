@@ -72,8 +72,8 @@
     <button class="btn btn-primary" id="primera">Primera</button>
     <button class="btn btn-primary" id="anterior">Anterior</button>
     <!--Total de paginas-->
-    <button class="btn btn-primary" id="contadorActual"></button>
-    <button class="btn btn-primary" id="contador"></button>
+    <button class="btn btn-primary disabled" id="contadorActual"></button>
+    <button class="btn btn-primary disabled" id="contador"></button>
     <!---->
     <button class="btn btn-primary" id="siguiente">Siguiente</button>
     <button class="btn btn-primary" id="ultima">Última</button>

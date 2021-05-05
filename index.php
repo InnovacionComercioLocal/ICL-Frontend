@@ -107,23 +107,14 @@
 
   </div>
 
-  <!--Container foooter -->
-  <div class="container mt-1">
-    <footer class="d-flex flex-wrap justify-content-start mx-0 mt-3 w-100 h-50">
-      <!--Container tab -->
-      <div class="d-flex border-top border-start border-end w-50 mt-2 mx-0">
-        <a href="" class="nav-link  w-100 text-center">Tab 1</a>
-        <a href="" class="nav-link  w-100 text-center">Tab 2</a>
-        <a href="" class="nav-link  w-100 text-center">Tab 3</a>
-      </div>
-      <!--Container images -->
-      <div class="container border border-2 w-100 h-50 d-flex mt-0 p-2">
-        <img src="media/images/exampleP.jpg" class="img imgOferta mx-5" alt="">
-        <img src="media/images/exampleP.jpg" class="img imgOferta mx-5" alt="">
-        <img src="media/images/exampleP.jpg" class="img imgOferta mx-5" alt="">
-      </div>
-    </footer>
-  </div>
+  <!--Footer-->
+  <?php 
+  if (!isset($_SESSION["usuario"])) {
+    include("components/footer.html");        
+  } else {
+    
+  }
+  ?>  
 
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous">

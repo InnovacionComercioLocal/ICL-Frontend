@@ -26,14 +26,14 @@ function loadEvents() {
 
 //--------------Eventos pagina-----------------//
 
-function primera() {
+function primera() {  
   pagina = 1;
   console.log("pagina" + pagina);
   limpiarContenidoLista();
   loadOfertas();
 }
 
-function anterior() {
+function anterior() {  
   if (pagina === 1) {
     pagina = 1;
   } else {
@@ -44,7 +44,7 @@ function anterior() {
   loadOfertas();
 }
 
-function siguiente() {
+function siguiente() {  
   if (pagina === totalPag) {
     pagina = totalPag;
   } else {
@@ -55,20 +55,26 @@ function siguiente() {
   loadOfertas();
 }
 
-function ultima() {
+function ultima() {  
   pagina = totalPag;
   console.log("pagina" + pagina);
   limpiarContenidoLista();
   loadOfertas();
 }
 
-function añadirAlCarro() {
+function añadirAlCarro() {  
   console.log(
     "hola soy el btnEdit " + document.getElementById("add").innerText
   );
   console.log(
     "El valor es deci id es: " + document.getElementById("add").value
   );
+}
+
+//--------------Test-----------------------//
+
+function test() {
+  alert("Is working!!!!");
 }
 
 //--------------Limpia el contenido a mostrado-----------------//

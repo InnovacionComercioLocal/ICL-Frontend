@@ -17,45 +17,23 @@
 </head>
 
 <body>
-  <aside class="container w-100">
-    <div class="border border-dark p-3 w-75 text-start float-end">
-      <!--Title-->
-      <div>
-        <label for="">
-          <h2>Iniciar Sesión</h2>
-        </label>        
-        <hr>
+  <!--Container foooter -->
+  <div class="container mt-1">
+    <footer class="d-flex flex-wrap justify-content-start mx-0 mt-3 w-100 h-50">
+      <!--Container tab -->
+      <div class="d-flex border-top border-start border-end w-50 mt-2 mx-0">
+        <a href="" class="nav-link  w-100 text-center">Tab 1</a>
+        <a href="" class="nav-link  w-100 text-center">Tab 2</a>
+        <a href="" class="nav-link  w-100 text-center">Tab 3</a>
       </div>
-      <!--Form login-->
-      <div class="container p-2">
-        <form action="php/auth/login.php" method="POST">
-          <input type="email" name="email" id="jsEmail" placeholder="Email" required class="w-100">
-          <br />
-          <br />
-          <input type="password" name="password" id="boxInput" placeholder="Password" required class="w-100">
-          <br />
-          <br />
-          <div class="container ">
-            <input type="checkbox" name="remember" id="">
-            <label for="remember">Recuerdame</label>
-            <input type="submit" value="Sign In" id="btnLogin" class="btn btn-success w-25 ms-5">
-          </div>
-        </form>
-        <div class="container mt-3">
-          <a href="../recuperarPass.html">¿Has olvidado tu contraseña?</a>
-        </div>
+      <!--Container images -->
+      <div class="container border border-2 w-100 h-50 d-flex mt-0 p-2">
+        <img src="media/images/exampleP.jpg" class="img imgOferta mx-5" alt="">
+        <img src="media/images/exampleP.jpg" class="img imgOferta mx-5" alt="">
+        <img src="media/images/exampleP.jpg" class="img imgOferta mx-5" alt="">
       </div>
-      <!--Redirect to Register-->
-      <div class="container my-3">
-        <label for="">
-          <h3>¿ Aún no estas registrado ?</h3>
-        </label>
-        <label for="">
-          <a href="register.html" class="nav-link mt-2">Registrarme</a>
-        </label>
-      </div>
-    </div>
-  </aside>
+    </footer>
+  </div>
 
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
