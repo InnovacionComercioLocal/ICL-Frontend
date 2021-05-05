@@ -20,7 +20,7 @@
   <!--Container Header and nav-->
   <div class="container w-100">
   <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom border-dark mb-sl-3">
-      <a href="ver-reservas.php"
+      <a href="crear-oferta.php"
         class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
         <img src="../media/images/logo-page.png" alt="" class="icoLogo">
       </a>

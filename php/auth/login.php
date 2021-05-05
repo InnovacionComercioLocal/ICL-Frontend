@@ -2,7 +2,8 @@
 
 //Connect to BD
 include("../conexionBD.php");
-
+//Permissons
+header('Access-Control-Allow-Origin: *');
 //Get var value
 $email = mysqli_real_escape_string($mysqli, $_POST['email']);
 $passwordS = mysqli_real_escape_string($mysqli, $_POST['password']);
@@ -29,14 +30,14 @@ if (mysqli_num_rows($comprobacion) <= 0) {
 
     //Correct password or username
     if ($contador > 0) {
-        echo ("Usuario: " . $row->Nombre . " conectado");
+        //echo ("Usuario: " . $row->Nombre . " conectado");
         $RoleUsuActive = $row->ID_Role;
         //Start session and set var session
         session_start();
         $_SESSION['usuario'] = array();
         $_SESSION['usuario']['email'] = $email;
         $_SESSION['usuario']['ID_Role'] = $RoleUsuActive;
-        print_r($_SESSION['usuario']);
+        //print_r($_SESSION['usuario']);
 
         //change status connection
         $mysqli->query("UPDATE usuario SET Validado=1 WHERE usuario.Email ='$email'");

@@ -7,6 +7,10 @@ $password = $_POST['password'];
 
 
 include("../conexionBD.php");
+
+//Permissons
+header('Access-Control-Allow-Origin: *');
+
 $comprobacion = $mysqli->query("SELECT * from usuario WHERE usuario.Email='$email'");
 //If email not exist
 if (mysqli_num_rows($comprobacion) <= 0) {

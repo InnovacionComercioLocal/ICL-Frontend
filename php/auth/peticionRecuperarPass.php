@@ -17,6 +17,7 @@ if (isset($_POST["boton-peticion-reset"])) {
     $expires = date("U") + 1800;
 
     require '../conexionBD.php';
+    include("../permissons.php");
 
     $userEmail = $_POST['email'];
 

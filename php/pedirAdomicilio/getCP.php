@@ -4,6 +4,8 @@ if (!isset($_SESSION["usuario"])) {
     header("location: http://localhost/ICL-Frontend/index.html");
 }
 include("../conexionBD.php");
+//Permissons
+header('Access-Control-Allow-Origin: *');
 $idMunicipio = $_GET['Municipio'];
 
 $result = $mysqli->query("SELECT * FROM cp WHERE cp.ID_Municipio = '$idMunicipio'");
