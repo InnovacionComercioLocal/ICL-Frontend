@@ -41,7 +41,7 @@
             
           </a></li>
         <!--Redirect to pages-->
-        <li class="nav-item"><a href="ver-reservas.php" class="nav-link active">Reservas</a></li>
+        <!--<li class="nav-item"><a href="ver-reservas.php" class="nav-link ">Reservas</a></li>-->
         <li class="nav-item"><a href="crear-oferta.php" class="nav-link">Crear oferta</a></li>
         <li class="nav-item"><a href="crear-producto.php" class="nav-link">Crear producto</a></li>
         <li class="nav-item"><a href="ver-pedidos.php" class="nav-link">Ver pedidos</a></li>
