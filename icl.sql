@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-05-2021 a las 12:41:44
+-- Tiempo de generación: 05-05-2021 a las 13:57:37
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
@@ -63,7 +63,9 @@ INSERT INTO `categoria` (`ID_Categoria`, `Categoria`) VALUES
 (11, 'Carbonara'),
 (12, 'Barbacoa'),
 (13, 'Jamón'),
-(14, 'Boloñesa');
+(14, 'Boloñesa'),
+(15, 'Bebida'),
+(16, 'Pasta');
 
 -- --------------------------------------------------------
 
@@ -2842,7 +2844,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `ID_Categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID_Categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `cp`
