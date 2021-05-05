@@ -58,7 +58,21 @@
 
   <!--Page content-->
   <div id="containerProducts" class="container border border-dark w-100 my-1">
-    <h1 class="h2 mt-2">Productos</h1>
+    <div class="d-flex border border-dark my-2">
+      <div class="border my-2 mx-2 p-1 float-left">
+        <h1 class="h2 mt-2">Productos</h1>
+
+      </div>
+      <div class="border my-2 ms-2 p-1 float-right">
+        <select name="" id="" >
+          <option value=""> - </option>
+          <option value=""> - </option>
+          <option value=""> - </option>
+          <option value=""> - </option>
+          <option value=""> - </option>
+        </select>
+      </div>
+    </div>
     <hr>
     <!--Contenedor de productos-->
     <div id="containerUp" class="container w-100 text-center my-3">

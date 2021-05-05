@@ -9,7 +9,7 @@ function printCarrito() {
 }
 
 function pay() {
-   window.open("./metodos-de-pago.html","_self");
+   window.open("./metodos-de-pago.php","_self");
 }
 
 function login(email, password) {
