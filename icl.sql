@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-05-2021 a las 00:14:29
--- Versión del servidor: 10.4.17-MariaDB
--- Versión de PHP: 7.3.27
+-- Tiempo de generación: 05-05-2021 a las 12:41:44
+-- Versión del servidor: 10.4.13-MariaDB
+-- Versión de PHP: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -61,7 +61,9 @@ INSERT INTO `categoria` (`ID_Categoria`, `Categoria`) VALUES
 (9, 'Sin gluten'),
 (10, 'Infantil'),
 (11, 'Carbonara'),
-(12, 'Barbacoa');
+(12, 'Barbacoa'),
+(13, 'Jamón'),
+(14, 'Boloñesa');
 
 -- --------------------------------------------------------
 
@@ -2534,6 +2536,7 @@ INSERT INTO `municipio` (`ID_Municipio`, `Municipio`, `ID_Provincia`) VALUES
 
 CREATE TABLE `oferta` (
   `ID_Oferta` int(11) NOT NULL,
+  `img` varchar(100) NOT NULL DEFAULT 'no-image',
   `Nombre` varchar(30) NOT NULL,
   `Precio` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -2542,22 +2545,22 @@ CREATE TABLE `oferta` (
 -- Volcado de datos para la tabla `oferta`
 --
 
-INSERT INTO `oferta` (`ID_Oferta`, `Nombre`, `Precio`) VALUES
-(1, '2x1 Pizza', '5'),
-(2, '4x2 Bebidas', '2'),
-(3, '2x1 Pizza', '5'),
-(4, 'Exclusiva', '30'),
-(5, 'Pizza Romana', '6'),
-(6, 'Pizza 4 quesos', '11'),
-(7, 'Pizza Vegetariana', '8'),
-(8, 'Pizza Tomate', '6'),
-(9, 'Pizza piña', '5'),
-(10, 'Pizza Atun', '7'),
-(11, 'Pizza Pescao', '8'),
-(12, 'Pizza motzarella', '9'),
-(13, 'Pizza Espagueti', '11'),
-(14, 'Pizza 4*2', '11'),
-(15, 'Pizza Test', '6');
+INSERT INTO `oferta` (`ID_Oferta`, `img`, `Nombre`, `Precio`) VALUES
+(1, 'no-image', '2x1 Pizza', '5'),
+(2, 'no-image', '4x2 Bebidas', '2'),
+(3, 'no-image', '2x1 Pizza', '5'),
+(4, 'no-image', 'Exclusiva', '30'),
+(5, 'no-image', 'Pizza Romana', '6'),
+(6, 'no-image', 'Pizza 4 quesos', '11'),
+(7, 'no-image', 'Pizza Vegetariana', '8'),
+(8, 'no-image', 'Pizza Tomate', '6'),
+(9, 'no-image', 'Pizza piña', '5'),
+(10, 'no-image', 'Pizza Atun', '7'),
+(11, 'no-image', 'Pizza Pescao', '8'),
+(12, 'no-image', 'Pizza motzarella', '9'),
+(13, 'no-image', 'Pizza Espagueti', '11'),
+(14, 'no-image', 'Pizza 4*2', '11'),
+(15, 'no-image', 'Pizza Test', '6');
 
 -- --------------------------------------------------------
 
@@ -2598,7 +2601,41 @@ INSERT INTO `producto` (`ID_Producto`, `Nombre`, `Precio`, `img`, `ID_Categoria`
 (3, 'Carbonara Sin Gluten', 7, 'Carbonara-Sin-Gluten', 11),
 (4, 'Carbonara Gourmet Queso', 6, 'Carbonara-Gourmet-Queso', 11),
 (5, 'Carbonara', 5, 'Carbonara', 11),
-(6, 'Carbonara Cebolla', 6, 'Carbonara-Cebolla', 11);
+(6, 'Carbonara Cebolla', 6, 'Carbonara-Cebolla', 11),
+(7, 'Barbacoa Vegui', 9, 'Barbacoa-Vegui', 12),
+(8, 'Barbacoa Sin Gluten', 7, 'Barbacoa-Sin-Gluten', 9),
+(9, 'Barbacoa Meat & Grill', 7, 'Barbacoa-Meat-&-Grill', 12),
+(10, 'Barbacoa Gourmet', 6, 'Barbacoa-Gourmet', 12),
+(11, 'Barbacoa Crème Tomate', 7, 'Barbacoa-Crème-Tomate', 12),
+(12, 'Barbacoa Crème Queso', 7, 'Barbacoa-Crème-Queso', 12),
+(13, 'Barbacoa con Cuarto de Libra', 7, 'Barbacoa-con-Cuarto-de-Libra', 12),
+(14, 'Barbacoa', 6, 'Barbacoa', 12),
+(15, '4 Quesos', 7, '4-Quesos', 2),
+(16, 'Formaggio', 6, 'Formaggio', 2),
+(17, 'Sin-Gluten 4 Quesos', 6, 'Sin-Gluten-4-Quesos', 2),
+(18, 'York Bacon Sin Gluten', 6, 'York-Bacon-Sin-Gluten', 13),
+(19, 'Delicheese', 7, 'Delicheese', 2),
+(20, 'Pepe Peperoni', 7, 'Pepe-Peperoni', 8),
+(21, 'Pepperoni Sin Gluten', 0, 'Pepperoni-Sin-Gluten', 9),
+(22, 'Pizza Bacon Hot Dog', 8, 'Pizza-Bacon-Hot-Dog', 8),
+(23, 'Supreme', 6, 'Supreme', 13),
+(24, 'La Ibérica', 7, 'La-Ibérica', 13),
+(25, 'Bacon Cheeseburger', 6, 'Bacon-Cheeseburger', 8),
+(26, 'Bacon Crispy', 7, 'Bacon-Crispy', 8),
+(27, 'Bacon Crispy Gourmet', 7, 'Bacon-Crispy-Gourmet', 8),
+(28, 'Carnívora Gourmet', 6, 'Carnívora-Gourmet', 8),
+(29, 'Hawaiana', 9, 'Hawaiana', 13),
+(30, 'Florentina', 8, 'Florentina', 1),
+(31, 'Especial de la casa champiñón', 8, 'Especial-de-la-casa-champiñón', 1),
+(32, 'Especial de la casa cebolla', 9, 'Especial-de-la-casa-cebolla', 1),
+(33, 'De la Huerta', 8, 'De-la-Huerta', 1),
+(34, 'Montana Vegui', 9, 'Montana-Vegui', 1),
+(35, 'César Deluxe', 9, 'César-Deluxe', 1),
+(36, 'Campesina Vegui', 8, 'Campesina-Vegui', 1),
+(37, 'Tándem Gourmet', 8, 'Tándem-Gourmet', 12),
+(38, 'Steak House', 11, 'Steak-House', 8),
+(39, 'Boloñesa', 15, 'Boloñesa', 14),
+(40, 'Americana', 10, 'Americana', 8);
 
 -- --------------------------------------------------------
 
@@ -2688,7 +2725,8 @@ INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Telefono`, `Password`, `Email`, 
 (1, 'admin', '000-000-000', '$2y$10$4gdTeUQLv4QB15077In/7uHQDAJ1SvOzdwkMh1Dyo31Pn.Jk3/9pu', 'admin@gmail.com', NULL, 1, 3, NULL, NULL),
 (2, 'worker', '111-111-111', '$2y$10$MS3QtuvbdgnpnvJlv6tqSuqsxjDT5W9HZvardPggd5C/kwr3xPCAK', 'worker@gmail.com', NULL, 1, 1, NULL, NULL),
 (3, 'client', '222-222-222', '$2y$10$zzQVMV.wj6RSVPNp3zDClOebeXR6dYML/sdoOcIhRNDGZmJQ4iGsi', 'client@gmail.com', 'Girona..Amer..17170..c/Test test..5..2..3..2..B//', 1, 2, NULL, NULL),
-(4, 'client2', '333-333-333', '$2y$10$Ghd6uWdY4Z1HFY9/s3KRZu.dowV4HRmd7iccMfrn21yk5I.LIGqHe', 'client2@gmail.com', 'LLeida..Alamús, els..25221..c/Test test..2..5..7..1..A//', 1, 2, NULL, NULL);
+(4, 'client2', '333-333-333', '$2y$10$Ghd6uWdY4Z1HFY9/s3KRZu.dowV4HRmd7iccMfrn21yk5I.LIGqHe', 'client2@gmail.com', 'LLeida..Alamús, els..25221..c/Test test..2..5..7..1..A//', 1, 2, NULL, NULL),
+(5, 'client3', '444-444-444', '$2y$10$KeCHyMedzRI1A.X6rUcTv.z72G623SmMaEDw0ix3AvP71W/kmPRJ2', 'client3@gmail.com', NULL, 1, 2, NULL, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -2804,7 +2842,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `ID_Categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `ID_Categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `cp`
@@ -2840,7 +2878,7 @@ ALTER TABLE `pedido`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `ID_Producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID_Producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT de la tabla `provincia`
@@ -2864,7 +2902,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
