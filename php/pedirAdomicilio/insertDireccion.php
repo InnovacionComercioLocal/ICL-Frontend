@@ -4,7 +4,7 @@
              header("location: http://localhost/ICL-Frontend/index.html");
          }
          include("../conexionBD.php");
-
+         header('Access-Control-Allow-Origin: *');
         $userDireccion=$_GET['userDireccion'];
 
         

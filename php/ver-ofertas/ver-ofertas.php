@@ -1,7 +1,7 @@
 <?php
 
 include("../conexionBD.php");
-    
+header('Access-Control-Allow-Origin: *');
     $registrosPorPag=4;
     
     $pagina=$_GET["pagina"];

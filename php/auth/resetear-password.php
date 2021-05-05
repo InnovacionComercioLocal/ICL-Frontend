@@ -20,7 +20,7 @@ if (isset($_POST['reset-password-submit'])) {
     $currenDate = date("U");
 
     require("../conexionBD.php");
-    include("../permissons.php");
+    header('Access-Control-Allow-Origin: *');
 
     $sql = "SELECT * FROM pwdreset WHERE pwdResetSelector=? AND pwdResetExpires >=?";
 

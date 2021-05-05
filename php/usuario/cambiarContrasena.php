@@ -7,7 +7,7 @@ session_start();
 
 
 include("../conexionBD.php");
-
+header('Access-Control-Allow-Origin: *');
 $email = $_SESSION['usuario']['email'];
 
 

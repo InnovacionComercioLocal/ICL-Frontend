@@ -4,7 +4,7 @@ if (!isset($_SESSION["usuario"])) {
     header("location: http://localhost/ICL-Frontend/index.html");
 } else {
     include("../conexionBD.php");
-    include("../permissons.php");
+    header('Access-Control-Allow-Origin: *');
     $result = $mysqli->query("SELECT * from provincia");
     echo ($mysqli->error);
 

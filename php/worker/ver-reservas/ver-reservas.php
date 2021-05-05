@@ -1,7 +1,7 @@
 <?php
 
 include("../../conexionBD.php");
-
+header('Access-Control-Allow-Origin: *');
 $producto = $mysqli->query("SELECT * FROM `reserva`");
 
 if (mysqli_num_rows($producto) > 0) {          

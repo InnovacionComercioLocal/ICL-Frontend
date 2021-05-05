@@ -1,7 +1,7 @@
 <?php
 
 include("../../conexionBD.php");
-
+header('Access-Control-Allow-Origin: *');
 $nombre = $_POST['nombre'];
 $precio = $_POST['precio'];
 $imagen = $_POST['imagen'];
