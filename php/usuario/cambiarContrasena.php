@@ -30,7 +30,7 @@ if (password_verify($passActual, $row->Password)) {
         $sql = $mysqli->query("UPDATE usuario SET Password = '$passwordCrypt' WHERE Email = '$email'");
 
 
-        header("Location: ../../editarPerfil.php?correcto=1");
+        header("Location: ../../editarPerfil.php?pcorrecto");
     }
 } else {
     echo "Contraseña actual incorrecta";

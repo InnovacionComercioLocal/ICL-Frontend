@@ -2,14 +2,16 @@
 
 if (isset($_POST["boton-peticion-reset"])) {
 
-    //token del usuario
+    //token del usuario que se guardara en la bd
     $selector = bin2hex(random_bytes(8));
 
-    //identifica al usuario comparando en la bd
+    //identifica al usuario después de volver a la pagina comparando en la bd
     $token = random_bytes(32);
 
     //url de la pagina
-    $url = "www.icl.net/php/auth/crear-nueva-pass.php?selector=" . $selector . "&validator=" . bin2hex($token);
+    // $url2 = "www.icl.net/php/auth/crear-nueva-pass.php?selector=" . $selector . "&validator=" . bin2hex($token);
+    $url3 = "https://pizzeriagirona.000webhostapp.com/php/auth/crear-nueva-pass.php?selector=" . $selector . "&validator=" . bin2hex($token);
+    $url = "localhost/php/auth/crear-nueva-pass.php?selector=" . $selector . "&validator=" . bin2hex($token);
 
     //tiempo de expiracion del token
     $expires = date("U") + 1800;
@@ -25,8 +27,6 @@ if (isset($_POST["boton-peticion-reset"])) {
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        // echo "Ha habido un error";
-        //exit();
         die("Ha habido un error");
     } else {
         //aqui le decimos en que convertiremos el ? en la variable $sql
