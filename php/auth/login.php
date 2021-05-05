@@ -64,7 +64,7 @@ if (mysqli_num_rows($comprobacion) <= 0) {
         //Incorrect password
     } else {
         //Redirect to errors/error-login
-        header("location:../../errors/error-login.html");
+        header("location:../../errors/error-login.php");
     }
 }
 

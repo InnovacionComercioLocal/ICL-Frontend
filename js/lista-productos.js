@@ -181,6 +181,8 @@ function procesarProductos() {
   }
 }
 
+//-------------Ruta imagen------------------//
+
 function rutaImagen(imgName) {
   console.log("Ruta imagen, Nombre: " + imgName);
   var rutaImgTemp = "/ICL-Frontend/media/images/products/" + imgName+".jpg";

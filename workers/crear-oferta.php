@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/allPages.css">
   <link rel="stylesheet" href="../css/crear-oferta.css">  
-  <script src="../js/crearOferta.js"></script>
+  <script src="../js/ver-ofertas-w.js"></script>
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -69,6 +69,16 @@
             <img src="../media/images/exampleP.jpg" alt="" class="imgProduct">
           </div>
 
+          <!--Container img-->
+          <div class="container border-start border-dark mx-2 my-2 w-50 text-center">
+            <!--  DESPLEGABLE
+            <select name="" id="" class="my-5 w-100">
+              <option value=""> - </option>
+            </select> 
+          -->
+            <input type="text" name="img" id="img" class="my-5 w-100" placeholder="Imagen">
+          </div>
+
           <!--Container select-->
           <div class="container border-start border-dark mx-2 my-2 w-50 text-center">
             <!--  DESPLEGABLE
@@ -85,8 +95,8 @@
           </div>
 
           <!--Container btn-->
-          <div class="container border-start border-end border-dark text-center mx-2 my-2 w-50">
-            <input type="button" onclick="loadEvents()" value="Agregar producto" class="btn btn-success my-5">
+          <div class="container border-start border-end border-dark text-center mx-2 my-2 w-50">            
+            <input type="submit" value="Agregar producto" class="btn btn-success my-5">
           </div>
 
       </form>
@@ -104,12 +114,21 @@
     </div>
 
     <!--Container items-->
-    <div class="container border border-dark mt-2 w-100 p-1 overflow-auto" id="containerOferta">
-
+    <div class="container border border-dark mt-2 w-100 p-1" id="containerOfertas">
       <!--Se mostraran todos los products-->  
 
     </div>
 
+    <div class="container p-2 mb-3 text-center">
+        <button class="btn btn-primary" id="primera">Primera</button>
+        <button class="btn btn-primary" id="anterior">Anterior</button>
+        <!--Total de paginas-->
+        <button class="btn btn-primary" id="contadorActual"></button>
+        <button class="btn btn-primary" id="contador"></button>
+        <!---->
+        <button class="btn btn-primary" id="siguiente">Siguiente</button>
+        <button class="btn btn-primary" id="ultima">Última</button>
+      </div>
   </div>
 
 

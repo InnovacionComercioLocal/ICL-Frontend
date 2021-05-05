@@ -123,29 +123,32 @@ function processarOfertas() {
       var divPrecio = document.createElement("div");
       var price = document.createElement("p");
       var divBtn = document.createElement("div");
-      var btnAdd = document.createElement("button");
+      var btnDel = document.createElement("button");
+      var icoBtn = document.createElement("i");
 
       //Establece los estilos
       divOferta.classList =
-        "container border border-dark rounded-4 color-White-6 my-1 w-80 h-25 p-2 mx-1 d-flex text-start";
+        "container border-bottom border-dark d-flex p-1";
       divImg.classList =
-        "container w-100 h-100 p-1 color-White-5 rounded-4 text-center mx-5 my-2";
+        "container w-100 h-25 text-start p-1";
       divNombre.classList =
-        "container w-100 h-100 p-4 color-White-5 rounded-4 text-center mx-5 my-2";
+        "container w-100 h-25 text-start p-1";
       divPrecio.classList =
-        "container w-100 h-100 p-4 color-White-5 rounded-4 text-center mx-5 my-2";
+        "container w-100 h-25 text-start p-1";
       divBtn.classList =
-        "container w-100 h-100 p-4 color-White-5 rounded-4 text-center mr-5 my-2";
-      btnAdd.classList = "btn btn-success";
-      img.style = "width: 200px; height: 100px;";
+        "container w-100 h-25 text-end p-1";
+      btnDel.classList = "btn btn-danger";
+      img.style = "width: 100px; height: 50px;";
+      name.classList = "h5";
+      price.classList = "h5";
+      icoBtn.classList = "bi bi-dash-square";      
       //Asigna los valores
       //Contenedor
       divOferta.id = "Producto";
-      //boton
-      btnAdd.innerText = "Añadir a la cesta";
+      //boton      
       //----Obten el id del producto
-      btnAdd.value = arrayCadaProducto[0];
-      btnAdd.id = "add";
+      btnDel.value = arrayCadaProducto[0];
+      btnDel.id = "add";
       //Imagen
       img.src = rutaImagen(arrayCadaProducto[1]);
       //---Añade la descripcion del producto
@@ -159,7 +162,8 @@ function processarOfertas() {
       divImg.appendChild(img);
       divNombre.appendChild(name);
       divPrecio.appendChild(price);
-      divBtn.appendChild(btnAdd);
+      btnDel.appendChild(icoBtn);
+      divBtn.appendChild(btnDel);
       divOferta.appendChild(divImg);
       divOferta.appendChild(divNombre);
       divOferta.appendChild(divPrecio);

@@ -57,7 +57,7 @@
   </div>
 
   <!--Page content-->
-  <div id="containerProducts" class="container border border-dark w-100 my-5">
+  <div id="containerProducts" class="container border border-dark w-100 my-1">
     <h1 class="h2 mt-2">Productos</h1>
     <hr>
     <!--Contenedor de productos-->

@@ -65,15 +65,15 @@
         <form action="php/usuario/cambiarContrasena.php" method="POST">
           <label for="pass1">Contraseña actual</label>
           <div class="d-block">
-            <input type="text" name="passActual">
+            <input type="password" name="passActual">
           </div>
           <label for="pass1">Nueva contraseña</label>
           <div class="d-block">
-            <input type="text" name="passNueva">
+            <input type="password" name="passNueva">
           </div>
           <label for="pass1">Confirmar nueva contraseña</label>
           <div class="d-block">
-            <input type="text" name="passNueva2">
+            <input type="password" name="passNueva2">
             <?php
             if (isset($_GET['error']) == 1) {
               echo '<p class="red">Las contraseñas no son iguales</p>';
