@@ -20,7 +20,7 @@
 <?php
     session_start();
     if (!isset($_SESSION["usuario"])) {        
-        header("location:http://localhost/ICL-Frontend/index.php");
+        header("location:https://pizzeriagirona.000webhostapp.com/index.php");
     }
     
     ?> 
