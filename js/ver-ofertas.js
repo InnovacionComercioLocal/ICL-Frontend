@@ -186,7 +186,7 @@ function processarOfertas() {
 
 function rutaImagen(imgName) {
   console.log("Ruta imagen, Nombre: " + imgName);
-  var rutaImgTemp = "/pizzeriagirona.000webhostapp.com/media/images/ofertas/" + imgName + ".jpg";
+  var rutaImgTemp = "https://pizzeriagirona.000webhostapp.com/media/images/ofertas/" + imgName + ".jpg";
 
   var rutaImg = rutaImgTemp.split(" ").join("");
   return rutaImg;
