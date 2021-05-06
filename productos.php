@@ -69,7 +69,7 @@
         <h1 class="h2 mt-2">Productos</h1>
 
       </div>
-      <div class="border my-2 ms-2 p-1 float-right">
+      <!--<div class="border my-2 ms-2 p-1 float-right">
         <select name="" id="" >
           <option value=""> - </option>
           <option value=""> - </option>
@@ -77,7 +77,7 @@
           <option value=""> - </option>
           <option value=""> - </option>
         </select>
-      </div>
+      </div>-->
     </div>
     <hr>
     <!--Contenedor de productos-->
