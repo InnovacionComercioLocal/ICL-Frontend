@@ -1,6 +1,18 @@
+
 <?php
+//incluir archivor necesarios
+require '../../phpmailer/PHPMailer.php';
+require '../../phpmailer/SMTP.php';
+require '../../phpmailer/Exception.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
 if (isset($_POST["boton-peticion-reset"])) {
+
+    //instancia phpmailer
+
 
     //token del usuario que se guardara en la bd
     $selector = bin2hex(random_bytes(8));
@@ -19,7 +31,6 @@ if (isset($_POST["boton-peticion-reset"])) {
     require '../conexionBD.php';
     header('Access-Control-Allow-Origin: *');
 
-    $userEmail = $_POST['email'];
 
     //borra el token de la bd si hay alguno, de manera que no tengamos 2 tokens activados
     $sql = "DELETE FROM pwdReset WHERE pwdResetEmail=?;";
@@ -53,24 +64,58 @@ if (isset($_POST["boton-peticion-reset"])) {
     mysqli_close($conn);
     //  $mysqli->close();
 
-    //a quien le enviamos el email
-    $to = $userEmail;
+    $mail = new PHPMailer();
 
-    //mensaje que se ve al recibir el email
-    $subject = "Resetea tu contraseña";
+    $mail->isSMTP();
 
-    $message = '<p>Hemos recibido una petición para resetar tu contraseña</p>';
+    $mail->Host = "smtp.gmail.com";
 
-    $message .= '<p>Aqui tienes el link para resetear tu contraseña : <br>';
+    $mail->SMTPAuth = "true";
 
-    $message .= '<a href="' . $url . '">' . $url . '</a></p>';
+    $mail->SMTPSecure = "tls";
 
-    //cabecera del email
-    $headers = "From:  icl <icl@gmail.com>\r\n";
-    $headers .= "Reply to: icl@gmail.com\r\n";
-    $headers .= "Content-type: text/html\r\n";
+    $mail->Port = "587";
 
-    $mail($to, $subject, $message, $headers);
+    $mail->Username = "innovacioncomerciolocal@gmail.com";
+
+    $mail->Password = "incoloincolo";
+
+    $mail->Subject = "Resetea tu contraseña";
+
+    //quién enviará el correo
+    $mail->setFrom("innovacioncomerciolocal@gmail.com");
+
+    $mail->Body = 'p>Hemos recibido una petición para resetar tu contraseña</p>
+                    <p>Aqui tienes el link para resetear tu contraseña : <br>
+                    <a href="' . $url3 . '">' . $url3 . '</a></p>';
+
+    $userEmail = $_POST['email'];
+
+    $mail->addAddress($userEmail);
+
+    if (!$mail->send()) {
+        echo "error al enviar";
+    }
+
+
+    // //a quien le enviamos el email
+    // $to = $userEmail;
+
+    // //mensaje que se ve al recibir el email
+    // $subject = "Resetea tu contraseña";
+
+    // $message = '<p>Hemos recibido una petición para resetar tu contraseña</p>';
+
+    // $message .= '<p>Aqui tienes el link para resetear tu contraseña : <br>';
+
+    // $message .= '<a href="' . $url . '">' . $url . '</a></p>';
+
+    // //cabecera del email
+    // $headers = "From:  icl <icl@gmail.com>\r\n";
+    // $headers .= "Reply to: icl@gmail.com\r\n";
+    // $headers .= "Content-type: text/html\r\n";
+
+    // $mail($to, $subject, $message, $headers);
 
     header("location:../../recuperarPass.php?reset=success");
 } else {
