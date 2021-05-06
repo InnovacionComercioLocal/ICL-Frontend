@@ -9,7 +9,7 @@ function loadReservas() {
   xmlhttp.onreadystatechange = processarReservas;
   xmlhttp.open(
     "GET",
-    "http://localhost/ICL-Frontend/php/worker/ver-reservas/ver-reservas.php",
+    "https://pizzeriagirona.000webhostapp.com/php/worker/ver-reservas/ver-reservas.php",
     true
   );
   xmlhttp.send();

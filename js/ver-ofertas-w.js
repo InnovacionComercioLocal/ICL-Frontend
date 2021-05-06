@@ -90,7 +90,7 @@ function loadOfertas() {
   xmlhttp.onreadystatechange = processarOfertas;
   xmlhttp.open(
     "GET",
-    "http://localhost/ICL-Frontend/php/ver-ofertas/ver-ofertas.php?pagina=" +
+    "https://pizzeriagirona.000webhostapp.com/php/ver-ofertas/ver-ofertas.php?pagina=" +
       pagina,
     true
   );
@@ -190,7 +190,7 @@ function processarOfertas() {
 
 function rutaImagen(imgName) {
   console.log("Ruta imagen, Nombre: " + imgName);
-  var rutaImgTemp = "/ICL-Frontend/media/images/ofertas/" + imgName + ".jpg";
+  var rutaImgTemp = "/pizzeriagirona.000webhostapp.com/media/images/ofertas/" + imgName + ".jpg";
 
   var rutaImg = rutaImgTemp.split(" ").join("");
   return rutaImg;

@@ -13,21 +13,21 @@ function loadEvents() {
 function loadProvincias() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = procesarProvincias;
-    xmlhttp.open("GET", "http://localhost/ICL-Frontend/php/pedirAdomicilio/getProvincia.php", true); 
+    xmlhttp.open("GET", "https://pizzeriagirona.000webhostapp.com/php/pedirAdomicilio/getProvincia.php", true); 
     xmlhttp.send();
 }
 
 function loadMunicipios() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = procesarMunicipios;
-    xmlhttp.open("GET", "http://localhost/ICL-Frontend/php/pedirAdomicilio/getMunicipios.php?idProvincia=" + cogerIdSelectorProv(), true);
+    xmlhttp.open("GET", "https://pizzeriagirona.000webhostapp.com/php/pedirAdomicilio/getMunicipios.php?idProvincia=" + cogerIdSelectorProv(), true);
     xmlhttp.send();
 }
 
 function loadCp() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = procesarCp;
-    xmlhttp.open("GET", "http://localhost/ICL-Frontend/php/pedirAdomicilio/getCP.php?Municipio=" + cogerIdSelectorMun(), true);
+    xmlhttp.open("GET", "https://pizzeriagirona.000webhostapp.com/php/pedirAdomicilio/getCP.php?Municipio=" + cogerIdSelectorMun(), true);
     xmlhttp.send();
 }
 
@@ -177,7 +177,7 @@ function comprobarCampos(){
         
         console.log('dirección comp: '+direccionCompuesta);
         
-        window.location="http://localhost/ICL-Frontend/php/pedirAdomicilio/insertDireccion.php?userDireccion=" + direccionCompuesta;
+        window.location="https://pizzeriagirona.000webhostapp.com/php/pedirAdomicilio/insertDireccion.php?userDireccion=" + direccionCompuesta;
         
         
         

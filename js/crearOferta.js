@@ -13,7 +13,7 @@ function crearOfertas() {
   xmlhttp.onreadystatechange = processarCrearOfertas;
   xmlhttp.open(
     "GET",
-    "http://localhost/ICL-Frontend/php/worker/crearOferta/crearOferta.php?nombre=" +
+    "https://pizzeriagirona.000webhostapp.com/php/worker/crearOferta/crearOferta.php?nombre=" +
       name +
       "&" +
       "precio=" +
@@ -45,7 +45,7 @@ function loadOfertas() {
   xmlhttp.onreadystatechange = processarOfertas;
   xmlhttp.open(
     "GET",
-    "http://localhost/ICL-Frontend/php/worker/crearOferta/getOferta.php",
+    "https://pizzeriagirona.000webhostapp.com/php/worker/crearOferta/getOferta.php",
     true
   );
   xmlhttp.send();
