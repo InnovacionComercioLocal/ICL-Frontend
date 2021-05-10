@@ -2,12 +2,12 @@
 
     //$mysqli = new mysqli("localhost", "Cliente", "1234", "icl");
     $server="localhost";
-    //$user="root";
-    $user="id16706749_root";
-    $password="[0Icl0Incoloincolo]";    
-    //$password="";    
-    //$name="icl";
-    $name="id16706749_icl";
+    $user="root";
+    //$user="id16706749_root";
+    //$password="[0Icl0Incoloincolo]";    
+    $password="";    
+    $name="icl";
+    //$name="id16706749_icl";
     //Usuario superAdmin (no es recomendable usar el usuario root)
     // $server="localhost";
     // $user="superAdmin";
