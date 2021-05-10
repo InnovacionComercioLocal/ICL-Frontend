@@ -90,7 +90,7 @@ function loadOfertas() {
   xmlhttp.onreadystatechange = processarOfertas;
   xmlhttp.open(
     "GET",
-    "https://pizzeriagirona.000webhostapp.com/php/ver-ofertas/ver-ofertas.php?pagina=" +
+    "http://localhost/ICL-Frontend/php/ver-ofertas/ver-ofertas.php?pagina=" +
       pagina,
     true
   );

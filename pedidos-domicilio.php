@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/allPages.css">
-  <script src="js/init.js"></script>
+  <link rel="stylesheet" href="css/allPages.css">  
   <script type="text/javascript" src="js/javascriptDireccion.js"></script>
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -20,7 +19,8 @@
 <?php
     session_start();
     if (!isset($_SESSION["usuario"])) {        
-        header("location:https://pizzeriagirona.000webhostapp.com/index.php");
+        header("location:http://localhost/ICL-Frontend/index.php");
+        //header("location:https://pizzeriagirona.000webhostapp.com/index.php");
     }
     
     ?> 
@@ -49,7 +49,7 @@
         <!--<li class="nav-item"><a href="menus.html" class="nav-link">Menus</a></li>-->
         <!--<li class="nav-item"><a href="reservar.html" class="nav-link active">Reservar</a></li>-->
         <li class="nav-item"><a href="productos.php" class="nav-link">Productos</a></li>
-        <li class="nav-item"><a href="pedidos-domicilio.php" class="nav-link ">Pedir a domicilio</a></li>
+        <li class="nav-item"><a href="pedidos-domicilio.php" class="nav-link active">Pedir a domicilio</a></li>
         <li class="nav-item"><a href="about-us.php" class="nav-link">Quienes somos</a></li>
         <!--Link carrito-->
         <?php        
@@ -65,8 +65,7 @@
         } else {
           include("components/logout.html");
         }
-        ?>
-        <!--<li class="nav-item"><a href="php/auth/logout.php" class="nav-link">Cerrar sesion</a></li>-->
+        ?>        
       </ul>
     </header>
   </div>

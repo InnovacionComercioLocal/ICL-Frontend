@@ -196,3 +196,6 @@ function rutaImagen(imgName) {
 var pagina = 1;
 var totalPag;
 var containerGeneral = document.getElementById("containerOfertas");
+
+//http://localhost/ICL-Frontend
+//https://pizzeriagirona.000webhostapp.com

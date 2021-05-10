@@ -16,7 +16,7 @@
   <title>Pitzeria girona</title>
 </head>
 
-<body onload="init()">
+<body >
   <!--Container Header and nav-->
   <div class="container ">
   <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom border-dark mb-sl-3">
@@ -58,8 +58,7 @@
         } else {
           include("components/logout.html");
         }
-        ?>
-        <!--<li class="nav-item"><a href="php/auth/logout.php" class="nav-link">Cerrar sesion</a></li>-->
+        ?>        
       </ul>
     </header>
   </div>

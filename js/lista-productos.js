@@ -90,7 +90,7 @@ function loadProductos() {
   xmlhttp.onreadystatechange = procesarProductos;
   xmlhttp.open(
     "GET",
-    "https://pizzeriagirona.000webhostapp.com/php/Products/getProductos.php?pagina=" +
+    "http://localhost/ICL-Frontend/php/Products/getProductos.php?pagina=" +
       pagina,
     true
   );
