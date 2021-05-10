@@ -11,7 +11,6 @@ use PHPMailer\PHPMailer\Exception;
 
 if (isset($_POST["boton-peticion-reset"])) {
 
-    //instancia phpmailer
 
 
     //token del usuario que se guardara en la bd
@@ -31,15 +30,16 @@ if (isset($_POST["boton-peticion-reset"])) {
     require '../conexionBD.php';
     header('Access-Control-Allow-Origin: *');
 
+    $userEmail = $_POST['email'];
 
     //borra el token de la bd si hay alguno, de manera que no tengamos 2 tokens activados
     $sql = "DELETE FROM pwdReset WHERE pwdResetEmail=?;";
 
     //statement
-    $stmt = mysqli_stmt_init($conn);
+    $stmt = mysqli_stmt_init($mysqli);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        die("Ha habido un error");
+        die("Ha habido un error borrando tokens");
     } else {
         //aqui le decimos en que convertiremos el ? en la variable $sql
         mysqli_stmt_bind_param($stmt, "s", $userEmail);
@@ -51,7 +51,7 @@ if (isset($_POST["boton-peticion-reset"])) {
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         //  echo "Ha habido un error";
         //exit();
-        die("Ha habido un error");
+        die("Ha habido un error el insertar");
     }
 
     $hashedToken = password_hash($token, PASSWORD_DEFAULT);
@@ -61,12 +61,17 @@ if (isset($_POST["boton-peticion-reset"])) {
 
 
     mysqli_stmt_close($stmt);
-    mysqli_close($conn);
+    mysqli_close($mysqli);
     //  $mysqli->close();
 
+    //instancia phpmailer
     $mail = new PHPMailer();
 
+    // try {
+
     $mail->isSMTP();
+
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
     $mail->Host = "smtp.gmail.com";
 
@@ -78,24 +83,53 @@ if (isset($_POST["boton-peticion-reset"])) {
 
     $mail->Username = "innovacioncomerciolocal@gmail.com";
 
-    $mail->Password = "incoloincolo";
+    $mail->Password = "qibt fwnd wpny dgko";
 
-    $mail->Subject = "Resetea tu contraseña";
+    $mail->CharSet = 'UTF-8';
+
 
     //quién enviará el correo
-    $mail->setFrom("innovacioncomerciolocal@gmail.com");
+    $mail->setFrom("innovacioncomerciolocal@gmail.com", "ICL");
 
-    $mail->Body = 'p>Hemos recibido una petición para resetar tu contraseña</p>
-                    <p>Aqui tienes el link para resetear tu contraseña : <br>
-                    <a href="' . $url3 . '">' . $url3 . '</a></p>';
-
-    $userEmail = $_POST['email'];
 
     $mail->addAddress($userEmail);
 
+    $mail->addReplyTo("innovacioncomerciolocal@gmail.com");
+
+
+    $mail->isHTML(true);
+
+
+    $mail->Subject = "Resetea tu contraseña";
+
+
+    $mail->Body = '<p>Hemos recibido una petición para resetar tu contraseña</p>
+                    <p>Aqui tienes el link para resetear tu contraseña : <br>
+                    <a href="' . $url3 . '">' . $url3 . '</a></p>';
+
+    // $mail->Body = 'Hemos recibido una petición para resetar tu contraseña
+    //                 Aqui tienes el link para resetear tu contraseña
+    //                 <a href="' . $url3 . '">' . $url3 . '</a></p>';
+
+
+
     if (!$mail->send()) {
-        echo "error al enviar";
+        echo "error al enviar correo";
+        echo $mail->ErrorInfo;
+    } else {
+        echo "Enviado";
+        header("location:../../recuperarPass.php?reset=success");
     }
+
+    // } catch (Exception $e) {
+    //     /* PHPMailer exception. */
+    //     echo "hola";
+    //     echo $e->errorMessage();
+    // } catch (\Exception $e) {
+    //     echo "adios";
+    //     /* PHP exception (note the backslash to select the global namespace Exception class). */
+    //     echo $e->getMessage();
+    // }
 
 
     // //a quien le enviamos el email
@@ -117,7 +151,6 @@ if (isset($_POST["boton-peticion-reset"])) {
 
     // $mail($to, $subject, $message, $headers);
 
-    header("location:../../recuperarPass.php?reset=success");
 } else {
     header("location:../../index.html");
 }

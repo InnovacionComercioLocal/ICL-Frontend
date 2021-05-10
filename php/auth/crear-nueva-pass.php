@@ -58,7 +58,7 @@
                     if (empty($selector) || empty($validator)) {
                         echo "could not validate your request";
                     } else {
-                        if (ctype_xdigit($selector !== false) && ctype_xdigit($validator !== false)) {
+                        if (ctype_xdigit($selector) !== false && ctype_xdigit($validator) !== false) {
                     ?>
 
                             <form action="resetear-password.php" method="POST">
