@@ -133,6 +133,7 @@ function processarPedidos() {
       
 
       //Establece los estilos
+      tr.classList = setTrStyle();
       td.classList = setTdStyle();
       td1.classList = setTdStyle();
       td2.classList = setTdStyle();
@@ -210,6 +211,11 @@ function setBtn1Style() {
 
 function setIco1Style() {
   var s = "bi bi-dash-square";
+  return s;
+}
+
+function setTrStyle() {
+  var s = "border-bottom border-dark";
   return s;
 }
 //-------------Ruta imagen------------------//

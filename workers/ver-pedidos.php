@@ -66,8 +66,8 @@
         <!--Contenido res-->
         <table class="container border w-100 h-75 mt-2">
           <!--Titulo-->
-          <thead class="border">
-            <!--<th class="text-center">Imagen</th>-->
+          <thead class="border border-dark">
+            <th class="text-center" style="display: none;">Imagen</th>
             <th class="text-center">Cod pedido</th>
             <th class="text-center">Nombre cliente</th>
             <th class="text-center">Comentario</th>
@@ -76,7 +76,7 @@
             <th class="text-center">Direccion</th>
             <th class="text-center">Precio</th>
             <th class="text-center">Estado</th>
-            <th class="text-center">Botones</th>
+            <!--<th class="text-center">Botones</th>-->
           </thead>
           <!--Contenido estructurado-->
           <tbody id="Pedido" class="border-bottom border-dark">

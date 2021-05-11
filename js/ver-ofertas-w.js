@@ -126,7 +126,14 @@ function processarOfertas() {
       var price = document.createElement("p");
       var divBtn = document.createElement("div");
       var btnDel = document.createElement("button");
+      var btnEdit = document.createElement("a");
       var icoBtn = document.createElement("i");
+
+      var tr = document.createElement("tr");
+      var td = document.createElement("td");
+      var td1 = document.createElement("td");
+      var td2 = document.createElement("td");
+      var td3 = document.createElement("td");      
 
       //Establece los estilos
       divOferta.classList =
@@ -139,7 +146,8 @@ function processarOfertas() {
         "container w-100 h-25 text-start p-1";
       divBtn.classList =
         "container w-100 h-25 text-end p-1";
-      btnDel.classList = "btn btn-danger";
+      btnDel.classList = "btn btn-danger ms-2";
+      btnEdit.classList ="btn btn-primary";
       img.style = "width: 100px; height: 50px;";
       name.classList = "h5";
       price.classList = "h5";
@@ -151,6 +159,7 @@ function processarOfertas() {
       //----Obten el id del producto
       btnDel.value = arrayCadaProducto[0];
       btnDel.id = "add";
+      btnEdit.innerHTML ="Editar";
       //Imagen
       img.src = rutaImagen(arrayCadaProducto[1]);
       //---Añade la descripcion del producto
@@ -160,19 +169,22 @@ function processarOfertas() {
       //Precio
       price.innerText = "Precio: " + arrayCadaProducto[3] + " €";
 
-      //Monta la caja
-      divImg.appendChild(img);
-      divNombre.appendChild(name);
-      divPrecio.appendChild(price);
+      //Monta la caja      
+      td.appendChild(img);      
+      td1.appendChild(name);      
+      td2.appendChild(price);
       btnDel.appendChild(icoBtn);
       divBtn.appendChild(btnDel);
-      divOferta.appendChild(divImg);
-      divOferta.appendChild(divNombre);
-      divOferta.appendChild(divPrecio);
-      divOferta.appendChild(divBtn);
+      td3.appendChild(btnEdit);      
+      td3.appendChild(btnDel);      
+      tr.appendChild(td);
+      tr.appendChild(td1);
+      tr.appendChild(td2);
+      tr.appendChild(td3);
 
       //Muestra los resultados      
-      document.getElementById("containerOfertas").appendChild(divOferta);      
+      //document.getElementById("containerOfertas").appendChild(divOferta);      
+      document.getElementById("containerOfertas").appendChild(tr);      
 
       //Muestra la pagina actual y el total de paginas
 
