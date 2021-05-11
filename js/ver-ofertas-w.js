@@ -18,10 +18,20 @@ function loadEvents() {
     ultima();
   });
 
-  /*document.getElementById("add").addEventListener("click", () => {
-    test();
-  });*/
-  //test();
+  //esta función coge el id del elemento que se clica, solo los botones tienen el id add+número
+  //de esa manera solo funcionará con los botones
+  document.body.addEventListener('click', function (event) {
+
+    var contentPanelId = event.target.id;
+    if (contentPanelId.includes("add")) {
+      var valor = event.target.value;
+
+      window.location.href = '../workers/borrarOferta.php?valor=' + valor;
+
+    }
+
+  });
+
 }
 
 //--------------Eventos pagina-----------------//
@@ -88,12 +98,12 @@ function limpiarContenidoLista() {
 function loadOfertas() {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = processarOfertas;
-  //xmlhttp.open(    "GET",    "https://pizzeriagirona.000webhostapp.com/php/ver-ofertas/ver-ofertas.php?pagina=" +      pagina,    true  );
-  xmlhttp.open(    "GET",    "http://localhost/ICL-Frontend/php/ver-ofertas/ver-ofertas.php?pagina=" +      pagina,    true  );
+  // xmlhttp.open("GET", "https://pizzeriagirona.000webhostapp.com/php/ver-ofertas/ver-ofertas.php?pagina=" + pagina, true);
+  xmlhttp.open("GET", "http://localhost/ICL-Frontend/php/ver-ofertas/ver-ofertas.php?pagina=" + pagina, true);
   xmlhttp.send();
 }
 
-function processarOfertas() {  
+function processarOfertas() {
   if (this.readyState == 4 && this.status == 200) {
     //Conten toda la respuesta
     var string = this.responseText;
@@ -126,7 +136,7 @@ function processarOfertas() {
       var price = document.createElement("p");
       var divBtn = document.createElement("div");
       var btnDel = document.createElement("button");
-      var icoBtn = document.createElement("i");
+      // var icoBtn = document.createElement("i");
 
       //Establece los estilos
       divOferta.classList =
@@ -143,14 +153,14 @@ function processarOfertas() {
       img.style = "width: 100px; height: 50px;";
       name.classList = "h5";
       price.classList = "h5";
-      icoBtn.classList = "bi bi-dash-square";      
+      // icoBtn.classList = "bi bi-dash-square";
       //Asigna los valores
       //Contenedor
       divOferta.id = "Producto";
       //boton      
       //----Obten el id del producto
       btnDel.value = arrayCadaProducto[0];
-      btnDel.id = "add";
+      btnDel.id = "add" + manejarId;
       //Imagen
       img.src = rutaImagen(arrayCadaProducto[1]);
       //---Añade la descripcion del producto
@@ -164,7 +174,7 @@ function processarOfertas() {
       divImg.appendChild(img);
       divNombre.appendChild(name);
       divPrecio.appendChild(price);
-      btnDel.appendChild(icoBtn);
+      // btnDel.appendChild(icoBtn);
       divBtn.appendChild(btnDel);
       divOferta.appendChild(divImg);
       divOferta.appendChild(divNombre);
@@ -172,12 +182,14 @@ function processarOfertas() {
       divOferta.appendChild(divBtn);
 
       //Muestra los resultados      
-      document.getElementById("containerOfertas").appendChild(divOferta);      
+      document.getElementById("containerOfertas").appendChild(divOferta);
 
       //Muestra la pagina actual y el total de paginas
 
       document.getElementById("contador").innerText = totalPag;
       document.getElementById("contadorActual").innerText = pagina;
+
+      manejarId++;
     });
   }
 }
@@ -195,5 +207,8 @@ function rutaImagen(imgName) {
 
 //-------------var------------------//
 var pagina = 1;
+var manejarId = 1;
 var totalPag;
 var containerGeneral = document.getElementById("containerOfertas");
+idd = "";
+
