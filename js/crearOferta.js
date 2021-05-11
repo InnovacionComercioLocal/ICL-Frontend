@@ -11,15 +11,8 @@ function crearOfertas() {
 
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = processarCrearOfertas;
-  xmlhttp.open(
-    "GET",
-    "https://pizzeriagirona.000webhostapp.com/php/worker/crearOferta/crearOferta.php?nombre=" +
-      name +
-      "&" +
-      "precio=" +
-      cost,
-    true
-  );
+  xmlhttp.open(    "GET",    "https://pizzeriagirona.000webhostapp.com/php/worker/crearOferta/crearOferta.php?nombre=" +      name +      "&" +      "precio=" +      cost,    true  );
+  //xmlhttp.open(    "GET",    "https://pizzeriagirona.000webhostapp.com/php/worker/crearOferta/crearOferta.php?nombre=" +      name +      "&" +      "precio=" +      cost,    true  );
   xmlhttp.send();
 
 }
@@ -43,11 +36,8 @@ function processarCrearOfertas() {
 function loadOfertas() {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = processarOfertas;
-  xmlhttp.open(
-    "GET",
-    "https://pizzeriagirona.000webhostapp.com/php/worker/crearOferta/getOferta.php",
-    true
-  );
+  xmlhttp.open(    "GET",    "https://pizzeriagirona.000webhostapp.com/php/worker/crearOferta/getOferta.php",    true  );
+  //xmlhttp.open(    "GET",    "https://pizzeriagirona.000webhostapp.com/php/worker/crearOferta/getOferta.php",    true  );
   xmlhttp.send();
 }
 

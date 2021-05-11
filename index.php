@@ -74,25 +74,25 @@
         <div class="carousel-inner h-100">
           <!--Contenido 1-->
           <div class="carousel-item active">
-            <img src="media/images/noImage.svg" class="d-block w-100" alt="1 image">
+            <img src="media/images/ofertas/Delicheese.jpg" class="d-block w-100" alt="1 image">
           </div>
           <!--Contenido 2-->
           <div class="carousel-item">
-            <img src="media/images/noImage.svg" class="d-block w-100" alt="2 image">
+            <img src="media/images/ofertas/no-image.jpg" class="d-block w-100" alt="2 image">
           </div>
           <!--Contenido 3-->
           <div class="carousel-item">
-            <img src="media/images/noImage.svg" class="d-block w-100" alt="3 image">
+            <img src="media/images/ofertas/Americana.jpg" class="d-block w-100" alt="3 image">
           </div>
         </div>
 
         <!--Controls-->
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Prev</span>
+          <span class="sr-only text-dark">Prev</span>
         </a>
         <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="sr-only">Next</span>
+          <span class="sr-only text-dark">Next</span>
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
         </a>
 
@@ -126,6 +126,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous">
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
+  </script>
+  <script src="js/index.js"></script>
+  <script type="text/javascript">
+    window.addEventListener("load",loadEvents);
   </script>
 </body>
 

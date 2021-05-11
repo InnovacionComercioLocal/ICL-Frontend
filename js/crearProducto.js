@@ -7,6 +7,7 @@ function loadCategorias() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = procesarCategorias;
     xmlhttp.open("GET", "https://pizzeriagirona.000webhostapp.com/php/worker/getCategoria.php", true);
+    //xmlhttp.open("GET", "https://pizzeriagirona.000webhostapp.com/php/worker/getCategoria.php", true);
     xmlhttp.send();
 }
 
