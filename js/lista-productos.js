@@ -18,9 +18,9 @@ function loadEvents() {
     ultima();
   });
 
-  document.getElementById("").addEventListener("click", () => {
+  /*document.getElementById("").addEventListener("click", () => {
     test();
-  });
+  });*/
 
   document.querySelectorAll("#myCircle1, #myCircle2, #myCircle3, #myCircle4");
   //test();
