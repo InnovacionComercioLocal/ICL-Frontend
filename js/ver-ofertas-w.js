@@ -20,18 +20,14 @@ function loadEvents() {
 
   //esta función coge el id del elemento que se clica, solo los botones tienen el id add+número
   //de esa manera solo funcionará con los botones
-  document.body.addEventListener('click', function (event) {
-
+  document.body.addEventListener("click", function (event) {
     var contentPanelId = event.target.id;
     if (contentPanelId.includes("add")) {
       var valor = event.target.value;
 
-      window.location.href = '../workers/borrarOferta.php?valor=' + valor;
-
+      window.location.href = "../workers/borrarOferta.php?valor=" + valor;
     }
-
   });
-
 }
 
 //--------------Eventos pagina-----------------//
@@ -99,7 +95,12 @@ function loadOfertas() {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = processarOfertas;
   // xmlhttp.open("GET", "https://pizzeriagirona.000webhostapp.com/php/ver-ofertas/ver-ofertas.php?pagina=" + pagina, true);
-  xmlhttp.open("GET", "http://localhost/ICL-Frontend/php/ver-ofertas/ver-ofertas.php?pagina=" + pagina, true);
+  xmlhttp.open(
+    "GET",
+    "http://localhost/ICL-Frontend/php/ver-ofertas/ver-ofertas.php?pagina=" +
+      pagina,
+    true
+  );
   xmlhttp.send();
 }
 
@@ -135,8 +136,8 @@ function processarOfertas() {
       var divPrecio = document.createElement("div");
       var price = document.createElement("p");
       var divBtn = document.createElement("div");
-      var btnDel = document.createElement("button");
-      // var icoBtn = document.createElement("i");
+      var btnDel = document.createElement("a");
+      var icoBtn = document.createElement("i");
 
       var tr = document.createElement("tr");
       var td = document.createElement("td");
@@ -145,30 +146,23 @@ function processarOfertas() {
       var td3 = document.createElement("td");
 
       //Establece los estilos
-      divOferta.classList =
-        "container border-bottom border-dark d-flex p-1";
-      divImg.classList =
-        "container w-100 h-25 text-start p-1";
-      divNombre.classList =
-        "container w-100 h-25 text-start p-1";
-      divPrecio.classList =
-        "container w-100 h-25 text-start p-1";
-      divBtn.classList =
-        "container w-100 h-25 text-end p-1";
+      divOferta.classList = "container border-bottom border-dark d-flex p-1";
+      divImg.classList = "container w-100 h-25 text-start p-1";
+      divNombre.classList = "container w-100 h-25 text-start p-1";
+      divPrecio.classList = "container w-100 h-25 text-start p-1";
+      divBtn.classList = "container w-100 h-25 text-end p-1";
       btnDel.classList = "btn btn-danger ms-2";
-      btnEdit.classList = "btn btn-primary";
       img.style = "width: 100px; height: 50px;";
       name.classList = "h5";
       price.classList = "h5";
-      // icoBtn.classList = "bi bi-dash-square";
+      icoBtn.classList = "bi bi-dash-square";
       //Asigna los valores
       //Contenedor
       divOferta.id = "Producto";
-      //boton      
+      //boton
       //----Obten el id del producto
       btnDel.value = arrayCadaProducto[0];
       btnDel.id = "add" + manejarId;
-      btnEdit.innerHTML = "Editar";
       //Imagen
       img.src = rutaImagen(arrayCadaProducto[1]);
       //---Añade la descripcion del producto
@@ -178,21 +172,20 @@ function processarOfertas() {
       //Precio
       price.innerText = "Precio: " + arrayCadaProducto[3] + " €";
 
-      //Monta la caja      
+      //Monta la caja
       td.appendChild(img);
       td1.appendChild(name);
       td2.appendChild(price);
       btnDel.appendChild(icoBtn);
       divBtn.appendChild(btnDel);
-      td3.appendChild(btnEdit);
       td3.appendChild(btnDel);
       tr.appendChild(td);
       tr.appendChild(td1);
       tr.appendChild(td2);
       tr.appendChild(td3);
 
-      //Muestra los resultados      
-      //document.getElementById("containerOfertas").appendChild(divOferta);      
+      //Muestra los resultados
+      //document.getElementById("containerOfertas").appendChild(divOferta);
       document.getElementById("containerOfertas").appendChild(tr);
 
       //Muestra la pagina actual y el total de paginas
@@ -209,7 +202,10 @@ function processarOfertas() {
 
 function rutaImagen(imgName) {
   console.log("Ruta imagen, Nombre: " + imgName);
-  var rutaImgTemp = "https://pizzeriagirona.000webhostapp.com/media/images/ofertas/" + imgName + ".jpg";
+  var rutaImgTemp =
+    "https://pizzeriagirona.000webhostapp.com/media/images/ofertas/" +
+    imgName +
+    ".jpg";
   //var rutaImgTemp = "http://localhost/ICL-Frontend/media/images/ofertas/" + imgName + ".jpg";
 
   var rutaImg = rutaImgTemp.split(" ").join("");
@@ -222,4 +218,3 @@ var manejarId = 1;
 var totalPag;
 var containerGeneral = document.getElementById("containerOfertas");
 idd = "";
-
