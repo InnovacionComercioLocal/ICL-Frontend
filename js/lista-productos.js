@@ -18,9 +18,11 @@ function loadEvents() {
     ultima();
   });
 
-  /*document.getElementById("add").addEventListener("click", () => {
+  document.getElementById("").addEventListener("click", () => {
     test();
-  });*/
+  });
+
+  document.querySelectorAll("#myCircle1, #myCircle2, #myCircle3, #myCircle4");
   //test();
 }
 
@@ -74,7 +76,7 @@ function añadirAlCarro() {
   console.log(
     "El valor es deci id es: " + document.getElementById("add").value
   );
-  
+
 }
 
 //--------------Limpia el contenido a mostrado-----------------//
@@ -91,7 +93,7 @@ function loadProductos() {
   xmlhttp.open(
     "GET",
     "http://localhost/ICL-Frontend/php/Products/getProductos.php?pagina=" +
-      pagina,
+    pagina,
     true
   );
   xmlhttp.send();
@@ -142,7 +144,7 @@ function procesarProductos() {
       divBtn.classList =
         "container w-100 h-100 p-4 color-White-5 rounded-4 text-center mr-5 my-2";
       btnAdd.classList = "btn btn-success";
-      img.style = "width: 200px; height: 100px;";      
+      img.style = "width: 200px; height: 100px;";
       //Asigna los valores
       //Contenedor
       divProducto.id = "Producto";
@@ -185,7 +187,7 @@ function procesarProductos() {
 
 function rutaImagen(imgName) {
   console.log("Ruta imagen, Nombre: " + imgName);
-  var rutaImgTemp = "https://pizzeriagirona.000webhostapp.com/media/images/products/" + imgName+".jpg";
+  var rutaImgTemp = "https://pizzeriagirona.000webhostapp.com/media/images/products/" + imgName + ".jpg";
 
   var rutaImg = rutaImgTemp.split(" ").join("");
   return rutaImg;
