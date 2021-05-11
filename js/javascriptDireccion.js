@@ -14,39 +14,24 @@ function loadProvincias() {
     //alert("ey");
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = procesarProvincias;
-<<<<<<< HEAD
-    xmlhttp.open("GET", "https://pizzeriagirona.000webhostapp.com/php/pedirAdomicilio/getProvincia.php", true); 
-    //xmlhttp.open("GET", "https://pizzeriagirona.000webhostapp.com/php/pedirAdomicilio/getProvincia.php", true); 
-=======
     // xmlhttp.open("GET", "https://pizzeriagirona.000webhostapp.com/php/pedirAdomicilio/getProvincia.php", true);
     xmlhttp.open("GET", "http://localhost/ICL-Frontend/php/pedirAdomicilio/getProvincia.php", true);
->>>>>>> 7fae00c941bbb2f8dd41184c98bc23467d870e78
     xmlhttp.send();
 }
 
 function loadMunicipios() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = procesarMunicipios;
-<<<<<<< HEAD
-    xmlhttp.open("GET", "https://pizzeriagirona.000webhostapp.com/php/pedirAdomicilio/getMunicipios.php?idProvincia=" + cogerIdSelectorProv(), true);
-    //xmlhttp.open("GET", "https://pizzeriagirona.000webhostapp.com/php/pedirAdomicilio/getMunicipios.php?idProvincia=" + cogerIdSelectorProv(), true);
-=======
     // xmlhttp.open("GET", "https://pizzeriagirona.000webhostapp.com/php/pedirAdomicilio/getMunicipios.php?idProvincia=" + cogerIdSelectorProv(), true);
     xmlhttp.open("GET", "http://localhost/ICL-Frontend/php/pedirAdomicilio/getMunicipios.php?idProvincia=" + cogerIdSelectorProv(), true);
->>>>>>> 7fae00c941bbb2f8dd41184c98bc23467d870e78
     xmlhttp.send();
 }
 
 function loadCp() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = procesarCp;
-<<<<<<< HEAD
-    xmlhttp.open("GET", "https://pizzeriagirona.000webhostapp.com/php/pedirAdomicilio/getCP.php?Municipio=" + cogerIdSelectorMun(), true);
-    //xmlhttp.open("GET", "https://pizzeriagirona.000webhostapp.com/php/pedirAdomicilio/getCP.php?Municipio=" + cogerIdSelectorMun(), true);
-=======
     // xmlhttp.open("GET", "https://pizzeriagirona.000webhostapp.com/php/pedirAdomicilio/getCP.php?Municipio=" + cogerIdSelectorMun(), true);
     xmlhttp.open("GET", "http://localhost/ICL-Frontend/php/pedirAdomicilio/getCP.php?Municipio=" + cogerIdSelectorMun(), true);
->>>>>>> 7fae00c941bbb2f8dd41184c98bc23467d870e78
     xmlhttp.send();
 }
 
@@ -180,29 +165,6 @@ function comprobarCampos() {
     alert(numero.value);
 
     //Comprobamos que en los option hay algo seleccionado 
-<<<<<<< HEAD
-    if(selectorProv.options[selectorProv.selectedIndex].text==="Selecione una provincia"||
-    selectorMun.options[selectorMun.selectedIndex].text==="Selecione un municipio"||
-    selectorCp.options[selectorCp.selectedIndex].text==="Selecione un código postal"||
-    direccion.value==="" || numero.value==="") {
-        errorMsg.style="color:red";
-        errorMsg.innerHTML=text;        
-    }else{
-        
-        errorMsg.style="color:green";
-        errorMsg.innerHTML="Dirección Válida";
-        var direccionCompuesta = selectorProv.options[selectorProv.selectedIndex].text+".."+selectorMun.options[selectorMun.selectedIndex].text+
-        ".."+selectorCp.options[selectorCp.selectedIndex].text+".."+direccion.value+".."+numero.value+".."+piso.value+".."+bloque.value+".."+puerta.value+".."+escalera.value+"//";
-        
-        
-        console.log('dirección comp: '+direccionCompuesta);
-        
-        window.location="https://pizzeriagirona.000webhostapp.com/php/pedirAdomicilio/insertDireccion.php?userDireccion=" + direccionCompuesta;
-        //window.location="https://pizzeriagirona.000webhostapp.com/php/pedirAdomicilio/insertDireccion.php?userDireccion=" + direccionCompuesta;
-        
-        
-        
-=======
     if (selectorProv.options[selectorProv.selectedIndex].text === "Selecione una provincia" ||
         selectorMun.options[selectorMun.selectedIndex].text === "Selecione un municipio" ||
         selectorCp.options[selectorCp.selectedIndex].text === "Selecione un código postal" ||
@@ -224,7 +186,6 @@ function comprobarCampos() {
 
 
 
->>>>>>> 7fae00c941bbb2f8dd41184c98bc23467d870e78
     }
 }
 

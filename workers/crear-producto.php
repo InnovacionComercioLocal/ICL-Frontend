@@ -6,8 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/allPages.css">
-  <link rel="stylesheet" href="../css/crear-producto.css">
-  <script src="../js/init.js"></script>
+  <link rel="stylesheet" href="../css/crear-producto.css">  
   <script type="text/javascript" src="../js/crearProducto.js"></script>
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
