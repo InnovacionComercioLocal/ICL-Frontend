@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-05-2021 a las 13:57:37
--- Versión del servidor: 10.4.13-MariaDB
--- Versión de PHP: 7.4.7
+-- Tiempo de generación: 05-05-2021 a las 17:24:22
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `icl`
 --
-CREATE DATABASE IF NOT EXISTS `icl` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `icl`;
 
 -- --------------------------------------------------------
 
