@@ -63,11 +63,7 @@
   <!--Page content-->
   <div id="containerProducts" class="container border border-dark w-100 my-1">
     <div class="d-flex border border-dark my-2">
-      <div class="border my-2 mx-2 p-1 float-left">
-        <h1 class="h2 mt-2">Productos</h1>
-
-      </div>
-      
+      <h1 class="h2 mt-2">Productos</h1>     
     </div>
     <hr>
     <!--Contenedor de productos-->

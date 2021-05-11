@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../css/allPages.css">
   <link rel="stylesheet" href="../css/crear-producto.css">  
   <script type="text/javascript" src="../js/crearProducto.js"></script>
+  <script type="text/javascript" src="../js/lista-productos-w.js"></script>
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -89,6 +90,31 @@
       </div>    
 
     </form>
+
+    <!--Container oferta-->
+  <div class="container mt-4 border border-dark p-2">
+    <!--Title-->
+    <div class="container w-100 text-center border border-dark">
+      <p class="h4">Productos</p>
+    </div>
+
+    <!--Container items-->
+    <div class="container border border-dark mt-2 w-100 p-1" id="containerProductos">
+      <!--Se mostraran todos los products-->  
+
+    </div>
+
+    <div class="container p-2 mb-3 text-center">
+        <button class="btn btn-primary" id="primera">Primera</button>
+        <button class="btn btn-primary" id="anterior">Anterior</button>
+        <!--Total de paginas-->
+        <button class="btn btn-primary disabled" id="contadorActual"></button>
+        <button class="btn btn-primary disabled" id="contador"></button>
+        <!---->
+        <button class="btn btn-primary" id="siguiente">Siguiente</button>
+        <button class="btn btn-primary" id="ultima">Última</button>
+      </div>
+  </div>
   </div>
 
   <!-- JavaScript Bundle with Popper -->
