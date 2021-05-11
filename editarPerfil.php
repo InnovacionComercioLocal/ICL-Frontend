@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/allPages.css">
-  <link rel="stylesheet" href="css/index.css">  
+  <link rel="stylesheet" href="css/index.css">
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
   <!-- CSS Icons-->
@@ -43,20 +43,20 @@
         <li class="nav-item"><a href="pedidos-domicilio.php" class="nav-link ">Pedir a domicilio</a></li>
         <li class="nav-item"><a href="about-us.php" class="nav-link">Quienes somos</a></li>
         <!--Link carrito-->
-        <?php        
+        <?php
         if (!isset($_SESSION["usuario"])) {
-        } else {          
-          include("components/carrito.html");                  
+        } else {
+          include("components/carrito.html");
         }
-        ?>        
+        ?>
         <!--Link logout-->
-        <?php        
+        <?php
         if (!isset($_SESSION["usuario"])) {
           //include("components/login.html");        
         } else {
           include("components/logout.html");
         }
-        ?>        
+        ?>
       </ul>
     </header>
   </div>
@@ -104,6 +104,24 @@
           }
           ?>
           <button class="btn btn-secondary mt-3" type="submit">Cambiar nombre</button>
+        </form>
+      </div>
+    </div>
+    <div class="container border border-dark w-100 h-75 p-4 m-3">
+      <h2>Cambiar teléfono</h2>
+      <div class="container">
+        <form action="php/usuario/cambiarTelefono.php" method="POST">
+          <label for="" id="labels">Nuevo Teléfono</label>
+          <div class="d-block">
+            <input type="text" placeholder="xxx-xxx-xxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" name="telefono" id="formBorders">
+            <span class="validity"></span>
+          </div>
+          <?php
+          if (isset($_GET['tcorrecto'])) {
+            echo '<p class="green">Se ha actualizado el teléfono</p>';
+          }
+          ?>
+          <button class="btn btn-secondary mt-3" type="submit">Cambiar teléfono</button>
         </form>
       </div>
     </div>

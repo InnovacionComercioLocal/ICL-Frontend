@@ -1,5 +1,5 @@
 <?php
-$nombre = $_POST['nombre'];
+$telefono = $_POST['telefono'];
 
 
 session_start();
@@ -12,16 +12,15 @@ $email = $_SESSION['usuario']['email'];
 
 $check = $mysqli->query("SELECT * FROM usuario WHERE usuario.Email='$email' ");
 
-
 $row = $check->fetch_object();
 
 if (mysqli_num_rows($check) > 0) {
 
 
-    $sql = $mysqli->query("UPDATE usuario SET Nombre = '$nombre' WHERE Email = '$email'");
+    $sql = $mysqli->query("UPDATE usuario SET Telefono = '$telefono' WHERE Email = '$email'");
 
 
-    header("Location: ../../editarPerfil.php?ncorrecto");
+    header("Location: ../../editarPerfil.php?tcorrecto");
 } else {
-    echo "Error no se ha podido cambiar el nombre";
+    echo "Error no se h apodido cambiar el teléfono";
 }
