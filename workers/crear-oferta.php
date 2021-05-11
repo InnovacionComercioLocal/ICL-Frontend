@@ -110,8 +110,11 @@
     </div>
 
     <!--Container items-->
-    <div class="container border border-dark mt-2 w-100 p-1" id="containerOfertas">
+    <div class="container border border-dark mt-2 w-100 p-1">
       <!--Se mostraran todos los products-->
+      <table id="containerOfertas" class="w-100">
+        
+      </table>
 
     </div>
 
