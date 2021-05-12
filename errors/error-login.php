@@ -66,7 +66,7 @@
       </div>
 
       <div id="carouselExampleSlidesOnly" class="carousel slide mx-0 mt-5" data-ride="carousel">
-        <div class="carousel-inner h-100">
+        <div class="carousel-inner h-100"> 
           <!--Contenido 1-->
           <div class="carousel-item active">
             <img src="../media/images/ofertas/Oferta1.jpg" class="d-block w-100" alt="1 image">
