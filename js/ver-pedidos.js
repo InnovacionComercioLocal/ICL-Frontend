@@ -89,7 +89,7 @@ function loadPedidos() {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = processarPedidos;
   //xmlhttp.open(    "GET",    "https://pizzeriagirona.000webhostapp.com/php/ver-ofertas/ver-ofertas.php?pagina=" +      pagina,    true  );
-  xmlhttp.open(    "GET",    "http://localhost/ICL-Frontend/php/worker/ver-pedidos/ver-pedidos.php?pagina=" +      pagina,    true  );
+  xmlhttp.open(    "GET",    "http://localhost/ICL-Frontend/php/worker/ver-pedidos/ver-pedidosV2.php?pagina=" +      pagina,    true  );
   xmlhttp.send();
 }
 
