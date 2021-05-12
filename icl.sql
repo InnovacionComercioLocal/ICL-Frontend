@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-05-2021 a las 17:24:22
+-- Tiempo de generación: 12-05-2021 a las 16:50:09
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.3.27
 
@@ -1544,6 +1544,15 @@ CREATE TABLE `linea_pedido` (
   `Descuento` int(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `linea_pedido`
+--
+
+INSERT INTO `linea_pedido` (`Cantidad`, `ID_Pedido`, `ID_Producto`, `Descuento`) VALUES
+(3, 4, 14, 0),
+(8, 6, 8, 0),
+(4, 7, 6, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -2546,17 +2555,8 @@ CREATE TABLE `oferta` (
 --
 
 INSERT INTO `oferta` (`ID_Oferta`, `img`, `Nombre`, `Precio`) VALUES
-(1, 'no-image', '2x1 Pizza', '5'),
-(2, 'no-image', '4x2 Bebidas', '2'),
-(3, 'no-image', '2x1 Pizza', '5'),
-(4, 'no-image', 'Exclusiva', '30'),
-(5, 'no-image', 'Pizza Romana', '6'),
-(6, 'no-image', 'Pizza 4 quesos', '11'),
 (7, 'no-image', 'Pizza Vegetariana', '8'),
-(8, 'no-image', 'Pizza Tomate', '6'),
 (9, 'no-image', 'Pizza piña', '5'),
-(10, 'no-image', 'Pizza Atun', '7'),
-(11, 'no-image', 'Pizza Pescao', '8'),
 (12, 'no-image', 'Pizza motzarella', '9'),
 (13, 'no-image', 'Pizza Espagueti', '11'),
 (14, 'no-image', 'Pizza 4*2', '11'),
@@ -2571,11 +2571,21 @@ INSERT INTO `oferta` (`ID_Oferta`, `img`, `Nombre`, `Precio`) VALUES
 CREATE TABLE `pedido` (
   `ID_Pedido` int(11) NOT NULL,
   `Comentario` varchar(200) DEFAULT NULL,
-  `Fecha` datetime NOT NULL,
+  `Hora` time NOT NULL,
+  `PrecioTotal` int(11) NOT NULL,
   `Descuento` int(4) NOT NULL DEFAULT 0,
   `ID_Usuario` int(11) NOT NULL,
-  `ID_Estado` int(11) NOT NULL
+  `ID_Estado` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `pedido`
+--
+
+INSERT INTO `pedido` (`ID_Pedido`, `Comentario`, `Hora`, `PrecioTotal`, `Descuento`, `ID_Usuario`, `ID_Estado`) VALUES
+(4, 'Prueba', '31:21:50', 30, 0, 3, 3),
+(6, 'Cargar con agua', '21:23:02', 15, 0, 5, 1),
+(7, 'Sin servilletas', '12:23:02', 8, 0, 4, 2);
 
 -- --------------------------------------------------------
 
@@ -2724,9 +2734,9 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Telefono`, `Password`, `Email`, `Direccion`, `Validado`, `ID_Role`, `ID_Cp`, `ID_Reserva`) VALUES
 (1, 'admin', '000-000-000', '$2y$10$4gdTeUQLv4QB15077In/7uHQDAJ1SvOzdwkMh1Dyo31Pn.Jk3/9pu', 'admin@gmail.com', NULL, 1, 3, NULL, NULL),
 (2, 'worker', '111-111-111', '$2y$10$MS3QtuvbdgnpnvJlv6tqSuqsxjDT5W9HZvardPggd5C/kwr3xPCAK', 'worker@gmail.com', NULL, 1, 1, NULL, NULL),
-(3, 'client', '222-222-222', '$2y$10$zzQVMV.wj6RSVPNp3zDClOebeXR6dYML/sdoOcIhRNDGZmJQ4iGsi', 'client@gmail.com', 'Girona..Amer..17170..c/Test test..5..2..3..2..B//', 1, 2, NULL, NULL),
-(4, 'client2', '333-333-333', '$2y$10$Ghd6uWdY4Z1HFY9/s3KRZu.dowV4HRmd7iccMfrn21yk5I.LIGqHe', 'client2@gmail.com', 'LLeida..Alamús, els..25221..c/Test test..2..5..7..1..A//', 1, 2, NULL, NULL),
-(5, 'client3', '444-444-444', '$2y$10$KeCHyMedzRI1A.X6rUcTv.z72G623SmMaEDw0ix3AvP71W/kmPRJ2', 'client3@gmail.com', NULL, 1, 2, NULL, NULL);
+(3, 'client', '222-222-222', '$2y$10$zzQVMV.wj6RSVPNp3zDClOebeXR6dYML/sdoOcIhRNDGZmJQ4iGsi', 'client@gmail.com', 'Girona..Amer..17170..c/Test test..5..2..3..2..B', 1, 2, NULL, NULL),
+(4, 'client2', '333-333-333', '$2y$10$Ghd6uWdY4Z1HFY9/s3KRZu.dowV4HRmd7iccMfrn21yk5I.LIGqHe', 'client2@gmail.com', 'LLeida..Alamús, els..25221..c/Test test..2..5..7..1..A', 1, 2, NULL, NULL),
+(5, 'client3', '444-444-444', '$2y$10$KeCHyMedzRI1A.X6rUcTv.z72G623SmMaEDw0ix3AvP71W/kmPRJ2', 'client3@gmail.com', 'Sin datos', 1, 2, NULL, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -2872,7 +2882,7 @@ ALTER TABLE `oferta`
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `ID_Pedido` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
