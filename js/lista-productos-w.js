@@ -17,7 +17,6 @@ function loadEvents() {
   document.getElementById("ultima").addEventListener("click", () => {
     ultima();
   });
-  
 }
 
 //Check
@@ -64,22 +63,30 @@ function ultima() {
 }
 
 function cargarBorrar() {
-  document.getElementById("add1").addEventListener("click",() => {
-    var idProduct = document.getElementById("Producto1").innerHTML;
-    window.location="../php/worker/crearProducto/eliminarProducto.php?idProd=" + idProduct;
-  });
-  document.getElementById("add2").addEventListener("click",() => {
-    var idProduct = document.getElementById("Producto2").innerHTML;
-    window.location="../php/worker/crearProducto/eliminarProducto.php?idProd=" + idProduct;
-  });
-  document.getElementById("add3").addEventListener("click",() => {
-    var idProduct = document.getElementById("Producto3").innerHTML;
-    window.location="../php/worker/crearProducto/eliminarProducto.php?idProd=" + idProduct;
-  });
-  document.getElementById("add4").addEventListener("click",() => {
-    var idProduct = document.getElementById("Producto4").innerHTML;
-    window.location="../php/worker/crearProducto/eliminarProducto.php?idProd=" + idProduct;
-  });
+  try {
+    document.getElementById("add1").addEventListener("click", () => {
+      var idProduct = document.getElementById("Producto1").innerHTML;
+      window.location =
+        "../php/worker/crearProducto/eliminarProducto.php?idProd=" + idProduct;
+    });
+    document.getElementById("add2").addEventListener("click", () => {
+      var idProduct = document.getElementById("Producto2").innerHTML;
+      window.location =
+        "../php/worker/crearProducto/eliminarProducto.php?idProd=" + idProduct;
+    });
+    document.getElementById("add3").addEventListener("click", () => {
+      var idProduct = document.getElementById("Producto3").innerHTML;
+      window.location =
+        "../php/worker/crearProducto/eliminarProducto.php?idProd=" + idProduct;
+    });
+    document.getElementById("add4").addEventListener("click", () => {
+      var idProduct = document.getElementById("Producto4").innerHTML;
+      window.location =
+        "../php/worker/crearProducto/eliminarProducto.php?idProd=" + idProduct;
+    });
+  } catch (error) {
+    console.log("¡Alerta en generar las referencias de btnDel!");
+  }
 }
 
 //--------------Limpia el contenido a mostrado-----------------//
@@ -94,7 +101,12 @@ function loadProductos() {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = procesarProductos;
   //xmlhttp.open(    "GET",    "https://pizzeriagirona.000webhostapp.com/php/Products/getProductos.php?pagina=" +      pagina,    true  );
-  xmlhttp.open(    "GET",    "http://localhost/ICL-Frontend/php/Products/getProductos.php?pagina=" +      pagina,    true  );
+  xmlhttp.open(
+    "GET",
+    "http://localhost/ICL-Frontend/php/Products/getProductos.php?pagina=" +
+      pagina,
+    true
+  );
   xmlhttp.send();
 }
 
@@ -135,30 +147,25 @@ function procesarProductos() {
       var icoBtn = document.createElement("i");
 
       //Establece los estilos
-      divProducto.classList =
-        "container border-bottom border-dark d-flex p-1";
-      divImg.classList =
-        "container w-100 h-25 text-start p-1";
-      divNombre.classList =
-        "container w-100 h-25 text-start p-1";
-      divPrecio.classList =
-        "container w-100 h-25 text-start p-1";
+      divProducto.classList = "container border-bottom border-dark d-flex p-1";
+      divImg.classList = "container w-100 h-25 text-start p-1";
+      divNombre.classList = "container w-100 h-25 text-start p-1";
+      divPrecio.classList = "container w-100 h-25 text-start p-1";
       contenedorID.classList = "hide";
-      divBtn.classList =
-        "container w-100 h-25 text-end p-1";
+      divBtn.classList = "container w-100 h-25 text-end p-1";
       btnDel.classList = "btn btn-danger";
       img.style = "width: 100px; height: 50px;";
       name.classList = "h5";
       price.classList = "h5";
-      icoBtn.classList = "bi bi-dash-square";      
+      icoBtn.classList = "bi bi-dash-square";
       //Asigna los valores
       //Contenedor
       divProducto.id = "Producto";
-      contenedorID.id = "Producto"+conj;
-      //boton      
+      contenedorID.id = "Producto" + conj;
+      //boton
       //----Obten el id del producto
       contenedorID.innerText = arrayCadaProducto[0];
-      btnDel.id = "add"+conj;      
+      btnDel.id = "add" + conj;
       conj++;
       //Imagen
       img.src = rutaImagen(arrayCadaProducto[1]);
@@ -185,7 +192,7 @@ function procesarProductos() {
       //containerGeneral.appendChild(divProducto);
       document.getElementById("containerProductos").appendChild(divProducto);
 
-      //Muestra la pagina actual y el total de paginas        
+      //Muestra la pagina actual y el total de paginas
 
       document.getElementById("contador").innerText = totalPag;
       document.getElementById("contadorActual").innerText = pagina;
@@ -199,7 +206,8 @@ function procesarProductos() {
 
 function rutaImagen(imgName) {
   console.log("Ruta imagen, Nombre: " + imgName);
-  var rutaImgTemp = "http://localhost/ICL-Frontend/media/images/products/" + imgName + ".jpg";
+  var rutaImgTemp =
+    "http://localhost/ICL-Frontend/media/images/products/" + imgName + ".jpg";
   //var rutaImgTemp = "https://pizzeriagirona.000webhostapp.com/media/images/products/" + imgName + ".jpg";
 
   var rutaImg = rutaImgTemp.split(" ").join("");

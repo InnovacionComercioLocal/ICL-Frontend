@@ -56,26 +56,32 @@ function ultima() {
 
 //coge el id del producto para borrarlo
 function cargarBorrar() {
-  document.getElementById("add1").addEventListener("click", () => {
-    var idOferta = document.getElementById("Producto1").innerHTML;
-    window.location = "../php/worker/crearOferta/borrarOferta.php?idOferta=" + idOferta;
-    //alert("id " + idOferta);
-  });
-  document.getElementById("add2").addEventListener("click", () => {
-    var idOferta = document.getElementById("Producto2").innerHTML;
-    window.location = "../php/worker/crearOferta/borrarOferta.php?idOferta=" + idOferta;
-    //alert("id " + idOferta);
-  });
-  document.getElementById("add3").addEventListener("click", () => {
-    var idOferta = document.getElementById("Producto3").innerHTML;
-    window.location = "../php/worker/crearOferta/borrarOferta.php?idOferta=" + idOferta;
-    //alert("id " + idOferta);
-  });
-  document.getElementById("add4").addEventListener("click", () => {
-    var idOferta = document.getElementById("Producto4").innerHTML;
-    // alert("id " + idOferta);
-    window.location = "../php/worker/crearOferta/borrarOferta.php?idOferta=" + idOferta;
-  });
+
+  try {
+    document.getElementById("add1").addEventListener("click", () => {
+      var idOferta = document.getElementById("Producto1").innerHTML;
+      window.location = "../php/worker/crearOferta/borrarOferta.php?idOferta=" + idOferta;
+      //alert("id " + idOferta);
+    });
+    document.getElementById("add2").addEventListener("click", () => {
+      var idOferta = document.getElementById("Producto2").innerHTML;
+      window.location = "../php/worker/crearOferta/borrarOferta.php?idOferta=" + idOferta;
+      //alert("id " + idOferta);
+    });
+    document.getElementById("add3").addEventListener("click", () => {
+      var idOferta = document.getElementById("Producto3").innerHTML;
+      window.location = "../php/worker/crearOferta/borrarOferta.php?idOferta=" + idOferta;
+      //alert("id " + idOferta);
+    });
+    document.getElementById("add4").addEventListener("click", () => {
+      var idOferta = document.getElementById("Producto4").innerHTML;
+      // alert("id " + idOferta);
+      window.location = "../php/worker/crearOferta/borrarOferta.php?idOferta=" + idOferta;
+    });
+  } catch (error) {
+    console.log("¡Alerta en generar las referencias de btnDel!");
+  }
+  
 }
 
 //--------------Test-----------------------//

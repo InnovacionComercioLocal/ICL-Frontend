@@ -22,18 +22,19 @@ function loadEvents() {
     test();
   });*/
   //test();
+  //cargarAcciones();
 }
 
 //--------------Eventos pagina-----------------//
 
-function primera() {  
+function primera() {
   pagina = 1;
   console.log("pagina" + pagina);
   limpiarContenidoLista();
   loadPedidos();
 }
 
-function anterior() {  
+function anterior() {
   if (pagina === 1) {
     pagina = 1;
   } else {
@@ -44,7 +45,7 @@ function anterior() {
   loadPedidos();
 }
 
-function siguiente() {  
+function siguiente() {
   if (pagina === totalPag) {
     pagina = totalPag;
   } else {
@@ -55,20 +56,78 @@ function siguiente() {
   loadPedidos();
 }
 
-function ultima() {  
+function ultima() {
   pagina = totalPag;
   console.log("pagina" + pagina);
   limpiarContenidoLista();
   loadPedidos();
 }
 
-function añadirAlCarro() {  
+function añadirAlCarro() {
   console.log(
     "hola soy el btnEdit " + document.getElementById("add").innerText
   );
   console.log(
     "El valor es deci id es: " + document.getElementById("add").value
   );
+}
+
+function cargarAcciones() {
+  try {
+    document.getElementById("add1").addEventListener("click", () => {
+      var idProduct = document.getElementById("Pedido1").innerHTML;
+      //alert("Pedido: "+idProduct);
+      window.location =
+        "../php/worker/ver-pedidos/cancelar-pedido.php?idProd=" + idProduct;
+    });
+    document.getElementById("add2").addEventListener("click", () => {
+      var idProduct = document.getElementById("Pedido2").innerHTML;
+      //alert("Pedido: "+idProduct);
+      window.location =
+        "../php/worker/ver-pedidos/cancelar-pedido.php?idProd=" + idProduct;
+    });
+    document.getElementById("add3").addEventListener("click", () => {
+      var idProduct = document.getElementById("Pedido3").innerHTML;
+      window.location =
+        "../php/worker/ver-pedidos/cancelar-pedido.php?idProd=" + idProduct;
+    });
+    document.getElementById("add4").addEventListener("click", () => {
+      var idProduct = document.getElementById("Pedido4").innerHTML;
+      window.location =
+        "../php/worker/ver-pedidos/cancelar-pedido.php?idProd=" + idProduct;
+    });
+    document.getElementById("add5").addEventListener("click", () => {
+      var idProduct = document.getElementById("Pedido5").innerHTML;
+      window.location =
+        "../php/worker/ver-pedidos/cancelar-pedido.php?idProd=" + idProduct;
+    });
+
+    //---------------Enviar
+    document.getElementById("send1").addEventListener("click", () => {
+      var idProduct = document.getElementById("Pedido1").innerHTML;
+      alert("Enviar Pedido: " + idProduct);
+      //window.location="../php/worker/ver-pedidos/cancelar-pedido.php?idProd=" + idProduct;
+    });
+    document.getElementById("send2").addEventListener("click", () => {
+      var idProduct = document.getElementById("Pedido2").innerHTML;
+      alert("Enviar Pedido: " + idProduct);
+      //window.location="../php/worker/ver-pedidos/cancelar-pedido.php?idProd=" + idProduct;
+    });
+    document.getElementById("send3").addEventListener("click", () => {
+      var idProduct = document.getElementById("Pedido3").innerHTML;
+      //window.location="../php/worker/ver-pedidos/cancelar-pedido.php?idProd=" + idProduct;
+    });
+    document.getElementById("send4").addEventListener("click", () => {
+      var idProduct = document.getElementById("Pedido4").innerHTML;
+      //window.location="../php/worker/ver-pedidos/cancelar-pedido.php?idProd=" + idProduct;
+    });
+    document.getElementById("send5").addEventListener("click", () => {
+      var idProduct = document.getElementById("Pedido5").innerHTML;
+      //window.location="../php/worker/ver-pedidos/cancelar-pedido.php?idProd=" + idProduct;
+    });
+  } catch (error) {
+    console.log("¡Alerta en generar las referencias!");
+  }
 }
 
 //--------------Test-----------------------//
@@ -89,11 +148,16 @@ function loadPedidos() {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = processarPedidos;
   //xmlhttp.open(    "GET",    "https://pizzeriagirona.000webhostapp.com/php/ver-ofertas/ver-ofertas.php?pagina=" +      pagina,    true  );
-  xmlhttp.open(    "GET",    "http://localhost/ICL-Frontend/php/worker/ver-pedidos/ver-pedidosV2.php?pagina=" +      pagina,    true  );
+  xmlhttp.open(
+    "GET",
+    "http://localhost/ICL-Frontend/php/worker/ver-pedidos/ver-pedidosV3.php?pagina=" +
+      pagina,
+    true
+  );
   xmlhttp.send();
 }
 
-function processarPedidos() {  
+function processarPedidos() {
   if (this.readyState == 4 && this.status == 200) {
     //Conten toda la respuesta
     var string = this.responseText;
@@ -109,12 +173,14 @@ function processarPedidos() {
 
     var stringProductos = string.slice(0, k);
 
+    var conj = 1;
+
     console.log("string" + stringProductos);
-    var arrayliProductos = stringProductos.split("//").filter(Boolean);
+    var arrayliProductos = stringProductos.split("||").filter(Boolean);
 
     //Genera los elementos por cantidad
     arrayliProductos.forEach((element) => {
-      var arrayCadaProducto = element.split("/");
+      var arrayCadaProducto = element.split("|");
 
       //Crea los elementos
       var tr = document.createElement("tr");
@@ -128,9 +194,8 @@ function processarPedidos() {
       var td7 = document.createElement("td");
       var td8 = document.createElement("td");
       var btn = document.createElement("button");
-      var btn1 = document.createElement("button");      
+      var btn1 = document.createElement("button");
       var ico1 = document.createElement("i");
-      
 
       //Establece los estilos
       tr.classList = setTrStyle();
@@ -145,10 +210,11 @@ function processarPedidos() {
       td8.classList = setTdStyle();
       btn.classList = setBtnStyle();
       btn1.classList = setBtn1Style();
-      ico1.classList = setIco1Style();
+      //ico1.classList = setIco1Style();
       //Asigna los valores
       //id
-      td.innerHTML = arrayCadaProducto[0]; 
+      td.innerHTML = arrayCadaProducto[0];
+      td.id = "Pedido" + conj;
       //Nombre cliente
       td1.innerHTML = arrayCadaProducto[2];
       //Comentario
@@ -163,9 +229,13 @@ function processarPedidos() {
       td6.innerHTML = arrayCadaProducto[3];
       //Estado
       td7.innerHTML = arrayCadaProducto[5];
-      
+
       //btn
       btn.innerHTML = "Enviar";
+      btn.id = "send" + conj;
+      btn1.innerHTML = "Cancelar";
+      btn1.id = "add" + conj;
+      conj++;
 
       //Monta la caja
       btn1.appendChild(ico1);
@@ -181,8 +251,8 @@ function processarPedidos() {
       tr.appendChild(td7);
       tr.appendChild(td8);
 
-      //Muestra los resultados      
-      document.getElementById("Pedido").appendChild(tr);      
+      //Muestra los resultados
+      document.getElementById("Pedido").appendChild(tr);
 
       //Muestra la pagina actual y el total de paginas
 
@@ -190,6 +260,8 @@ function processarPedidos() {
       document.getElementById("contadorActual").innerText = pagina;
     });
   }
+
+  cargarAcciones();
 }
 
 //-------------Set styles------------------//
@@ -222,7 +294,10 @@ function setTrStyle() {
 
 function rutaImagen(imgName) {
   console.log("Ruta imagen, Nombre: " + imgName);
-  var rutaImgTemp = "https://pizzeriagirona.000webhostapp.com/media/images/ofertas/" + imgName + ".jpg";
+  var rutaImgTemp =
+    "https://pizzeriagirona.000webhostapp.com/media/images/ofertas/" +
+    imgName +
+    ".jpg";
   //var rutaImgTemp = "http://localhost/ICL-Frontend/media/images/ofertas/" + imgName + ".jpg";
 
   var rutaImg = rutaImgTemp.split(" ").join("");
