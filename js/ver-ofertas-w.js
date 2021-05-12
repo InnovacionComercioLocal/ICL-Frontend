@@ -20,21 +20,21 @@ function loadEvents() {
 
   //esta función coge el id del elemento que se clica, solo los botones tienen el id add+número
   //de esa manera solo funcionará con los botones
-  document.body.addEventListener("click", function (event) {
-    var contentPanelId = event.target.id;
-    if (contentPanelId.includes("add")) {
-      var valor = event.target.value;
+  // document.body.addEventListener("click", function (event) {
+  //   var contentPanelId = event.target.id;
+  //   if (contentPanelId.includes("add")) {
+  //     var valor = event.target.value;
 
-      window.location.href = "../workers/borrarOferta.php?valor=" + valor;
-    }
-  });
+  //     window.location.href = "../workers/borrarOferta.php?valor=" + valor;
+  //   }
+  // });
 }
 
 //--------------Eventos pagina-----------------//
 
 function primera() {
   pagina = 1;
-  console.log("pagina" + pagina);
+  // console.log("pagina" + pagina);
   limpiarContenidoLista();
   loadOfertas();
 }
@@ -45,7 +45,7 @@ function anterior() {
   } else {
     pagina--;
   }
-  console.log("pagina" + pagina);
+  // console.log("pagina" + pagina);
   limpiarContenidoLista();
   loadOfertas();
 }
@@ -56,25 +56,40 @@ function siguiente() {
   } else {
     pagina++;
   }
-  console.log("pagina" + pagina);
+  // console.log("pagina" + pagina);
   limpiarContenidoLista();
   loadOfertas();
 }
 
 function ultima() {
   pagina = totalPag;
-  console.log("pagina" + pagina);
+  // console.log("pagina" + pagina);
   limpiarContenidoLista();
   loadOfertas();
 }
 
-function añadirAlCarro() {
-  console.log(
-    "hola soy el btnEdit " + document.getElementById("add").innerText
-  );
-  console.log(
-    "El valor es deci id es: " + document.getElementById("add").value
-  );
+//coge el id del producto para borrarlo
+function cargarBorrar() {
+  document.getElementById("add1").addEventListener("click", () => {
+    var idOferta = document.getElementById("Producto1").innerHTML;
+    // window.location = "../php/worker/crearOferta/borrarOferta.php?idOferta=" + idOferta;
+    alert("id " + idOferta);
+  });
+  document.getElementById("add2").addEventListener("click", () => {
+    var idOferta = document.getElementById("Producto2").innerHTML;
+    //window.location = "../php/worker/crearOferta/borrarOferta.php?idOferta=" + idOferta;
+    alert("id " + idOferta);
+  });
+  document.getElementById("add3").addEventListener("click", () => {
+    var idOferta = document.getElementById("Producto3").innerHTML;
+    //window.location = "../php/worker/crearOferta/borrarOferta.php?idOferta=" + idOferta;
+    alert("id " + idOferta);
+  });
+  document.getElementById("add4").addEventListener("click", () => {
+    var idOferta = document.getElementById("Producto4").innerHTML;
+    alert("id " + idOferta);
+    //window.location = "../php/worker/crearOferta/borrarOferta.php?idOferta=" + idOferta;
+  });
 }
 
 //--------------Test-----------------------//
@@ -98,7 +113,7 @@ function loadOfertas() {
   xmlhttp.open(
     "GET",
     "http://localhost/ICL-Frontend/php/ver-ofertas/ver-ofertas.php?pagina=" +
-      pagina,
+    pagina,
     true
   );
   xmlhttp.send();
@@ -138,6 +153,7 @@ function processarOfertas() {
       var divBtn = document.createElement("div");
       var btnDel = document.createElement("a");
       var icoBtn = document.createElement("i");
+      var contenedorID = document.createElement("p");
 
       var tr = document.createElement("tr");
       var td = document.createElement("td");
@@ -156,6 +172,7 @@ function processarOfertas() {
       name.classList = "h5";
       price.classList = "h5";
       icoBtn.classList = "bi bi-dash-square";
+      // contenedorID.classList = "hide";
       //Asigna los valores
       //Contenedor
       divOferta.id = "Producto";
@@ -171,6 +188,9 @@ function processarOfertas() {
       name.innerText = "Nombre: " + arrayCadaProducto[2];
       //Precio
       price.innerText = "Precio: " + arrayCadaProducto[3] + " €";
+      //id oferta
+      contenedorID.id = "Producto" + manejarId;
+      contenedorID.innerText = arrayCadaProducto[0];
 
       //Monta la caja
       td.appendChild(img);
@@ -179,6 +199,7 @@ function processarOfertas() {
       btnDel.appendChild(icoBtn);
       divBtn.appendChild(btnDel);
       td3.appendChild(btnDel);
+      tr.appendChild(contenedorID);
       tr.appendChild(td);
       tr.appendChild(td1);
       tr.appendChild(td2);
@@ -196,17 +217,15 @@ function processarOfertas() {
       manejarId++;
     });
   }
+  cargarBorrar();
 }
 
 //-------------Ruta imagen------------------//
 
 function rutaImagen(imgName) {
   console.log("Ruta imagen, Nombre: " + imgName);
-  var rutaImgTemp =
-    "https://pizzeriagirona.000webhostapp.com/media/images/ofertas/" +
-    imgName +
-    ".jpg";
-  //var rutaImgTemp = "http://localhost/ICL-Frontend/media/images/ofertas/" + imgName + ".jpg";
+  // var rutaImgTemp = "https://pizzeriagirona.000webhostapp.com/media/images/ofertas/" + imgName + ".jpg";
+  var rutaImgTemp = "http://localhost/ICL-Frontend/media/images/ofertas/" + imgName + ".jpg";
 
   var rutaImg = rutaImgTemp.split(" ").join("");
   return rutaImg;
