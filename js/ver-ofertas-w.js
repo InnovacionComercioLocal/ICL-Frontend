@@ -127,17 +127,18 @@ function processarOfertas() {
 
     var k = string.indexOf("#");
     console.log("k" + k);
-
+    
     //Establece el maximo de paginas ref var pagina
     var paginacion = string.slice(k + 1, string.length);
     totalPag = parseInt(paginacion);
     console.log("pag:" + paginacion);
-
+    
     var stringProductos = string.slice(0, k);
-
+    
     console.log("string" + stringProductos);
     var arrayliProductos = stringProductos.split("//").filter(Boolean);
-
+    
+    var manejarId = 1;
     //Genera los elementos por cantidad
     arrayliProductos.forEach((element) => {
       var arrayCadaProducto = element.split("/");
@@ -180,6 +181,7 @@ function processarOfertas() {
       //----Obten el id del producto
       btnDel.value = arrayCadaProducto[0];
       btnDel.id = "add" + manejarId;
+      contenedorID.id = "Producto" + manejarId;
       //Imagen
       img.src = rutaImagen(arrayCadaProducto[1]);
       //---Añade la descripcion del producto
@@ -189,7 +191,6 @@ function processarOfertas() {
       //Precio
       price.innerText = "Precio: " + arrayCadaProducto[3] + " €";
       //id oferta
-      contenedorID.id = "Producto" + manejarId;
       contenedorID.innerText = arrayCadaProducto[0];
 
       //Monta la caja
@@ -233,7 +234,6 @@ function rutaImagen(imgName) {
 
 //-------------var------------------//
 var pagina = 1;
-var manejarId = 1;
 var totalPag;
 var containerGeneral = document.getElementById("containerOfertas");
 idd = "";
