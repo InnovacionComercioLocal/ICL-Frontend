@@ -70,7 +70,7 @@
       <div class="row p-1">
         <div class="container d-flex w-100">
           <div class="col-sm-6">
-  
+
             <div class="text-start mx-2">
               <p class="fs-5">Somos una pizzería con mucha experiencia, nuestros productos llevan una gran cantidad de condimentos
                 de la mejor calidad a un buen precio. Los clientes tienen una gran variedad de pizzas a elegir, si
@@ -80,16 +80,12 @@
               <p class="fs-4 fw-bolder">¡¡ Buon Appetito. !!</p>
             </div>
           </div>
-          <div class="container mx-2">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d144848.83382844183!2d2.421752935269213!3d42.03284051530292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12bae7b0432f1b0d%3A0x42986cf1a64dfb08!2sLuciopizza!5e0!3m2!1ses!2ses!4v1620841433504!5m2!1ses!2ses"  allowfullscreen="" loading="lazy" class="w-100 h-100"></iframe>
+          <div class="container mx-2 w-100 border p-0">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d808.7520014860046!2d2.8199317716150887!3d41.96774236011738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12bae7b0432f1b0d%3A0x42986cf1a64dfb08!2sLuciopizza!5e0!3m2!1ses!2ses!4v1620843692157!5m2!1ses!2ses" class="w-100 h-100" allowfullscreen="" loading="lazy"></iframe>
           </div>
         </div>
-        
 
-        <div class="col-sm-6 p-5">
-          <!--<img src="media/images/logo-page.png" alt="" class="h-25 w-25">-->
-        </div>
-        <a href="http://icl2021.epizy.com/" target="_blank" class="text-dark fw-bold text-decoration-none">Creada por ICL</a>
+        <a href="http://icl2021.epizy.com/" target="_blank" class="text-dark fw-bold text-decoration-none mt-5">Creada por ICL</a>
       </div>
     </div>
 

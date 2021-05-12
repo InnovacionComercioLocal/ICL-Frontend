@@ -70,13 +70,13 @@
             <label for="titu">Titular de la targeta</label>
             <br/>
             <br/>
-            <input type="text" name="titu" id="">
+            <input type="text" name="titu" id="" required>
             <br/>
             <!--Numero targeta-->
             <label for="numtar">Numero de la targeta</label>
             <br/>
             <br/>
-            <input type="text" name="numtar" id="">
+            <input type="text" name="numtar" id="" required>
             <br/>            
             <!--Fecha vencimiento-->
             <label for="hora">Hora de vencimiento del pedido</label>
@@ -93,7 +93,7 @@
             <label for="codeS">Código de seguridad</label>
             <br/>
             <br/>
-            <input type="password" name="codeS" id="">            
+            <input type="password" name="codeS" id="" required>            
             <br/>
             <!--Recordar datos-->
             <!--<input type="checkbox" name="" id="">
