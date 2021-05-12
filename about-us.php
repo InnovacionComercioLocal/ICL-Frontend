@@ -83,7 +83,7 @@
         <div class="col-sm-6 p-5">
           <img src="media/images/logo-page.png" alt="" class="h-75 w-75">
         </div>
-        <a href="http://icl2021.epizy.com/" target="_blank" class="text-dark">Creada por ICL</a>
+        <a href="http://icl2021.epizy.com/" target="_blank" class="text-dark fw-bold text-decoration-none">Creada por ICL</a>
       </div>
     </div>
 
