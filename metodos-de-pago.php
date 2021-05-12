@@ -93,7 +93,7 @@
             <label for="codeS">Código de seguridad</label>
             <br/>
             <br/>
-            <input type="text" name="codeS" id="">            
+            <input type="password" name="codeS" id="">            
             <br/>
             <!--Recordar datos-->
             <!--<input type="checkbox" name="" id="">
