@@ -72,23 +72,23 @@ function ultima() {
 function cargarBorrar() {
   document.getElementById("add1").addEventListener("click", () => {
     var idOferta = document.getElementById("Producto1").innerHTML;
-    // window.location = "../php/worker/crearOferta/borrarOferta.php?idOferta=" + idOferta;
-    alert("id " + idOferta);
+    window.location = "../php/worker/crearOferta/borrarOferta.php?idOferta=" + idOferta;
+    //alert("id " + idOferta);
   });
   document.getElementById("add2").addEventListener("click", () => {
     var idOferta = document.getElementById("Producto2").innerHTML;
-    //window.location = "../php/worker/crearOferta/borrarOferta.php?idOferta=" + idOferta;
-    alert("id " + idOferta);
+    window.location = "../php/worker/crearOferta/borrarOferta.php?idOferta=" + idOferta;
+    //alert("id " + idOferta);
   });
   document.getElementById("add3").addEventListener("click", () => {
     var idOferta = document.getElementById("Producto3").innerHTML;
-    //window.location = "../php/worker/crearOferta/borrarOferta.php?idOferta=" + idOferta;
-    alert("id " + idOferta);
+    window.location = "../php/worker/crearOferta/borrarOferta.php?idOferta=" + idOferta;
+    //alert("id " + idOferta);
   });
   document.getElementById("add4").addEventListener("click", () => {
     var idOferta = document.getElementById("Producto4").innerHTML;
-    alert("id " + idOferta);
-    //window.location = "../php/worker/crearOferta/borrarOferta.php?idOferta=" + idOferta;
+    // alert("id " + idOferta);
+    window.location = "../php/worker/crearOferta/borrarOferta.php?idOferta=" + idOferta;
   });
 }
 
@@ -127,17 +127,17 @@ function processarOfertas() {
 
     var k = string.indexOf("#");
     console.log("k" + k);
-    
+
     //Establece el maximo de paginas ref var pagina
     var paginacion = string.slice(k + 1, string.length);
     totalPag = parseInt(paginacion);
     console.log("pag:" + paginacion);
-    
+
     var stringProductos = string.slice(0, k);
-    
+
     console.log("string" + stringProductos);
     var arrayliProductos = stringProductos.split("//").filter(Boolean);
-    
+
     var manejarId = 1;
     //Genera los elementos por cantidad
     arrayliProductos.forEach((element) => {
@@ -173,7 +173,7 @@ function processarOfertas() {
       name.classList = "h5";
       price.classList = "h5";
       icoBtn.classList = "bi bi-dash-square";
-      // contenedorID.classList = "hide";
+      contenedorID.classList = "hide";
       //Asigna los valores
       //Contenedor
       divOferta.id = "Producto";

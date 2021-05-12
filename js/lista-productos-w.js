@@ -17,11 +17,6 @@ function loadEvents() {
   document.getElementById("ultima").addEventListener("click", () => {
     ultima();
   });
-
-  /*document.getElementById("").addEventListener("click", () => {
-    test();
-  });*/
-  //cargarBorrar()
   
 }
 
