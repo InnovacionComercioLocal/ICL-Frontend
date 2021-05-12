@@ -24,7 +24,8 @@ function procesarCategorias() {
         arrayliCat.length = arrayliCat.length - 1;
 
         for (let index = 0; index < arrayliCat.length; index++) {
-            selectorCat.innerHTML += "<option>" + arrayliCat[index] + "</option>" + "\n"
+            selectorCat.innerHTML += "<option>" + arrayliCat[index] + "</option>" + "\n";
+            //console.log("Contiene: "+arrayliCat[index]);
         }
 
     }

@@ -21,9 +21,8 @@ function loadEvents() {
   /*document.getElementById("").addEventListener("click", () => {
     test();
   });*/
-
-  document.querySelectorAll("#myCircle1, #myCircle2, #myCircle3, #myCircle4");
-  //test();
+  //cargarBorrar()
+  
 }
 
 //Check
@@ -69,14 +68,23 @@ function ultima() {
   loadProductos();
 }
 
-function BorrarProducto() {
-  console.log(
-    "hola soy el btnEdit " + document.getElementById("add").innerText
-  );
-  console.log(
-    "El valor es deci id es: " + document.getElementById("add").value
-  );
-
+function cargarBorrar() {
+  document.getElementById("add1").addEventListener("click",() => {
+    var idProduct = document.getElementById("Producto1").innerHTML;
+    window.location="../php/worker/crearProducto/eliminarProducto.php?idProd=" + idProduct;
+  });
+  document.getElementById("add2").addEventListener("click",() => {
+    var idProduct = document.getElementById("Producto2").innerHTML;
+    window.location="../php/worker/crearProducto/eliminarProducto.php?idProd=" + idProduct;
+  });
+  document.getElementById("add3").addEventListener("click",() => {
+    var idProduct = document.getElementById("Producto3").innerHTML;
+    window.location="../php/worker/crearProducto/eliminarProducto.php?idProd=" + idProduct;
+  });
+  document.getElementById("add4").addEventListener("click",() => {
+    var idProduct = document.getElementById("Producto4").innerHTML;
+    window.location="../php/worker/crearProducto/eliminarProducto.php?idProd=" + idProduct;
+  });
 }
 
 //--------------Limpia el contenido a mostrado-----------------//
@@ -90,8 +98,8 @@ function limpiarContenidoLista() {
 function loadProductos() {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = procesarProductos;
-  xmlhttp.open(    "GET",    "https://pizzeriagirona.000webhostapp.com/php/Products/getProductos.php?pagina=" +      pagina,    true  );
-  //xmlhttp.open(    "GET",    "http://localhost/ICL-Frontend/php/Products/getProductos.php?pagina=" +      pagina,    true  );
+  //xmlhttp.open(    "GET",    "https://pizzeriagirona.000webhostapp.com/php/Products/getProductos.php?pagina=" +      pagina,    true  );
+  xmlhttp.open(    "GET",    "http://localhost/ICL-Frontend/php/Products/getProductos.php?pagina=" +      pagina,    true  );
   xmlhttp.send();
 }
 
@@ -114,6 +122,7 @@ function procesarProductos() {
     var arrayliProductos = stringProductos.split("//").filter(Boolean);
 
     //Genera los elementos por cantidad
+    var conj = 1;
     arrayliProductos.forEach((element) => {
       var arrayCadaProducto = element.split("/");
 
@@ -125,6 +134,7 @@ function procesarProductos() {
       var name = document.createElement("p");
       var divPrecio = document.createElement("div");
       var price = document.createElement("p");
+      var contenedorID = document.createElement("p");
       var divBtn = document.createElement("div");
       var btnDel = document.createElement("button");
       var icoBtn = document.createElement("i");
@@ -138,6 +148,7 @@ function procesarProductos() {
         "container w-100 h-25 text-start p-1";
       divPrecio.classList =
         "container w-100 h-25 text-start p-1";
+      contenedorID.classList = "hide";
       divBtn.classList =
         "container w-100 h-25 text-end p-1";
       btnDel.classList = "btn btn-danger";
@@ -148,10 +159,12 @@ function procesarProductos() {
       //Asigna los valores
       //Contenedor
       divProducto.id = "Producto";
+      contenedorID.id = "Producto"+conj;
       //boton      
       //----Obten el id del producto
-      btnDel.value = arrayCadaProducto[0];
-      btnDel.id = "add";
+      contenedorID.innerText = arrayCadaProducto[0];
+      btnDel.id = "add"+conj;      
+      conj++;
       //Imagen
       img.src = rutaImagen(arrayCadaProducto[1]);
       //---Añade la descripcion del producto
@@ -169,6 +182,7 @@ function procesarProductos() {
       divBtn.appendChild(btnDel);
       divProducto.appendChild(divImg);
       divProducto.appendChild(divNombre);
+      divProducto.appendChild(contenedorID);
       divProducto.appendChild(divPrecio);
       divProducto.appendChild(divBtn);
 
@@ -182,14 +196,16 @@ function procesarProductos() {
       document.getElementById("contadorActual").innerText = pagina;
     });
   }
+
+  cargarBorrar();
 }
 
 //-------------Ruta imagen------------------//
 
 function rutaImagen(imgName) {
   console.log("Ruta imagen, Nombre: " + imgName);
-  //var rutaImgTemp = "http://localhost/ICL-Frontend/media/images/products/" + imgName + ".jpg";
-  var rutaImgTemp = "https://pizzeriagirona.000webhostapp.com/media/images/products/" + imgName + ".jpg";
+  var rutaImgTemp = "http://localhost/ICL-Frontend/media/images/products/" + imgName + ".jpg";
+  //var rutaImgTemp = "https://pizzeriagirona.000webhostapp.com/media/images/products/" + imgName + ".jpg";
 
   var rutaImg = rutaImgTemp.split(" ").join("");
   return rutaImg;

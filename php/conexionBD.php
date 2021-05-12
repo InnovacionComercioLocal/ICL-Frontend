@@ -13,7 +13,7 @@
     // $user="superAdmin";
     // $password="hFe7anf1retwahAu";
     // $name="icl";
-    $mysqli = new mysqli("$server", "$user", "$password", "$name");
+    $mysqli = new mysqli($server, $user, $password, $name);
     if ($mysqli->connect_errno) {
         echo ("Connect failed: " . $mysqli->connect_error);
         exit();

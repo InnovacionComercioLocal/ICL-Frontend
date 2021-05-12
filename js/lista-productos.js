@@ -90,8 +90,8 @@ function limpiarContenidoLista() {
 function loadProductos() {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = procesarProductos;
-  xmlhttp.open(    "GET",    "https://pizzeriagirona.000webhostapp.com/php/Products/getProductos.php?pagina=" +      pagina,    true  );
-  //xmlhttp.open(    "GET",    "http://localhost/ICL-Frontend/php/Products/getProductos.php?pagina=" +      pagina,    true  );
+  //xmlhttp.open(    "GET",    "https://pizzeriagirona.000webhostapp.com/php/Products/getProductos.php?pagina=" +      pagina,    true  );
+  xmlhttp.open(    "GET",    "http://localhost/ICL-Frontend/php/Products/getProductos.php?pagina=" +      pagina,    true  );
   xmlhttp.send();
 }
 
@@ -183,8 +183,8 @@ function procesarProductos() {
 
 function rutaImagen(imgName) {
   console.log("Ruta imagen, Nombre: " + imgName);
-  //var rutaImgTemp = "http://localhost/ICL-Frontend/media/images/products/" + imgName + ".jpg";
-  var rutaImgTemp = "https://pizzeriagirona.000webhostapp.com/media/images/products/" + imgName + ".jpg";
+  var rutaImgTemp = "http://localhost/ICL-Frontend/media/images/products/" + imgName + ".jpg";
+  //var rutaImgTemp = "https://pizzeriagirona.000webhostapp.com/media/images/products/" + imgName + ".jpg";
 
   var rutaImg = rutaImgTemp.split(" ").join("");
   return rutaImg;
