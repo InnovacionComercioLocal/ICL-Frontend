@@ -63,41 +63,41 @@
 
   <!--Page content-->
     <div class="container text-center ">
-        <form action="" method="GET" id="metodoPago" class="border border-dark w-50 mx-auto p-3">
+        <form action="php/pago/pago.php" method="POST" id="metodoPago" class="border border-dark w-50 mx-auto p-3">
             <img src="media/images/card.jpg" alt="">
             <br/>
             <!--Titular targeta-->
-            <label for="">Titular de la targeta</label>
+            <label for="titu">Titular de la targeta</label>
             <br/>
             <br/>
-            <input type="text" name="" id="">
+            <input type="text" name="titu" id="">
             <br/>
             <!--Numero targeta-->
-            <label for="">Numero de la targeta</label>
+            <label for="numtar">Numero de la targeta</label>
             <br/>
             <br/>
-            <input type="text" name="" id="">
-            <br/>
-            <!--Fecha vencimiento-->
-            <label for="fechaIni">Fecha de vencimiento</label>
-            <br/>
-            <br/>
-            <select name="fechaIni" id="fechaIni" form="metodoPago">
-                <option value=""></option>
-            </select>
-            <select name="fechaFin" id="fechaIni" form="metodoPago">
-                <option value=""></option>
-            </select>
+            <input type="text" name="numtar" id="">
             <br/>            
+            <!--Fecha vencimiento-->
+            <label for="hora">Hora de vencimiento del pedido</label>
+            <br/>
+            <br/>
+            <input type="time" name="hora" id="">                   
+            <br/> 
+            <label for="coment">Comentarios</label>           
+            <br/>
+            <br/>
+            <input type="text" name="coment" id="" placeholder="Escriba sus preferencias">
+            <br/>
             <!--Codigo de seguridad-->
-            <label for="">Código de seguridad</label>
+            <label for="codeS">Código de seguridad</label>
             <br/>
             <br/>
-            <input type="text" name="" id="">            
+            <input type="text" name="codeS" id="">            
             <br/>
             <!--Recordar datos-->
-            <input type="checkbox" name="" id="">
-            <label for="">Recordar targeta</label>
+            <!--<input type="checkbox" name="" id="">
+            <label for="">Recordar targeta</label>-->
             <br/>
             <br/>
             <!--Finalizar pago-->

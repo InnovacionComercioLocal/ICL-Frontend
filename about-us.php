@@ -71,21 +71,19 @@
         <div class=" col-sm-6">
 
           <div class="text-start">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Numquam omnis officia, dignissimos cumque
-              libero eveniet quidem qui soluta distinctio dolore molestias, magni perferendis nemo optio assumenda 
-              nihil sit odio sunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam omnis officia, dignissimos cumque
-              libero eveniet quidem qui soluta distinctio dolore molestias, magni perferendis nemo optio assumenda 
-              nihil sit odio sunt.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam omnis officia, dignissimos cumque
-                libero eveniet quidem qui soluta distinctio dolore molestias, magni perferendis nemo optio assumenda 
-                nihil sit odio sunt.</p>
+            <p class="fs-5">Somos una pizzería con mucha experiencia, nuestros productos llevan una gran cantidad de condimentos
+               de la mejor calidad a un buen precio. Los clientes tienen una gran variedad de pizzas a elegir, si
+                alguien tiene alguna necesidad también será escuchada.</p>
+              <p class="fs-5">Disponemos de servicio de entrega y recogida en la tienda, solo es necesario unos cuantos clics
+                 y listo, solo falta esperar, preparar una buena película y disfrutar.</p>
+                 <p class="fs-4 fw-bolder">¡¡ Buon Appetito. !!</p>
           </div>
         </div>
         
         <div class="col-sm-6 p-5">
-          <img src="media/images/exampleP.jpg" alt="">
+          <img src="media/images/logo-page.png" alt="" class="h-75 w-75">
         </div>
+        <a href="http://icl2021.epizy.com/" target="_blank" class="text-dark fw-bold text-decoration-none">Creada por ICL</a>
       </div>
     </div>
 
