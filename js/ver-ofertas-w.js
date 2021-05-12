@@ -18,23 +18,12 @@ function loadEvents() {
     ultima();
   });
 
-  //esta función coge el id del elemento que se clica, solo los botones tienen el id add+número
-  //de esa manera solo funcionará con los botones
-  // document.body.addEventListener("click", function (event) {
-  //   var contentPanelId = event.target.id;
-  //   if (contentPanelId.includes("add")) {
-  //     var valor = event.target.value;
-
-  //     window.location.href = "../workers/borrarOferta.php?valor=" + valor;
-  //   }
-  // });
 }
 
 //--------------Eventos pagina-----------------//
 
 function primera() {
   pagina = 1;
-  // console.log("pagina" + pagina);
   limpiarContenidoLista();
   loadOfertas();
 }
@@ -45,7 +34,6 @@ function anterior() {
   } else {
     pagina--;
   }
-  // console.log("pagina" + pagina);
   limpiarContenidoLista();
   loadOfertas();
 }
@@ -56,14 +44,12 @@ function siguiente() {
   } else {
     pagina++;
   }
-  // console.log("pagina" + pagina);
   limpiarContenidoLista();
   loadOfertas();
 }
 
 function ultima() {
   pagina = totalPag;
-  // console.log("pagina" + pagina);
   limpiarContenidoLista();
   loadOfertas();
 }
@@ -177,11 +163,12 @@ function processarOfertas() {
       //Asigna los valores
       //Contenedor
       divOferta.id = "Producto";
+
       //boton
-      //----Obten el id del producto
       btnDel.value = arrayCadaProducto[0];
       btnDel.id = "add" + manejarId;
       contenedorID.id = "Producto" + manejarId;
+
       //Imagen
       img.src = rutaImagen(arrayCadaProducto[1]);
       //---Añade la descripcion del producto

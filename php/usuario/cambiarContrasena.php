@@ -10,12 +10,13 @@ include("../conexionBD.php");
 header('Access-Control-Allow-Origin: *');
 $email = $_SESSION['usuario']['email'];
 
-
+//a partir del email podemos sacar la fila del usuario
 $check = $mysqli->query("SELECT * FROM usuario WHERE usuario.Email='$email' ");
 
-//Check password
+
 $row = $check->fetch_object();
 
+//verificamos que la contraseña introducida sea la que está guardada en la bd
 if (password_verify($passActual, $row->Password)) {
 
     if ($passNueva != $passNueva2) {

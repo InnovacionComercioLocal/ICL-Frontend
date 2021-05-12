@@ -10,6 +10,7 @@ header('Access-Control-Allow-Origin: *');
 $email = $_SESSION['usuario']['email'];
 
 
+//a partir del email podemos sacar la fila del usuario
 $check = $mysqli->query("SELECT * FROM usuario WHERE usuario.Email='$email' ");
 
 
