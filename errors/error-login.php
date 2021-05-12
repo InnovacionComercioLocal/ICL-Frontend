@@ -42,8 +42,7 @@
         <!--<li class="nav-item"><a href="reservar.html" class="nav-link active">Reservar</a></li>-->
         <li class="nav-item"><a href="../productos.php" class="nav-link">Productos</a></li>
         <li class="nav-item"><a href="../pedidos-domicilio.php" class="nav-link ">Pedir a domicilio</a></li>
-        <li class="nav-item"><a href="../about-us.php" class="nav-link">Quienes somos</a></li>
-        <li class="nav-item"><a href="../carrito.php" class="nav-link"><img src="" alt=""><i class="bi bi-cart4"></i></a>
+        <li class="nav-item"><a href="../about-us.php" class="nav-link">Quienes somos</a></li>        
         </li>
         <?php        
         if (!isset($_SESSION["usuario"])) {
@@ -70,15 +69,15 @@
         <div class="carousel-inner h-100">
           <!--Contenido 1-->
           <div class="carousel-item active">
-            <img src="../media/images/noImage.svg" class="d-block w-100" alt="1 image">
+            <img src="../media/images/ofertas/Oferta1.jpg" class="d-block w-100" alt="1 image">
           </div>
           <!--Contenido 2-->
           <div class="carousel-item">
-            <img src="../media/images/noImage.svg" class="d-block w-100" alt="2 image">
+            <img src="../media/images/ofertas/Oferta3.jpg" class="d-block w-100" alt="2 image">
           </div>
           <!--Contenido 3-->
           <div class="carousel-item">
-            <img src="../media/images/noImage.svg" class="d-block w-100" alt="3 image">
+            <img src="../media/images/ofertas/Oferta2.jpg" class="d-block w-100" alt="3 image">
           </div>
         </div>
 
@@ -123,6 +122,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous">
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
+  </script>
+  <script src="../js/index.js"></script>
+  <script type="text/javascript">
+    window.addEventListener("load",loadEvents2);
   </script>
 </body>
 

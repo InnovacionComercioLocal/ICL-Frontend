@@ -16,7 +16,7 @@ $comprobacion = $mysqli->query("SELECT * from usuario WHERE usuario.Email='$emai
 //If not exists
 if (mysqli_num_rows($comprobacion) <= 0) {
     //Redirect to errors/not exists users    
-    header("location:../../errors/error-login.html");
+    header("location:../../errors/error-login.php");
 
     //If it exists
 } else {

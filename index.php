@@ -74,15 +74,15 @@
         <div class="carousel-inner h-100">
           <!--Contenido 1-->
           <div class="carousel-item active">
-            <img src="media/images/ofertas/Delicheese.jpg" class="d-block w-100" alt="1 image">
+            <img src="media/images/ofertas/Oferta3.jpg" class="d-block w-100" alt="1 image">
           </div>
           <!--Contenido 2-->
           <div class="carousel-item">
-            <img src="media/images/ofertas/no-image.jpg" class="d-block w-100" alt="2 image">
+            <img src="media/images/ofertas/Oferta1.jpg" class="d-block w-100" alt="2 image">
           </div>
           <!--Contenido 3-->
           <div class="carousel-item">
-            <img src="media/images/ofertas/Americana.jpg" class="d-block w-100" alt="3 image">
+            <img src="media/images/ofertas/Oferta2.jpg" class="d-block w-100" alt="3 image">
           </div>
         </div>
 
