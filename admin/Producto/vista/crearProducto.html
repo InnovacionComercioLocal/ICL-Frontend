@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Producto</title>
+    <script type="text/javascript" src="../controlador/crearProducto.js"></script>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript">
+        window.addEventListener("load",loadEvents);
+    </script>
+    <h1>Crear Producto</h1>
+
+    <div id="imagenFoto">
+    </div>
+    <form id="formimg" action="" method="POST" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <td><label for="imagen">Imagen:</label></td>
+                <td><input type="file" name="imagen" id="imagenInput" size="20" required></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="enviar" value="Enviar img al servidor"></td>
+            </tr>
+        </table>
+    </form>
+    <form action="../modelo/crearProducto.php" id="formularioProducto" method="POST">
+        <div>
+            <label for="nombreProducto">Nombre del Producto:</label>
+            <input type="text" id="nombreProducto" name="nombreProducto" required></input>
+        </div>
+        <div>
+            <label for="precioProducto">Precio del Producto:</label>
+            <input type="number" min="0" step="0.01"  id="precioProducto" name="precioProducto" required></input>€
+        </div>
+        <div>
+            <label for="categoriaProducto">Categoria del Producto:</label>
+            <select name="categoriaProducto" id="categoriaProducto">
+            </select>
+        </div>
+        <div>
+            <input type="text" style="display: none;" name="imagen" id="imagen" >
+            <input type="text" style="display: none;" name="IDcategoria" id="IDcategoria" >
+        </div>
+        <div>
+            <button type="button" id="btnValidar">Validar Producto</button>
+            <button type="submit" id="btnEnviar">Crear Producto</button>
+        </div>
+    </form>
+    <div id="errores">
+        <span id="spanErr"></span>
+    </div>  
+</body>
+</html>
