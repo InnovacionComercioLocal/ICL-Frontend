@@ -33,8 +33,9 @@
             <ul class="nav nav-pills">
                 <!--Username-->
                 <li class="nav-item "><a href="user/configuracionCuenta/vista/ajustesCuenta.php" class="nav-link text-reset">
-                        <?php
+                        <?php                        
                         if (!isset($_SESSION["usuario"])) {
+                        } else {
                             echo ($_SESSION["usuario"]["email"]);
                         }
                         ?>
@@ -48,10 +49,10 @@
                 <li class="nav-item"><a href="about-us.php" class="nav-link">Quienes somos</a></li>
                 <?php
                 if (!isset($_SESSION["usuario"])) {
-                    echo ('<li class="nav-item"><a href="carrito/carrito.php" class="nav-link"><img src="" alt=""><i class="bi bi-cart4"></i></a>');
-                } else {                    
+                    //echo ('<li class="nav-item"><a href="carrito/carrito.php" class="nav-link"><img src="" alt=""><i class="bi bi-cart4"></i></a>');
+                } else {
                     if ($_SESSION['usuario']['ID_Role'] == 2) {
-                        echo ('<li class="nav-item"><a href="carrito.php" class="nav-link"><img src="" alt=""><i class="bi bi-cart4"></i></a>');
+                        echo ('<li class="nav-item"><a href="carrito/vista/mostrarCarrito.php" class="nav-link"><img src="" alt=""><i class="bi bi-cart4"></i></a>');
                     }
                 }
                 ?>

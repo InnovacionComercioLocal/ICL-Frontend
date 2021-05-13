@@ -44,7 +44,7 @@
                 <li class="nav-item"><a href="../../about-us.php" class="nav-link">Quienes somos</a></li>
                 <?php
                 if ($_SESSION['usuario']['ID_Role'] == 2) {
-                    echo ('<li class="nav-item"><a href="carrito.php" class="nav-link"><img src="" alt=""><i class="bi bi-cart4"></i></a>');
+                    echo ('<li class="nav-item"><a href="../../carrito/vista/mostrarCarrito.php" class="nav-link"><img src="" alt=""><i class="bi bi-cart4"></i></a>');
                 }
                 ?>
                 <?php
