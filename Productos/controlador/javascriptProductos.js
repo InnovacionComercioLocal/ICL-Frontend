@@ -28,46 +28,60 @@ function procesarProductos() {
             var img = document.createElement("img");
             img.src = rutaImagen(arrayCadaProducto[1]);
             img.width = 200;
-            img.alt = "Imagen Producto";
+            img.alt = "Imagen Producto";  
+            //Pon el estilo
+            td1.classList = "container w-100 h-100 p-1 color-White-5 rounded-4 text-center mx-5 my-2"          ;
             td1.appendChild(img);
             var td2 = document.createElement("td");
+            //Pon el estilo
+            td2.classList = "container w-100 h-100 p-4 color-White-5 rounded-4 text-center mx-5 my-2";
             td2.innerHTML = arrayCadaProducto[2];
             var td3 = document.createElement("td");
+            td3.classList = "container w-100 h-100 p-4 color-White-5 rounded-4 text-center mx-5 my-2";
             td3.innerHTML = arrayCadaProducto[3] + "€";
             var td4 = document.createElement("td");
             if (role != "NOSESSION" && role != "USERSESSION") {
                 var editar = document.createElement("a");
-                editar.href = "../../admin/Producto/vista/editarProducto.html?idProduct=" + arrayCadaProducto[0];
+                editar.href = "../../admin/Producto/vista/editarProducto.php?idProduct=" + arrayCadaProducto[0];
                 //console.log(editar.id);
                 //editar.value = arrayCadaProducto[0];
                 editar.innerHTML = "Editar";
-                td4.appendChild(editar);
+                editar.classList = "btn btn-primary";                
+                td4.classList = "container w-100 h-100 p-4 color-White-5 rounded-4 text-center mx-5 my-2";
+                td4.appendChild(editar);                
             } else {
                 var anadir = document.createElement("button");
                 var cantidad = document.createElement("input");
                 anadir.innerHTML = "Añadir";
                 anadir.id = "anadir" + numero;
                 anadir.value = arrayCadaProducto[0];
+                anadir.classList = "btn btn-primary";
                 cantidad.type = "number";
                 cantidad.min = 1;
                 cantidad.max = 50;
                 cantidad.value = 1;
                 cantidad.id = "cantidad" + numero;
                 cantidad.style = "width=30px;margin-rigth=10px";
+                cantidad.classList = "btn btn-success";
                 anadir.onclick = cambiarCantidad;
 
                 //anadir.href="../../carrito/vista/carrito.html?idProduct="+arrayCadaProducto[0];
                 anadir.append(cantidad);
+                td4.classList = "container w-100 h-100 p-4 color-White-5 rounded-4 text-center mx-5 my-2";
                 td4.appendChild(anadir);
                 td4.insertBefore(cantidad, anadir);
                 numero++;
             }
+            //Pon el estilo
+            tr.classList = "container border border-dark rounded-4 color-White-6 my-1 w-80 h-25 p-2 mx-1 d-flex text-start";
             tbody.appendChild(tr);
             tr.appendChild(td1);
             tr.appendChild(td2);
             tr.appendChild(td3);
             tr.appendChild(td4);
         });
+        document.getElementById("contador").innerText = totalPag;
+      document.getElementById("contadorActual").innerText = pagina;
     }
 }
 function cambiarCantidad() {
@@ -85,7 +99,7 @@ function cambiarCantidad() {
 
 }
 function rutaImagen(imgName) {
-    var rutaImgTemp = "/php/uploads/" + imgName;
+    var rutaImgTemp = "/php/uploads/" + imgName+".jpg";
     var rutaImg = rutaImgTemp.split(" ").join("");
     return rutaImg;
 }

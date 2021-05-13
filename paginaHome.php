@@ -31,26 +31,49 @@
             </a>
 
             <ul class="nav nav-pills">
-                <!--Username-->                
-                <li class="nav-item "><a href="user/configuracionCuenta/vista/ajustesCuenta.html" class="nav-link text-reset">
-                    <?php
-                    echo($_SESSION["usuario"]["email"]);
-                    ?>
-                </a></li>    
+                <!--Username-->
+                <li class="nav-item "><a href="user/configuracionCuenta/vista/ajustesCuenta.php" class="nav-link text-reset">
+                        <?php
+                        if (!isset($_SESSION["usuario"])) {
+                            echo ($_SESSION["usuario"]["email"]);
+                        }
+                        ?>
+                    </a></li>
                 <!--Redirect to pages-->
                 <li class="nav-item"><a href="ofertas.php" class="nav-link ">Ofertas</a></li>
                 <!--<li class="nav-item"><a href="menus.html" class="nav-link">Menus</a></li>-->
                 <!--<li class="nav-item"><a href="reservar.html" class="nav-link active">Reservar</a></li>-->
-                <li class="nav-item"><a href="Productos/vista/listaProductos.html" class="nav-link">Productos</a></li>
+                <li class="nav-item"><a href="Productos/vista/listaProductos.php" class="nav-link">Productos</a></li>
                 <li class="nav-item"><a href="user/pedirAdomicilio/direccion.php" class="nav-link ">Pedir a domicilio</a></li>
                 <li class="nav-item"><a href="about-us.php" class="nav-link">Quienes somos</a></li>
-                <li class="nav-item"><a href="carrito.php" class="nav-link"><img src="" alt=""><i class="bi bi-cart4"></i></a>
-                <li class="nav-item"><a href="comun/logout.php" class="nav-link">Cerrar sesion</a></li>
+                <?php
+                if (!isset($_SESSION["usuario"])) {
+                    echo ('<li class="nav-item"><a href="carrito/carrito.php" class="nav-link"><img src="" alt=""><i class="bi bi-cart4"></i></a>');
+                } else {                    
+                    if ($_SESSION['usuario']['ID_Role'] == 2) {
+                        echo ('<li class="nav-item"><a href="carrito.php" class="nav-link"><img src="" alt=""><i class="bi bi-cart4"></i></a>');
+                    }
+                }
+                ?>
+                <?php
+                if ($_SESSION['usuario']['ID_Role'] == 1 || $_SESSION['usuario']['ID_Role'] == 3) {
+                    echo ('<li class="nav-item"><a href="admin/Usuarios/vista/listaUsuarios.php" class="nav-link">Lista de usuarios</a></li>');
+                }
+                ?>
+                <?php
+                if (!isset($_SESSION["usuario"])) {
+                } else {
+                    echo ('<li class="nav-item"><a href="comun/logout.php" class="nav-link">Cerrar sesion</a></li>');
+                }
+                ?>
             </ul>
         </header>
     </div>
 
-    <!--Content page-->
+    <?php
+    if ($_SESSION['usuario']['ID_Role'] == 2) {
+        echo ('
+        <!--Content page-->
     <div class="container border border-dark  w-100 mx-15 d-flex mt-4 py-4">
         <!--Contenedor ofertas-->
         <div class="container w-100 mx-1 border border-dark p-0">
@@ -71,22 +94,30 @@
             </div>
         </div>
     </div>
+        ');
+    } elseif ($_SESSION['usuario']['ID_Role'] == 1 || $_SESSION['usuario']['ID_Role'] == 3) {
+        //header("location: http://localhost/php/");
+        echo ("Debbe de ir a ofertas");
+    }
+    ?>
 
 
-        <h1>Bienvenidos a la mejor Pizzeria</h1>
 
-        <p>Si estas aqui es porqué ya estas registrado</p>
-        <p><a href="user/pedirAdomicilio/direccion.php">Introducir Dirección</a></p>
-        <p><a href="Productos/vista/listaProductos.html">Productos</a></p>
-        <p><a href="user/configuracionCuenta/vista/ajustesCuenta.html">Cambiar Ajustes</a></p>
-        <?php
-        if ($_SESSION['usuario']['ID_Role'] == '3' || $_SESSION['usuario']['ID_Role'] == '1') {
-        ?>
-            <p><a href="admin/Usuarios/vista/listaUsuarios.html">Lista Usuarios</a></p>
-        <?php
-        }
-        ?>
-        <p><a href="comun/logout.php">Cerrar Sessión</a></p>        
+
+    <h1>Bienvenidos a la mejor Pizzeria</h1>
+
+    <p>Si estas aqui es porqué ya estas registrado</p>
+    <p><a href="user/pedirAdomicilio/direccion.php">Introducir Dirección</a></p>
+    <p><a href="Productos/vista/listaProductos.html">Productos</a></p>
+    <p><a href="user/configuracionCuenta/vista/ajustesCuenta.html">Cambiar Ajustes</a></p>
+    <?php
+    if ($_SESSION['usuario']['ID_Role'] == '3' || $_SESSION['usuario']['ID_Role'] == '1') {
+    ?>
+        <p><a href="admin/Usuarios/vista/listaUsuarios.html">Lista Usuarios</a></p>
+    <?php
+    }
+    ?>
+    <p><a href="comun/logout.php">Cerrar Sessión</a></p>
 </body>
 
 </html>

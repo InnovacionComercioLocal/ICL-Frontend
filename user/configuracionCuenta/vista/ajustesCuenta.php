@@ -53,7 +53,7 @@
 
             <ul class="nav nav-pills">
                 <!--Username-->
-                <li class="nav-item "><a href="ajustesCuenta.php" class="nav-link text-reset">
+                <li class="nav-item "><a href="ajustesCuenta.php" class="nav-link active">
                         <?php
                         session_start();
                         echo ($_SESSION["usuario"]["email"]);
@@ -63,10 +63,19 @@
                 <li class="nav-item"><a href="ofertas.php" class="nav-link ">Ofertas</a></li>
                 <!--<li class="nav-item"><a href="menus.html" class="nav-link">Menus</a></li>-->
                 <!--<li class="nav-item"><a href="reservar.html" class="nav-link active">Reservar</a></li>-->
-                <li class="nav-item"><a href="../../../Productos/vista/listaProductos.html" class="nav-link">Productos</a></li>
+                <li class="nav-item"><a href="../../../Productos/vista/listaProductos.php" class="nav-link">Productos</a></li>
                 <li class="nav-item"><a href="user/pedirAdomicilio/direccion.php" class="nav-link ">Pedir a domicilio</a></li>
                 <li class="nav-item"><a href="../../../about-us.php" class="nav-link">Quienes somos</a></li>
-                <li class="nav-item"><a href="carrito.php" class="nav-link"><img src="" alt=""><i class="bi bi-cart4"></i></a>
+                <?php
+                if ($_SESSION['usuario']['ID_Role'] == 2) {
+                    echo ('<li class="nav-item"><a href="carrito.php" class="nav-link"><img src="" alt=""><i class="bi bi-cart4"></i></a>');
+                }
+                ?>
+                <?php
+                if ($_SESSION['usuario']['ID_Role'] == 1 || $_SESSION['usuario']['ID_Role'] == 3) {
+                    echo ('<li class="nav-item"><a href="../../../admin/Usuarios/vista/listaUsuarios.php" class="nav-link">Lista de usuarios</a></li>');
+                }
+                ?>
                 <li class="nav-item"><a href="../../../comun/logout.php" class="nav-link">Cerrar sesion</a></li>
             </ul>
         </header>
@@ -91,7 +100,7 @@
         </br>
         <input type="text" name="contraDefinitiva" id="contraDefinitiva">
         <br>
-        <br>        
+        <br>
         <div id="divContra">
             Contraseña: <input type="password" value="********" disabled id="password"></input>
             <br>
@@ -116,7 +125,7 @@
         </br>
 
         <!--Email: <input type="email" id="email" name="email" required></input>-->
-        </br>        
+        </br>
         Teléfono: <input type="text" id="telefono" name="telefono" required placeholder="xxx-xxx-xxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"></input>
         <span class="validity"></span>
         </br>

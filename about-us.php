@@ -16,31 +16,55 @@
 <body>
   <!--Container Header and nav-->
   <div class="container ">
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom border-dark mb-sl-3">
-            <a href="paginaHome.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-                <img src="uploads/logo-page.png" alt="" class="icoLogo">
-            </a>
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom border-dark mb-sl-3">
+      <a href="paginaHome.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <img src="uploads/logo-page.png" alt="" class="icoLogo">
+      </a>
 
-            <ul class="nav nav-pills">
-                <!--Username-->                
-                <li class="nav-item "><a href="user/configuracionCuenta/vista/ajustesCuenta.html" class="nav-link text-reset">
-                    <?php
-                    session_start();
-                    echo($_SESSION["usuario"]["email"]);
-                    ?>
-                </a></li>    
-                <!--Redirect to pages-->
-                <li class="nav-item"><a href="ofertas.php" class="nav-link ">Ofertas</a></li>
-                <!--<li class="nav-item"><a href="menus.html" class="nav-link">Menus</a></li>-->
-                <!--<li class="nav-item"><a href="reservar.html" class="nav-link active">Reservar</a></li>-->
-                <li class="nav-item"><a href="Productos/vista/listaProductos.html" class="nav-link">Productos</a></li>
-                <li class="nav-item"><a href="user/pedirAdomicilio/direccion.php" class="nav-link ">Pedir a domicilio</a></li>
-                <li class="nav-item"><a href="about-us.php" class="nav-link">Quienes somos</a></li>
-                <li class="nav-item"><a href="carrito.php" class="nav-link"><img src="" alt=""><i class="bi bi-cart4"></i></a>
-                <li class="nav-item"><a href="comun/logout.php" class="nav-link">Cerrar sesion</a></li>
-            </ul>
-        </header>
-    </div>
+      <ul class="nav nav-pills">
+        <!--Username-->
+        <li class="nav-item "><a href="user/configuracionCuenta/vista/ajustesCuenta.html" class="nav-link text-reset">
+            <?php
+            session_start();
+            if (!isset($_SESSION["usuario"])) {
+            } else {
+              echo ($_SESSION["usuario"]["email"]);
+            }
+            ?>
+          </a></li>
+        <!--Redirect to pages-->
+        <li class="nav-item"><a href="ofertas.php" class="nav-link ">Ofertas</a></li>
+        <!--<li class="nav-item"><a href="menus.html" class="nav-link">Menus</a></li>-->
+        <!--<li class="nav-item"><a href="reservar.html" class="nav-link active">Reservar</a></li>-->
+        <li class="nav-item"><a href="Productos/vista/listaProductos.php" class="nav-link">Productos</a></li>
+        <li class="nav-item"><a href="user/pedirAdomicilio/direccion.php" class="nav-link ">Pedir a domicilio</a></li>
+        <li class="nav-item"><a href="about-us.php" class="nav-link active">Quienes somos</a></li>
+        <?php
+        if (!isset($_SESSION["usuario"])) {
+          echo ('<li class="nav-item"><a href="carrito.php" class="nav-link"><img src="" alt=""><i class="bi bi-cart4"></i></a>');
+        } else {          
+          if ($_SESSION['usuario']['ID_Role'] == 2) {
+            echo ('<li class="nav-item"><a href="carrito.php" class="nav-link"><img src="" alt=""><i class="bi bi-cart4"></i></a>');
+          }
+        }
+        ?>
+        <?php
+        if (!isset($_SESSION["usuario"])) {
+        } else {
+          if ($_SESSION['usuario']['ID_Role'] == 1 || $_SESSION['usuario']['ID_Role'] == 3) {
+            echo ('<li class="nav-item"><a href="admin/Usuarios/vista/listaUsuarios.php" class="nav-link">Lista de usuarios</a></li>');
+          }
+        }
+        ?>
+        <?php
+        if (!isset($_SESSION["usuario"])) {
+        } else {
+          echo ('<li class="nav-item"><a href="../../comun/logout.php" class="nav-link">Cerrar sesion</a></li>');
+        }
+        ?>
+      </ul>
+    </header>
+  </div>
 
   <!--Content page-->
   <div class="container border border-dark p-4">

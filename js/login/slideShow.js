@@ -16,7 +16,7 @@ function changeImg() {
     var id = document.getElementById("imagenC");
 
     id.addEventListener("click", function () {
-        window.location.href = "http://localhost/php/ofertas.php";
+        window.location.href = "http://localhost/php/paginaHome.php";
     });
 
     id.src = images[i];
@@ -43,7 +43,7 @@ function changeImg2() {
     var id = document.getElementById("imagenC");
 
     id.addEventListener("click", function () {
-        window.location.href = "http://localhost/php/ofertas.php";
+        window.location.href = "http://localhost/php/paginaHome.php";
     });
 
     id.src = images2[i];
