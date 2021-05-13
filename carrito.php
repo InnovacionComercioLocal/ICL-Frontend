@@ -44,12 +44,7 @@
         <li class="nav-item"><a href="pedidos-domicilio.php" class="nav-link ">Pedir a domicilio</a></li>
         <li class="nav-item"><a href="about-us.php" class="nav-link">Quienes somos</a></li>
         <!--Link carrito-->
-        <?php        
-        if (!isset($_SESSION["usuario"])) {
-        } else {          
-          include("components/carrito.html");                  
-        }
-        ?>        
+        <li class="nav-item"><a href="carrito.php" class="nav-link active"><img src="" alt=""><i class="bi bi-cart4"></i></a></li>                
         <!--Link logout-->
         <?php        
         if (!isset($_SESSION["usuario"])) {

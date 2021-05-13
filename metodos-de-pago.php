@@ -102,7 +102,7 @@
             <br/>
             <!--Finalizar pago-->
             <!--<input type="submit" value="Pagar y finalizar" class="btn bg-primary">-->
-            <button type="submit" class="btn btn-primary w-25">Pagar</button>
+            <button type="submit" class="btn btn-primary w-25">Finalizar pago</button>
         </form>
     </div>
 
