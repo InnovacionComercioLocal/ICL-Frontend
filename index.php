@@ -74,7 +74,7 @@
       <div id="carouselExampleSlidesOnly" class="carousel slide mx-0 mt-5" data-ride="carousel">
         <div class="carousel-inner h-100">
           <!--Contenido 1-->
-          <div class="carousel-item active">
+          <div class="carousel-item active p-1">
             <!-- media/images/ofertas/Delicheese.jpg -->
             <img id="imagenC" class="d-block w-100" alt="1 image">
             <script type="text/javascript">

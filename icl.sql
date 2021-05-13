@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-05-2021 a las 16:50:09
+-- Tiempo de generación: 12-05-2021 a las 17:20:14
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.3.27
 
@@ -2720,7 +2720,7 @@ CREATE TABLE `usuario` (
   `Telefono` varchar(11) NOT NULL,
   `Password` varchar(400) NOT NULL,
   `Email` varchar(50) NOT NULL,
-  `Direccion` varchar(300) DEFAULT NULL,
+  `Direccion` varchar(300) DEFAULT 'Sin datos',
   `Validado` int(1) NOT NULL DEFAULT 0,
   `ID_Role` int(11) NOT NULL DEFAULT 2,
   `ID_Cp` int(11) DEFAULT NULL,
@@ -2732,8 +2732,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Telefono`, `Password`, `Email`, `Direccion`, `Validado`, `ID_Role`, `ID_Cp`, `ID_Reserva`) VALUES
-(1, 'admin', '000-000-000', '$2y$10$4gdTeUQLv4QB15077In/7uHQDAJ1SvOzdwkMh1Dyo31Pn.Jk3/9pu', 'admin@gmail.com', NULL, 1, 3, NULL, NULL),
-(2, 'worker', '111-111-111', '$2y$10$MS3QtuvbdgnpnvJlv6tqSuqsxjDT5W9HZvardPggd5C/kwr3xPCAK', 'worker@gmail.com', NULL, 1, 1, NULL, NULL),
+(1, 'admin', '000-000-000', '$2y$10$4gdTeUQLv4QB15077In/7uHQDAJ1SvOzdwkMh1Dyo31Pn.Jk3/9pu', 'admin@gmail.com', 'Sin datos', 1, 3, NULL, NULL),
+(2, 'worker', '111-111-111', '$2y$10$MS3QtuvbdgnpnvJlv6tqSuqsxjDT5W9HZvardPggd5C/kwr3xPCAK', 'worker@gmail.com', 'Sin datos', 1, 1, NULL, NULL),
 (3, 'client', '222-222-222', '$2y$10$zzQVMV.wj6RSVPNp3zDClOebeXR6dYML/sdoOcIhRNDGZmJQ4iGsi', 'client@gmail.com', 'Girona..Amer..17170..c/Test test..5..2..3..2..B', 1, 2, NULL, NULL),
 (4, 'client2', '333-333-333', '$2y$10$Ghd6uWdY4Z1HFY9/s3KRZu.dowV4HRmd7iccMfrn21yk5I.LIGqHe', 'client2@gmail.com', 'LLeida..Alamús, els..25221..c/Test test..2..5..7..1..A', 1, 2, NULL, NULL),
 (5, 'client3', '444-444-444', '$2y$10$KeCHyMedzRI1A.X6rUcTv.z72G623SmMaEDw0ix3AvP71W/kmPRJ2', 'client3@gmail.com', 'Sin datos', 1, 2, NULL, NULL);

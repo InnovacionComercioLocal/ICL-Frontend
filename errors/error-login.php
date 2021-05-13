@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/allPages.css">
   <link rel="stylesheet" href="../css/index.css">
+  <script src="../js/slideShow.js"></script>
   <!--<script src="../js/"></script>-->
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -66,33 +67,37 @@
       </div>
 
       <div id="carouselExampleSlidesOnly" class="carousel slide mx-0 mt-5" data-ride="carousel">
-        <div class="carousel-inner h-100"> 
+        <div class="carousel-inner h-100">
           <!--Contenido 1-->
           <div class="carousel-item active">
-            <img src="../media/images/ofertas/Oferta1.jpg" class="d-block w-100" alt="1 image">
+            <!-- media/images/ofertas/Delicheese.jpg -->
+            <img id="imagenC" class="d-block w-100" alt="1 image">
+            <script type="text/javascript">
+              window.addEventListener("load", changeImg2);
+            </script>
           </div>
           <!--Contenido 2-->
-          <div class="carousel-item">
-            <img src="../media/images/ofertas/Oferta3.jpg" class="d-block w-100" alt="2 image">
-          </div>
+          <!-- <div class="carousel-item">
+            <img src="media/images/ofertas/Oferta1.jpg" class="d-block w-100" alt="2 image">
+          </div> -->
           <!--Contenido 3-->
-          <div class="carousel-item">
-            <img src="../media/images/ofertas/Oferta2.jpg" class="d-block w-100" alt="3 image">
-          </div>
+          <!-- <div class="carousel-item">
+            <img src="media/images/ofertas/Oferta2.jpg" class="d-block w-100" alt="3 image">
+          </div> -->
         </div>
 
         <!--Controls-->
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <!-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Prev</span>
+          <span class="sr-only text-dark">Prev</span>
         </a>
         <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="sr-only">Next</span>
+          <span class="sr-only text-dark">Next</span>
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </a>
+        </a> -->
 
       </div>
-      
+
     </div>
 
     <!--Flotant container for Login-->
