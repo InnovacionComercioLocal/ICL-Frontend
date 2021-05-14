@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/allPages.css">
     <link rel="stylesheet" href="css/index.css">
-    <script src="js/login/slideShow.js"></script>
+    <script src="js/slideShow.js"></script>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <!-- CSS Icons-->
@@ -22,7 +22,7 @@
     if (!isset($_SESSION["usuario"])) {
         header("location: http://localhost/php/auth/login.html");
     }
-    ?>
+    ?>    
     <!--Container Header and nav-->
     <div class="container ">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom border-dark mb-sl-3">
@@ -41,7 +41,7 @@
                         ?>
                     </a></li>
                 <!--Redirect to pages-->
-                <li class="nav-item"><a href="ofertas.php" class="nav-link ">Ofertas</a></li>
+                <li class="nav-item"><a href="Ofertas/vista/listaOfertas.php" class="nav-link ">Ofertas</a></li>
                 <!--<li class="nav-item"><a href="menus.html" class="nav-link">Menus</a></li>-->
                 <!--<li class="nav-item"><a href="reservar.html" class="nav-link active">Reservar</a></li>-->
                 <li class="nav-item"><a href="Productos/vista/listaProductos.php" class="nav-link">Productos</a></li>
@@ -86,7 +86,9 @@
                     <!--Contenido 1-->
                     <div class="carousel-item active p-1">
                         <!-- media/images/ofertas/Delicheese.jpg -->
-                        <img id="imagenC" class="d-block w-100" alt="1 image">
+                        <a href="Ofertas/vista/listaOfertas.php">
+                            <img id="imagenC" class="d-block w-100" alt="1 image">
+                        </a>
                         <script type="text/javascript">
                             window.addEventListener("load", changeImg2);
                         </script>
@@ -96,29 +98,28 @@
         </div>
     </div>
         ');
-    } elseif ($_SESSION['usuario']['ID_Role'] == 1 || $_SESSION['usuario']['ID_Role'] == 3) {
-        //header("location: http://localhost/php/");
-        echo ("Debbe de ir a ofertas");
+    } elseif ($_SESSION['usuario']['ID_Role'] == 1 || $_SESSION['usuario']['ID_Role'] == 3) {        
+        header("location: http://localhost/php/Ofertas/vista/listaOfertas.php");
     }
     ?>
 
 
 
 
-    <h1>Bienvenidos a la mejor Pizzeria</h1>
+<!--    <h1>Bienvenidos a la mejor Pizzeria</h1>
 
     <p>Si estas aqui es porqué ya estas registrado</p>
     <p><a href="user/pedirAdomicilio/direccion.php">Introducir Dirección</a></p>
     <p><a href="Productos/vista/listaProductos.html">Productos</a></p>
     <p><a href="user/configuracionCuenta/vista/ajustesCuenta.html">Cambiar Ajustes</a></p>
-    <?php
-    if ($_SESSION['usuario']['ID_Role'] == '3' || $_SESSION['usuario']['ID_Role'] == '1') {
+    /*<?php
+    //if ($_SESSION['usuario']['ID_Role'] == '3' || $_SESSION['usuario']['ID_Role'] == '1') {
     ?>
         <p><a href="admin/Usuarios/vista/listaUsuarios.html">Lista Usuarios</a></p>
     <?php
-    }
-    ?>
-    <p><a href="comun/logout.php">Cerrar Sessión</a></p>
+    //}
+    ?>*/
+    <p><a href="comun/logout.php">Cerrar Sessión</a></p>-->
 </body>
 
 </html>
