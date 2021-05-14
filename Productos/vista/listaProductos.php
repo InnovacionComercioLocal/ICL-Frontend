@@ -11,7 +11,6 @@
   <!-- CSS Icons-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
   <title>Pitzeria girona</title>
-
   <style>
     td {
       text-align: center;
@@ -23,7 +22,6 @@
     }
   </style>
 </head>
-
 <body>
   <!--Container Header and nav-->
   <div class="container ">
@@ -44,7 +42,7 @@
             ?>
           </a></li>
         <!--Redirect to pages-->
-        <li class="nav-item"><a href="ofertas.php" class="nav-link ">Ofertas</a></li>
+        <li class="nav-item"><a href="../../Ofertas/vista/listaOfertas.php" class="nav-link ">Ofertas</a></li>
         <!--<li class="nav-item"><a href="menus.html" class="nav-link">Menus</a></li>-->
         <!--<li class="nav-item"><a href="reservar.html" class="nav-link active">Reservar</a></li>-->
         <li class="nav-item"><a href="listaProductos.php" class="nav-link active">Productos</a></li>
@@ -79,10 +77,9 @@
 
   <!--Page content-->
   <div id="containerProducts" class="container border border-dark w-100 my-1">
-    <div class="d-flex border border-dark my-1">
+    <div class="text-center border-bottom border-dark my-1">
       <h1 class="h2 mt-2">Productos</h1>
-    </div>
-    <hr>
+    </div>    
     <!--Contenedor de productos-->
     <table id="tablaProductos" style="width: 90%;" class="container w-100 text-center my-1">
       <!--<thead class="container border border-dark rounded-4 color-White-6 my-3 w-80 h-25 p-2 mx-1 d-flex text-start">
@@ -109,7 +106,7 @@
   </div>
 
 
-  <a id="carrito" href="../../carrito/vista/mostrarCarrito.php">Carrito compra</a>
+  <a id="carrito" href="../../carrito/vista/mostrarCarrito.php" class="hide">Carrito compra</a>
 
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous">

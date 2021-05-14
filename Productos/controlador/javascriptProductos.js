@@ -30,7 +30,7 @@ function procesarProductos() {
             img.width = 200;
             img.alt = "Imagen Producto";  
             //Pon el estilo
-            td1.classList = "container w-100 h-100 p-1 color-White-5 rounded-4 text-center mx-5 my-2"          ;
+            td1.classList = "container w-100 h-100 p-1 color-White-5 rounded-4 text-center mx-5 my-2";
             td1.appendChild(img);
             var td2 = document.createElement("td");
             //Pon el estilo
@@ -99,7 +99,7 @@ function cambiarCantidad() {
 
 }
 function rutaImagen(imgName) {
-    var rutaImgTemp = "/php/uploads/" + imgName+".jpg";
+    var rutaImgTemp = "/php/uploads/" + imgName;
     var rutaImg = rutaImgTemp.split(" ").join("");
     return rutaImg;
 }
