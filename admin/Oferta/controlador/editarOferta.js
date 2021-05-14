@@ -53,7 +53,8 @@ function loadEvents() {
         location.reload();
     });
     document.getElementById("eliminar").addEventListener("click",()=>{
-        window.location="../modelo/eliminarProducto.php?idProd=" + idProduct;
+        console.log("Id de la oferta: "+idProduct);
+        window.location="../modelo/eliminarOferta.php?idProd=" + idProduct;
     });
 }
 function comprobarSession() {
@@ -65,6 +66,6 @@ function comprobarSession() {
 function loadProducto() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = procesarProducto;
-    xmlhttp.open("GET", "http://localhost/php/admin/Producto/modelo/getProductoPorID.php?idProducto=" + getURLParams(), true);
+    xmlhttp.open("GET", "http://localhost/php/admin/Oferta/modelo/getOfertaPorID.php?idProducto=" + getURLParams(), true);
     xmlhttp.send();
 }

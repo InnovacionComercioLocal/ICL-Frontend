@@ -6,14 +6,13 @@
         include("../../../comun/conexionBD.php");
 
         $id=$_GET['idProd'];
-
         
-
+        //echo($id);
         $userEmail=$_SESSION['usuario'];
-        $usuarioUpdated=$mysqli->query("DELETE FROM producto WHERE producto.ID_Producto=$id");    
+        $usuarioUpdated=$mysqli->query("DELETE FROM oferta WHERE oferta.ID_Oferta=$id");    
         echo ($mysqli->error);
         if(!$mysqli->error){
-            header("location: ../../../Productos/vista/listaProductos.php");
+            header("location: ../../../Ofertas/vista/listaOfertas.php");   
         }
         $mysqli->close();
 ?>

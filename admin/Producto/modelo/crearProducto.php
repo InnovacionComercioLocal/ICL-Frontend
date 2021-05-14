@@ -16,7 +16,7 @@
         $result=$mysqli->query($sql);  
         echo ($mysqli->error);       
         if(!$mysqli->error){
-            header("location: ../../../Productos/vista/listaProductos.html"); 
+            header("location: ../../../Productos/vista/listaProductos.php"); 
             $mysqli->close();    
 
         }

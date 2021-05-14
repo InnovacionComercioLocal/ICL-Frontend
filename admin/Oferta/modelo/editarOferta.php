@@ -9,10 +9,10 @@
         $nombreProducto=$_POST['nombreProducto'];
         $precioProducto=$_POST['precioProducto'];
 
-        $productUpdated=$mysqli->query("UPDATE producto SET Nombre = '$nombreProducto' , Precio='$precioProducto' WHERE ID_Producto=$id");    
+        $productUpdated=$mysqli->query("UPDATE oferta SET Nombre = '$nombreProducto' , Precio='$precioProducto' WHERE ID_Oferta=$id");    
         echo ($mysqli->error);
         if(!$mysqli->error){
-            header("location: ../../../Productos/vista/listaProductos.php");
+            header("location: ../../../Ofertas/vista/listaOfertas.php");
         }
         $productUpdated->free();
         $mysqli->close();

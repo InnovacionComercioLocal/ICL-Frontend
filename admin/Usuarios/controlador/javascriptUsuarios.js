@@ -27,7 +27,7 @@ function procesarUsuarios() {
             console.log('em: ' + arrayCadaUsuario[3]);
             console.log('dir: ' + arrayCadaUsuario[4]);
             console.log('rol: ' + arrayCadaUsuario[5]);
-            let tr = document.createElement("tr");
+            let tr = document.createElement("tr");            
             if (role === "ADMINSESSION") {
                 let td1 = document.createElement("td");
                 td1.innerHTML = arrayCadaUsuario[0];
@@ -51,6 +51,7 @@ function procesarUsuarios() {
             } else {
                 let td1s = document.createElement("td");
                 td1s.innerHTML = arrayCadaUsuario[0];
+                td1s.classList = "hide";
                 let td2s = document.createElement("td");
                 td2s.innerHTML = arrayCadaUsuario[1];
                 let td3s = document.createElement("td");
@@ -63,10 +64,11 @@ function procesarUsuarios() {
                 td6s.innerHTML = arrayCadaUsuario[5];
                 let td7s = document.createElement("td");
                 let editar = document.createElement("a");
-                editar.href = "../vista/editarUsuario.html?i=" + arrayCadaUsuario[0];
+                editar.href = "../vista/editarUsuario.php?i=" + arrayCadaUsuario[0];
                 editar.innerHTML = "Editar";
+                editar.classList = "btn btn-warning";
                 td7s.appendChild(editar);
-                tr.appendChild(td7s);
+                tr.appendChild(td7s);                
                 tbody.appendChild(tr);
                 tr.appendChild(td1s);
                 tr.appendChild(td2s);
@@ -75,6 +77,7 @@ function procesarUsuarios() {
                 tr.appendChild(td5s);
                 tr.appendChild(td6s);
                 tr.appendChild(td7s);
+                tr.classList = "border-bottom border-dark overflow-auto";
             }
 
             // var td4 = document.createElement("td");
@@ -96,6 +99,8 @@ function procesarUsuarios() {
             // }
 
         });
+        document.getElementById("contador").innerText = totalPag;
+      document.getElementById("contadorActual").innerText = pagina;
     }
 }
 

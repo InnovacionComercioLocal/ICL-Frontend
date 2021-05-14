@@ -1,23 +1,4 @@
-function procesarCategorias() {
-    var selectorCategoria = document.getElementById("categoriaProducto");
-
-    if (this.readyState == 4 && this.status == 200) {
-        var stringAll = this.responseText;
-        //console.log('string'+stringAll);
-
-        var arrayliCat = stringAll.split("//",);
-        //console.log('arrayliCat  '+arrayliCat);
-
-        for (let i = 0; i < arrayliCat.length - 1; i++) {
-            var arraycomponentesCat = arrayliCat[i].split("/");
-            selectorCategoria.innerHTML += "<option value=" + arraycomponentesCat[0] + ">" + arraycomponentesCat[1] + "</option>" + "\n"
-            //console.log("arrayComponents "+arraycomponentesCat[1]);
-        }
-
-    }
-}
-
-            
+     
 function procesarProducto() {
     if (this.readyState == 4 && this.status == 200) {
         var string = this.responseText;
@@ -28,24 +9,23 @@ function procesarProducto() {
         if (err[1] === "1" || err[1] === "2") {
             span.innerHTML = err[0];
             span.style = "color:red;";
-            document.getElementById("btnEnviar").setAttribute("disabled",true);
+            //document.getElementById("btnEnviar").setAttribute("disabled",true);
             //divErr.appendChild(span1);
         } else if (err[1] === "0") {
             document.getElementById("btnEnviar").setAttribute("enable",true);
             span.innerHTML = err[0];
             span.style = "color:green;";
             var img = document.getElementById("imagenInput").files[0].name;
-            var selectorcategoria = document.getElementById("categoriaProducto");
-            var catValue = selectorcategoria.options[selectorcategoria.selectedIndex].value;
-            var catInt = parseInt(catValue);
-            document.getElementById("IDcategoria").setAttribute("value", catInt);
+            //var selectorcategoria = document.getElementById("categoriaProducto");
+            //var catValue = selectorcategoria.options[selectorcategoria.selectedIndex].value;
+            //var catInt = parseInt(catValue);
+            //document.getElementById("IDcategoria").setAttribute("value", catInt);
             console.log("nIMG " + img)
-            document.getElementById("imagen").setAttribute("value", img);
-            //CrearProduto
+            document.getElementById("imagen").setAttribute("value", img); 
+            document.getElementById("hereName").setAttribute("value",img);
         }
     }
 }
-
 
 function previewImg(e) {
     // Creamos el objeto de la clase FileReader
@@ -98,7 +78,7 @@ function procesarIMG() {
 }
 function loadEvents() {
     comprobarSession();
-    loadCategorias();
+    //loadCategorias();
     //previsualizamos imagen y la enviamos a la carpeta uploads de nuestro servidor
     var inputIMG = document.getElementById("imagenInput");
     inputIMG.addEventListener("change", previewImg);
@@ -106,9 +86,9 @@ function loadEvents() {
     //--------------------------------------------------------------------
     //al validar la creación de productos miramos que no hay ningún producto creado con ese nombre
     var btnValidar = document.getElementById("btnValidar");
-    btnValidar.addEventListener("click", comprobarProducto);
-
+    btnValidar.addEventListener("click", comprobarProducto);   
 }
+
 function comprobarSession() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = procesarSession;
@@ -119,7 +99,7 @@ function comprobarProducto() {
     var formData = new FormData(document.getElementById("formularioProducto"));
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = procesarProducto;
-    xmlhttp.open("POST", "http://localhost/php/admin/Producto/modelo/comprobarProducto.php", true);
+    xmlhttp.open("POST", "http://localhost/php/admin/Oferta/modelo/comprobarOferta.php", true);
     xmlhttp.send(formData);
 }
 function imagen() {
@@ -128,11 +108,4 @@ function imagen() {
     xmlhttp.onreadystatechange = procesarIMG;
     xmlhttp.open("POST", "http://localhost/php/comun/mostrarImg.php", true);
     xmlhttp.send(formData);
-}
-
-function loadCategorias() {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = procesarCategorias;
-    xmlhttp.open("GET", "http://localhost/php/admin/Producto/modelo/getCategorias.php", true);
-    xmlhttp.send();
 }
