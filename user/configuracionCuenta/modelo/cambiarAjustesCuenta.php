@@ -7,7 +7,7 @@
         $id = $_POST['iduser'];
         $nombre=$_POST['nombre'];
         $password=$_POST['contraDefinitiva'];
-        $telefono=$_POST['telefono'];
+        $telefono=$_POST['telexfono'];
         include("../../../comun/conexionBD.php");
         $passwordCrypt= password_hash($password,PASSWORD_DEFAULT);
         $usuarioUpdated=$mysqli->query("UPDATE usuario SET Nombre = '$nombre' , Telefono = '$telefono',Password = '$passwordCrypt' WHERE ID_Usuario=$id");

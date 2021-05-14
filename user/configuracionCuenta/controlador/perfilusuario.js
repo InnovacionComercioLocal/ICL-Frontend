@@ -84,7 +84,7 @@ function loadEvents() {
     comprobarSession();
     loadDatosUser();
     document.getElementById("guardarContra").addEventListener("click", comprobarContrasIguales);
-    //document.getElementById("btnEnviar").addEventListener("click", guardarAjustesCuenta);
+    document.getElementById("btnEnviar").addEventListener("click", guardarAjustesCuenta);
 
 
 }

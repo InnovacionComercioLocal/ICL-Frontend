@@ -53,7 +53,7 @@
                         ?>
                     </a></li>
                 <!--Redirect to pages-->
-                <li class="nav-item"><a href="ofertas.php" class="nav-link ">Ofertas</a></li>
+                <li class="nav-item"><a href="../../../Ofertas/vista/listaOfertas.php" class="nav-link ">Ofertas</a></li>
                 <!--<li class="nav-item"><a href="menus.html" class="nav-link">Menus</a></li>-->
                 <!--<li class="nav-item"><a href="reservar.html" class="nav-link active">Reservar</a></li>-->
                 <li class="nav-item"><a href="../../../Productos/vista/listaProductos.php" class="nav-link">Productos</a></li>
@@ -83,14 +83,12 @@
                     Nombre: <input type="text" name="nombre" id="nombre" required></input>
                     </br>
                     </br>
-                    Contraseña Cifrada: <input type="text" name="contraDefinitiva" id="contraDefinitiva">
-                    <br>
-                    <br>
+                    <input type="text" name="contraDefinitiva" id="contraDefinitiva" hidden>                    
                     <div id="divContra">
                         Contraseña: <input type="password" value="********" disabled id="password"></input>
                         <br>
                         <br>
-                        <label><input type="checkbox" id="checkboxButton" onchange="cbChecked()" class="btn btn-secondary mt-3">Cambiar Contraseña</label>
+                        <label class="btn btn-secondary mt-3"><input type="checkbox" id="checkboxButton" onchange="cbChecked()">Cambiar Contraseña</label>
 
                     </div>
                     <div id="nuevaContra" style="display: none;">
@@ -105,7 +103,7 @@
                         <div id="diverr">
                             <span id="spanErr"></span>
                         </div>
-                        <button type="reset" id="guardarContra">Guardar</button>
+                        <button type="reset" id="guardarContra" class="btn btn-secondary mt-3">Guardar</button>
                     </div>
                     </br>
 
