@@ -43,10 +43,10 @@
           <?php
               $lineasPedido= $mysqli->query("SELECT * from linea_pedido WHERE ID_Pedido=$row->ID_Pedido");
               
-              while($productos=$lineasPedido->fetch_object()) {
+              while($producto=$lineasPedido->fetch_array()) {
             ?>
                 <tr>
-                  <td><img src="<?php echo "/php/uploads/" . $producto['Imagen']; ?>" width="70px" alt="Imagen Producto"></td>
+                  <td><img src="<?php echo "/php/uploads/" . $producto['Imagen'].".jpg"; ?>" width="70px" alt="Imagen Producto"></td>
                   <td><?php echo $producto['Nombre']; ?></td>
                   <td><?php echo $producto['Cantidad']; ?></td>
                   <td><?php echo $producto['Precio']; ?>€</td>

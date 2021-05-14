@@ -3,7 +3,9 @@
               if (isset($_SESSION["Carrito"])) {
                 unset($_SESSION["Carrito"]);
                 echo $_SESSION["Carrito"];
-                header("location: http://localhost/php/Productos/vista/listaProductos.html"); 
+                header("location: http://localhost/php/Productos/vista/listaProductos.php"); 
+              }else{
+                header("location: http://localhost/php/Productos/vista/listaProductos.php"); 
               }
               
 ?>
