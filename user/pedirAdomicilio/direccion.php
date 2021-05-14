@@ -36,7 +36,7 @@
                         ?>
                     </a></li>
                 <!--Redirect to pages-->
-                <li class="nav-item"><a href="ofertas.php" class="nav-link ">Ofertas</a></li>
+                <li class="nav-item"><a href="../../Ofertas/vista/listaOfertas.php" class="nav-link ">Ofertas</a></li>
                 <!--<li class="nav-item"><a href="menus.html" class="nav-link">Menus</a></li>-->
                 <!--<li class="nav-item"><a href="reservar.html" class="nav-link active">Reservar</a></li>-->
                 <li class="nav-item"><a href="../../Productos/vista/listaProductos.php" class="nav-link">Productos</a></li>
@@ -57,11 +57,11 @@
         </header>
     </div>
 
-    <!--Page content-->
-    <div class="container h-auto w-auto p-3">
-        <h1>Pedidos a domicilio</h1>
+    <!--Page content-->    
         <div class="container border border-dark w-100 h-75 p-4">
-            <h2>Dirección</h2>
+            <div class=" border border-dark text-center">
+                <h2>Dirección</h2>
+            </div>
             <p id="errormsg"></p>
             <div class="border-top border-dark h-100">
                 <div class="container border my-4 h-50 p-4 text-center">
@@ -111,8 +111,7 @@
                     <input type="button" value="Enviar" id="botonEnviar" class="btn btn-success w-25"></input>
                 </div>
             </div>
-        </div>
-    </div>
+        </div> 
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous">
